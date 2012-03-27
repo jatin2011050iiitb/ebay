@@ -2,233 +2,193 @@ DROP DATABASE IF EXISTS ebay ;
 CREATE DATABASE ebay;
 USE ebay;
 -- ---------------------------------------------------------------------------------------------------------------------
--- not sure if its needed but since its there in documentation here it goes.
-create table country( 
-countryId int AUTO_INCREMENT PRIMARY KEY, 
-counrtyName varchar(20)
-);
-
-create table state(
-stateId int AUTO_INCREMENT PRIMARY KEY, 
-countryId int, 
-stateName varchar(20),
-foreign key (countryId) references country(countryId)
-);
-
-create table city(
-cityId int AUTO_INCREMENT PRIMARY KEY, 
-countryId int,
-stateId int,
-cityName varchar(20),
-foreign key (countryId) references country(countryId),
-foreign key (stateId) references state(stateId)
-);
--- ---------------------------------------------------------------------------------------------------------------------
 -- USER DETAILS 
-create table userCredentials( -- both buyer and seller use this
-userId int AUTO_INCREMENT PRIMARY KEY,
-username varchar(15) NOT NULL UNIQUE,
-password varchar(15) NOT NULL
+CREATE TABLE userCredentials( -- both buyer and seller use this
+userId INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(15) NOT NULL UNIQUE,
+password VARCHAR(15) NOT NULL,
+accStatus ENUM('0','1') -- 0= inactive 1=active 
 );
 
-create table userInfo(
-userId int PRIMARY KEY,
-dob DATE,
-gender enum('male','female'),
-emailId varchar(30) NOT NULL,
-address tinytext,
-cityId int,
-pincode int,
-phone int,
-secretquestion tinytext, 
-secretanswer tinytext, 
-accStatus int, 
-isAdmin int,
-PPayAccId int, -- paypal account id
-foreign key (cityId) references city(cityId),
-foreign key (userId) references userCredentials(userId)
+CREATE TABLE userInfo(
+userId INT PRIMARY KEY,
+fName VARCHAR(20),
+lName VARCHAR(20),
+gender ENUM('male','female'),
+dob DATE, -- yyyy-mm-dd
+address VARCHAR(500),
+city VARCHAR(20),
+state VARCHAR(20),
+country VARCHAR(20),
+pincode INT,
+emailId VARCHAR(30) NOT NULL,
+phone BIGINT,
+secretQID INT, 
+secretanswer TINYTEXT, 
+isAdmin ENUM('0','1'), -- 0= common man 1=admin
+PPayAccId INT, -- paypal account id
+FOREIGN KEY (userId) REFERENCES userCredentials(userId)
 );
 
+CREATE TABLE secretquestion(
+secretQID INT AUTO_INCREMENT PRIMARY KEY,
+secretQuestion TINYTEXT
+);
 -- ---------------------------------------------------------------------------------------------------------------------
 -- PRODUCT DETAILS
-create table category(
-categoryId int AUTO_INCREMENT PRIMARY KEY, 
-categoryDesc tinytext -- tinytext=max 255 characters
+CREATE TABLE category(
+categoryId INT AUTO_INCREMENT PRIMARY KEY, 
+categoryDesc TINYTEXT -- tinytext=max 255 characters
 );
 
-create table subcategory(
-subcategoryId int AUTO_INCREMENT PRIMARY KEY, 
-categoryId int NOT NULL, 
-subcategoryDesc tinytext,
-foreign key (categoryId) references category(categoryId)
+CREATE TABLE subcategory(
+subcategoryId INT AUTO_INCREMENT PRIMARY KEY, 
+categoryId INT NOT NULL, 
+subcategoryDesc TINYTEXT,
+FOREIGN KEY (categoryId) REFERENCES category(categoryId)
 );
 
-create table product(
-productId int AUTO_INCREMENT PRIMARY KEY,
-subcategoryId int NOT NULL, 
-categoryId int NOT NULL, 
-productDesc tinytext,
-sellerId int NOT NULL, 
-saleType enum('1','2'), -- 1=binProduct  2=auctionProduct
-foreign key (sellerId) references userCredentials(userId),
-foreign key (categoryId) references category(categoryId),
-foreign key (subcategoryId) references subcategory(subcategoryId)
+CREATE TABLE product(
+productId INT AUTO_INCREMENT PRIMARY KEY,
+subcategoryId INT NOT NULL, 
+categoryId INT NOT NULL, 
+productDesc TINYTEXT,
+sellerId INT NOT NULL, 
+saleType ENUM('1','2'), -- 1=binProduct  2=auctionProduct
+FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
+FOREIGN KEY (categoryId) REFERENCES category(categoryId),
+FOREIGN KEY (subcategoryId) REFERENCES subcategory(subcategoryId)
 );
 
-create table binProduct( -- buy it now item
-productId int unique PRIMARY KEY,  
-stock int NOT NULL, 
-binPrice int NOT NULL,-- buyitnow price
-foreign key (productId) references product(productId)
+CREATE TABLE binProduct( -- buy it now item
+productId INT UNIQUE PRIMARY KEY,  
+stock INT NOT NULL, 
+binPrice INT NOT NULL,-- buyitnow price
+FOREIGN KEY (productId) REFERENCES product(productId)
 );
 
-create table auctionProduct( -- auction item
-auctionId int AUTO_INCREMENT PRIMARY KEY,
-productId int unique, 
-basePrice int not null, 
-stepPrice int not null,
-startDate timestamp,
-endDate timestamp, 
-highestBidPrice int, 
-finalBidderId int,
-foreign key (finalbidderId) references userCredentials(userId),
-foreign key (productId) references product(productId)
+CREATE TABLE auctionProduct( -- auction item
+auctionId INT AUTO_INCREMENT PRIMARY KEY,
+productId INT UNIQUE, 
+basePrice INT NOT NULL, 
+stepPrice INT NOT NULL,
+startDate TIMESTAMP,
+endDate TIMESTAMP, 
+highestBidPrice INT, 
+finalBidderId INT,
+FOREIGN KEY (finalbidderId) REFERENCES userCredentials(userId),
+FOREIGN KEY (productId) REFERENCES product(productId)
 );
 
-create table bid_list(
-bidId int AUTO_INCREMENT PRIMARY KEY,
-bidderId int,
-auctionId int,
-bidValue int, 
+CREATE TABLE bid_list(
+bidId INT AUTO_INCREMENT PRIMARY KEY,
+bidderId INT,
+auctionId INT,
+bidValue INT, 
 bidTS TIMESTAMP,
-foreign key (bidderId) references userCredentials(userId),
-foreign key (auctionId) references auctionProduct(auctionId)
+FOREIGN KEY (bidderId) REFERENCES userCredentials(userId),
+FOREIGN KEY (auctionId) REFERENCES auctionProduct(auctionId)
 );
 -- ---------------------------------------------------------------------------------------------------------------------
-
 -- PURCHASE DETAILS
 
 CREATE TABLE purchaseDetail(
 purchaseOrderNo INT AUTO_INCREMENT PRIMARY KEY,
 productId INT,
-quantity int,
-unitPrice int, -- app layer has to pass binPrice(quantity>=1)/highestBidPrice(quantity=1) 
+quantity INT,
+unitPrice INT, -- app layer has to pass binPrice(quantity>=1)/highestBidPrice(quantity=1) 
 totalAmount INT,
 buyerId INT,
-sellerId int,
-buyerAccId int,
-sellerAccId int,
-paymentType enum('creditcard','debitcard','banktrasfer'),
-paymentConfirmation enum('0','1','-1'), -- 0=unpaid 1=success -1=failure
-recieptConfirmation enum('1','2'), -- 1=recieved 2=not recieved
+sellerId INT,
+buyerAccId INT,
+sellerAccId INT,
+paymentType ENUM('creditcard','debitcard','banktrasfer'),
+paymentConfirmation ENUM('0','1','-1'), -- 0=unpaid 1=success -1=failure
+recieptConfirmation ENUM('1','2'), -- 1=recieved 2=not recieved
 paymentTS TIMESTAMP, 
-foreign key (productId) references product(productId),
-foreign key (sellerId) references userCredentials(userId),
-foreign key (buyerId) references userCredentials(userId)
+FOREIGN KEY (productId) REFERENCES product(productId),
+FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
+FOREIGN KEY (buyerId) REFERENCES userCredentials(userId)
 );
-
-
-
 
 CREATE TABLE shipmentDetail(
 purchaseOrderNo INT PRIMARY KEY,
-courierCompany varchar(20),
-shippingAddress tinytext,
+courierCompany VARCHAR(20),
+shippingAddress VARCHAR(500),
 shipmentCharges INT,
-ETD varchar(5), -- ETA=Estimated time of delivary for Ex. 5days, 3 days etc
-shipmentStatus enum('processing','shipped','delivered'),
-foreign key (purchaseOrderNo) references purchaseDetail(purchaseOrderNo)
+ETD VARCHAR(5), -- ETA=Estimated time of delivary for Ex. 5days, 3 days etc
+shipmentStatus ENUM('processing','shipped','delivered'),
+FOREIGN KEY (purchaseOrderNo) REFERENCES purchaseDetail(purchaseOrderNo)
 );
 
 -- ---------------------------------------------------------------------------------------------------------------------
 -- BANK DETAILS 
 /* CUSTOMER TABLE */
 
-CREATE TABLE customer(
-customerId INT PRIMARY KEY,
-custName VARCHAR(200),
-phoneNo VARCHAR(15),
-emailId VARCHAR(25),
-address tinytext,
-dob DATE,
-password VARCHAR(50)
+CREATE TABLE bankMaster(
+bankId INT AUTO_INCREMENT PRIMARY KEY,
+bankName VARCHAR(50)
 );
 
-/* ACCOUNT TABLE */
-
-CREATE TABLE account(
-accountId INT PRIMARY KEY,
-customerId INT,
-accountType VARCHAR(20),
-active VARCHAR(20),
-creditCard VARCHAR(30),
-debitCard VARCHAR(30)
-);
-
-/* TRANSACTION TABLE */
-
-CREATE TABLE bankTransaction(
-transactionId INT PRIMARY KEY,
-accountId INT,
-transactionType VARCHAR(20),
-amount INT,
-date DATE,
-description VARCHAR(200)
-);
-
-/* BALANCE-HISTORY TABLE */
-
-CREATE TABLE balancehistory(
-id INT PRIMARY KEY,
-accountId INT,
-balanceDate DATE,
-balance INT,
-transactionId INT
-);
-
-/* PAISAPAY ACCOUNT TABLE */
-
-CREATE TABLE paisapayaccount(
-paisaPayAccountId INT PRIMARY KEY,
-ebayUserId INT,
+CREATE TABLE BankAcc(
 bankId INT,
-accountId INT
+accNo INT AUTO_INCREMENT PRIMARY KEY,
+accHolder VARCHAR(20),
+creditCardNo BIGINT,
+creditCardverfNo INT,
+debitCardNo BIGINT,
+debitCardverfNo INT,
+NEFTcode INT,
+accBalance INT,
+creditPermited INT DEFAULT 50000,
+FOREIGN KEY (bankId) REFERENCES bankMaster(bankId)
 );
 
 /* PAISAPAY TRANSACTION TABLE*/
 
-CREATE TABLE paisapaytransaction(
-transactionId INT PRIMARY KEY,
+CREATE TABLE PPTransaction(
+transactionId INT AUTO_INCREMENT PRIMARY KEY,
 buyerId INT,
-purchaseOrderNO INT,
+sellerId INT,
+purchaseOrderNo INT, 
+accountId INT,-- buyer
+bankId INT, -- buyer
+PPayAccId INT, 
+paymentType enum('creditcard','debitcard','banktrasfer'),
 amount INT,
-timestamp TIMESTAMP,
-confirmation VARCHAR(20),
-status VARCHAR(20)
+pRecvTS TIMESTAMP,
+pPaidTS TIMESTAMP,
+pCancelTS TIMESTAMP,
+status enum('recieved','paidtosellerPPacc','cancelled'),
+FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
+FOREIGN KEY (buyerId) REFERENCES userCredentials(userId),
+FOREIGN KEY (purchaseOrderNo) REFERENCES purchaseDetail(purchaseOrderNo),
+FOREIGN KEY (bankId) REFERENCES bankMaster(bankId)
 );
 
-/* TRANSFER TABLE */
+/* PAISAPAY ACCOUNT TABLE */
 
-CREATE TABLE transfer(
-transferId INT PRIMARY KEY,
-transactionId INT,
-paisaPayAccountId INT,
-transferDate DATE,
-status VARCHAR(20),
-amount INT,
-transferType VARCHAR(20)
+CREATE TABLE PPayAccInfo(
+PPayAccId INT AUTO_INCREMENT PRIMARY KEY,
+ebayUserId INT,
+bankId INT,
+accNo INT,
+PPayBalance int,
+FOREIGN KEY (ebayUserId) REFERENCES userCredentials(userId),
+FOREIGN KEY (bankId) REFERENCES bankMaster(bankId)
 );
-
-create table advertisement(
-advId int AUTO_INCREMENT PRIMARY KEY,
-adDesc tinytext,
-sellerId int,
-categoryId int, 
-subcategoryId int,
-addDate timestamp,
-endDate timestamp,
-costPerDay int,
-foreign key (sellerId) references userCredentials(userId),
-foreign key (categoryId) references category(categoryId),
-foreign key (subcategoryId) references subcategory(subcategoryId)
+-- ---------------------------------------------------------------------------------------------------------------------
+-- advertisement
+CREATE TABLE advertisement(
+advId INT AUTO_INCREMENT PRIMARY KEY,
+adDesc TINYTEXT,
+sellerId INT,
+categoryId INT, 
+subcategoryId INT,
+addDate TIMESTAMP,
+endDate TIMESTAMP,
+costPerDay INT,
+FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
+FOREIGN KEY (categoryId) REFERENCES category(categoryId),
+FOREIGN KEY (subcategoryId) REFERENCES subcategory(subcategoryId)
 );
