@@ -9,6 +9,8 @@
 	
 	<definition name="BaseLayout" template="/BaseLayout.jsp">
         <put-attribute name="header" value="/header.jsp" />
+        <put-attribute name="searchbar" value="/searchbar.jsp" />
+        <put-attribute name="navigationbar" value="/navigation.jsp" />
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="/footer.jsp" />
     </definition>

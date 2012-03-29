@@ -15,6 +15,15 @@
 		<div id="header" style="background-color: #F8F8FF; text-align: left; height: 127px;">
 			<tiles:insertAttribute name="header" />
 		</div>
+		
+		<div id="searchbar" >
+			<tiles:insertAttribute name="searchbar" />
+		</div>
+		
+		<div id="navigationbar" >
+			<tiles:insertAttribute name="navigationbar" />
+		</div>
+		
 		<div id="body" style="background-color:#F0FFF0; height: 500px;">
 			<tiles:insertAttribute name="body" />
 		</div>
