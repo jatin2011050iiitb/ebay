@@ -3,6 +3,7 @@ CREATE DATABASE ebay;
 USE ebay;
 
 -- ---------------------------------------------------------------------------------------------------------------------
+-- SECRET QUESTION  
 CREATE TABLE secretquestion(
 secretQID INT AUTO_INCREMENT PRIMARY KEY,
 secretQuestion TINYTEXT
@@ -21,9 +22,9 @@ bankId INT,
 accNo INT AUTO_INCREMENT PRIMARY KEY,
 accHolder VARCHAR(20),
 creditCardNo BIGINT,
-creditCardverfNo INT,
+creditCardVerfNo INT,
 debitCardNo BIGINT,
-debitCardverfNo INT,
+debitCardVerfNo INT,
 NEFTcode INT,
 accBalance INT,
 creditPermited INT DEFAULT 50000,
@@ -95,17 +96,19 @@ subcategoryId INT NOT NULL,
 categoryId INT NOT NULL, 
 productDesc TINYTEXT,
 sellerId INT NOT NULL, 
-prodCondition enum('used','new'),
-shipmentState enum('free','chargeble'),
-shipmentCharges INT,
 saleType ENUM('1','2'), -- 1=binProduct  2=auctionProduct
+prodCondition enum('used','new'),
+startDate TIMESTAMP,
+endDate TIMESTAMP, 
+shipmentState enum('free','chargeable'),
+shipmentCharges INT,
 FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
 FOREIGN KEY (categoryId) REFERENCES category(categoryId),
 FOREIGN KEY (subcategoryId) REFERENCES subcategory(subcategoryId)
 );
 
 CREATE TABLE binProduct( -- buy it now item
-productId INT UNIQUE PRIMARY KEY,  
+productId INT PRIMARY KEY,  
 stock INT NOT NULL, 
 binPrice INT NOT NULL,-- buyitnow price
 FOREIGN KEY (productId) REFERENCES product(productId)
@@ -116,8 +119,6 @@ auctionId INT AUTO_INCREMENT PRIMARY KEY,
 productId INT UNIQUE, 
 basePrice INT NOT NULL, 
 stepPrice INT NOT NULL,
-startDate TIMESTAMP,
-endDate TIMESTAMP, 
 highestBidPrice INT, 
 finalBidderId INT,
 FOREIGN KEY (finalbidderId) REFERENCES userCredentials(userId),
@@ -211,7 +212,7 @@ FOREIGN KEY (PPayAccId) REFERENCES PPayAccInfo(PPayAccId)
 );
 
 -- ---------------------------------------------------------------------------------------------------------------------
--- EBAY advertisement
+-- EBAY ADVERTISEMENT
 
 CREATE TABLE advertisement(
 advId INT AUTO_INCREMENT PRIMARY KEY,
