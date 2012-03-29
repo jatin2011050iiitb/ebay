@@ -1,0 +1,1497 @@
+body,.g-std {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+a:active,a:link,.g-novisited a:visited {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #990099;
+	text-decoration: none;
+}
+
+.gh-w {
+	padding: 10px 0;
+	min-width: 760px;
+}
+
+.g-b {
+	font-weight: bold;
+}
+
+.g-em {
+	color: #009900;
+	font-weight: bold;
+}
+
+.g-err {
+	color: #FF0000;
+}
+
+.g-hlp {
+	color: #666666;
+}
+
+.g-pipe {
+	color: #9999FF;
+}
+
+.g-txtBx,.g-btn,.g-nav {
+	font-family: Verdana;
+	font-size: x-small;
+}
+
+.g-txtBxHlp {
+	color: #666666;
+	font-family: Verdana;
+	font-size: x-small;
+}
+
+.g-m0 {
+	margin: 0;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.g-i {
+	font-style: italic;
+}
+
+.g-bi {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.g-dft {
+	font-weight: normal;
+}
+
+.g-dfti {
+	font-style: italic;
+	font-weight: normal;
+}
+
+.g-s {
+	font-size: small;
+}
+
+.g-xs {
+	font-size: x-small;
+}
+
+.g-m {
+	font-size: medium;
+}
+
+.g-l {
+	font-size: large;
+}
+
+.g-xl {
+	font-size: x-large;
+}
+
+.g-hdn {
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	outline: medium none;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	z-index: -1;
+}
+
+.gh-ovr {
+	left: -1000px;
+	position: absolute;
+	z-index: 10000;
+}
+
+.gh-iovr {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	float: left;
+	position: relative;
+}
+
+.gh-ext {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-top: 1px solid #FFFFFF;
+	font-size: 0;
+	left: 0;
+	margin-top: -1px;
+	position: absolute;
+	top: 0;
+}
+
+.gh-vnl {
+	background: none repeat scroll 0 0 #CCCCCC;
+	color: #333333;
+	margin-top: -1px;
+	overflow: hidden;
+	padding: 0 5px 0 2px;
+}
+
+.gh-vnl .gh-cNav {
+	height: 25px;
+	padding: 3px 0 0;
+}
+
+.gh-vnl .gh-sm {
+	float: left;
+	width: 10%;
+}
+
+.gh-vnl .gh-cat,.gh-vnl .gh-sm {
+	margin-right: 20px;
+	white-space: nowrap;
+}
+
+.gh-vnl a {
+	color: #333333 !important;
+	display: inline-block;
+	font: bold 0.923em Arial;
+	margin-left: 6px;
+	padding: 4px 11px 3px;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.gh-see a {
+	padding: 0;
+}
+
+.gh-vnl .gh-fst {
+	background: none repeat scroll 0 0 transparent;
+}
+
+.gh-vnl .gh-iNav a {
+	float: right;
+	line-height: normal;
+	margin: 3px 0 0;
+}
+
+.gh-vnl .gh-iNav .gh-bbt {
+	padding-right: 0;
+}
+
+.gh-vnl .gh-iA .gh-barr {
+	background: none no-repeat scroll 50% -25px transparent;
+	display: block;
+	padding: 0 5px 0 8px;
+}
+
+.gh-vnl .gh-iA .gh-barr:hover {
+	text-decoration: none;
+}
+
+.gh-vsmn .gh-iovr {
+	background-color: transparent;
+	border: 0 none;
+	float: none;
+	max-width: 1000px;
+	min-width: 930px;
+}
+
+.gh-vsmn .gh-iovr {
+	width: 100%;
+}
+
+.gh-vmnu ul {
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	width: 95px;
+}
+
+.gh-vmnu li {
+	padding: 0 0 7px;
+}
+
+.gh-vmnu a,.gh-vmnu a:visited,.gh-vmnu a:link,.gh-vmnu a:active {
+	color: #FFFFFF;
+	font: 0.846em arial;
+}
+
+.gh-vmnu a:hover {
+	text-decoration: underline;
+}
+
+.gh-hid {
+	display: none;
+}
+
+.gh-vnl .vnl-dd {
+	font-size: 0.923em;
+	padding-bottom: 6px;
+}
+
+.gh-vnl .vnl-dd b {
+	background-position: 0 -11px;
+	color: #CCCCCC;
+	display: inline-block;
+	margin-left: 2px;
+	width: 11px;
+}
+
+.gh-vnl a.vnl-dd:hover,.gh-vnl a.vnl-dd:hover b {
+	text-decoration: none;
+}
+
+.gh-vnl .vnl-img {
+	height: 22px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.gh-vnl img {
+	border: 0 none;
+}
+
+.gh-vnl a:hover img {
+	margin-top: -50px;
+}
+
+.gh-vnl .gh-hso b,.gh-vnl a:hover b {
+	color: #FFFFFF;
+}
+
+.gh-vnl .gh-hso,.gh-vnl a:hover {
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #333333 !important;
+	text-decoration: none;
+}
+
+.gh-vsmn .gh-ext {
+	border-top: 0 none;
+	height: 0;
+}
+
+.vnl-dn {
+	overflow: hidden;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.c22,.c20,.c18 {
+	background: none repeat scroll 0 0 #FFFFFF;
+	height: 200px;
+	overflow: hidden;
+	vertical-align: top;
+}
+
+.c22 ul {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.c20 ul {
+	font-size: 0.923em;
+}
+
+.c22 {
+	border-left: 1px solid #CCCCCC;
+	width: 22%;
+}
+
+.c20 {
+	width: 20%;
+}
+
+.c18 {
+	width: 18%;
+}
+
+.vnl-dn ul {
+	height: 170px;
+	list-style: none outside none;
+	margin: 15px 0;
+	padding: 0 15px;
+}
+
+.vnl-dn .c22 li {
+	padding: 1px 1px 5px;
+}
+
+.vnl-dn .c20 li {
+	padding: 1px 1px 2px;
+}
+
+.c22 ul {
+	border-right: 1px solid #CCCCCC;
+}
+
+.vnl-br div,.vnl-vl div,.vnl-vl ul {
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin: 0 5px 0 0;
+	overflow: hidden;
+}
+
+.vnl-vl {
+	background:
+		url("http://p.ebaystatic.com/aw/pics/globalHeader/imgVNLshdwRt.png")
+		repeat-y scroll 100% 0 transparent;
+}
+
+.vnl-dn ul li {
+	height: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.vnl-dn .vnl-tr {
+	background: none repeat scroll 0 0 transparent;
+	border: 0 none;
+}
+
+.vnl-dn td a,.vnl-dn td a:link,.vnl-dn td a:active {
+	color: #666666;
+	display: block;
+	text-align: left;
+}
+
+.vnl-dn td b {
+	color: #333333;
+}
+
+.vnl-dn td a:visited {
+	color: #784A99;
+}
+
+.vnl-dn td a:hover {
+	background: none repeat scroll 0 0 #DDE5F4;
+	text-decoration: none;
+}
+
+.vnl-dn a,.vnl-dn a:link,.vnl-dn a:active,.vnl-dn b {
+	padding: 0 3px;
+}
+
+.vnl-dn td.c18 a {
+	background: none repeat scroll 0 0 transparent;
+	display: inline;
+	padding: 0;
+	text-align: right;
+}
+
+.vnl-b div {
+	background: none repeat-x scroll 0 -15px transparent;
+}
+
+.vnl-bs div {
+	font-size: 0;
+	height: 5px;
+}
+
+.vnl-br {
+	background: none no-repeat scroll 100% 0 transparent;
+	vertical-align: top;
+}
+
+.vnl-b div,.vnl-br {
+	background-image:
+		url("http://p.ebaystatic.com/aw/pics/globalHeader/sprVNLshdwVert.png");
+}
+
+.vnl-vl ul {
+	padding: 15px;
+}
+
+.vnl-vl div {
+	height: 200px;
+	text-align: right;
+}
+
+.gh-vnl-1 {
+	background: none repeat scroll 0 0 #4D89C8;
+	color: #E8E8E8;
+	font: bold 0.923em Trebuchet MS;
+	height: 20px;
+	margin-top: 2px;
+	overflow: hidden;
+	padding: 0 5px 0 15px;
+}
+
+.gh-vnl-1 .gh-cNav {
+	float: left;
+	width: 60%;
+}
+
+.gh-vnl-1 .gh-sm {
+	float: left;
+	width: 10%;
+}
+
+.gh-vnl-1 .gh-cat,.gh-vnl-1 .gh-sm {
+	margin-right: 20px;
+	white-space: nowrap;
+}
+
+.gh-vnl-1 a {
+	background: none no-repeat scroll -5px 2px transparent;
+	color: #FFFFFF !important;
+	font: 0.917em/20px Arial;
+	padding: 0 5px 0 10px;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.gh-see a {
+	padding: 0;
+}
+
+.gh-vnl-1 .gh-fst {
+	background: none repeat scroll 0 0 transparent;
+}
+
+.gh-vnl-1 .gh-iNav a {
+	float: right;
+	line-height: normal;
+	margin: 3px 0 0;
+}
+
+.gh-vnl-1 .gh-iNav .gh-bbt {
+	padding-right: 0;
+}
+
+.gh-vnl-1 .gh-iA .gh-barr {
+	background:
+		url("http://p.ebaystatic.com/aw/pics/homepage/imgArrowDot.png")
+		no-repeat scroll 50% -25px transparent;
+	display: block;
+	padding: 0 5px 0 8px;
+}
+
+.gh-vnl-1 .gh-iA .gh-barr:hover {
+	text-decoration: none;
+}
+
+.gh-vsmn-1 {
+	background-color: #4D89C8;
+	padding: 10px 15px 3px;
+}
+
+.gh-vmnu-1 ul {
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	width: 95px;
+}
+
+.gh-vmnu-1 li {
+	padding: 0 0 7px;
+}
+
+.gh-vmnu-1 a,.gh-vmnu-1 a:visited,.gh-vmnu-1 a:link,.gh-vmnu-1 a:active
+	{
+	color: #FFFFFF;
+	font: 0.846em arial;
+}
+
+.gh-vnl-1 a:hover,.gh-vmnu-1 a:hover {
+	text-decoration: underline;
+}
+
+.gh-hid {
+	display: none;
+}
+
+.gh-vsmn-1 .gh-iovr {
+	background: none repeat scroll 0 0 #4D89C8;
+	border: 0 none;
+}
+
+.gh-w {
+	min-width: 760px;
+	padding: 10px 0;
+}
+
+.gh-log {
+	float: left;
+	max-width: 60%;
+	white-space: nowrap;
+}
+
+.gh-log .gh-lg img {
+	margin-bottom: -2px;
+	position: relative;
+}
+
+.gh-log .gh-ui {
+	color: #333333;
+	font: 0.769em verdana;
+}
+
+.gh-log span,.gh-log a {
+	display: inline-block;
+}
+
+.gh-rph {
+	clear: right;
+	float: right;
+	padding-top: 12px;
+}
+
+.gh-rtm {
+	padding: 5px 0 0;
+}
+
+.gh-cl {
+	clear: both;
+	font-size: 0;
+	height: 7px;
+	line-height: 0;
+	overflow: hidden;
+}
+
+.gh-clr {
+	clear: both;
+	font-size: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+
+
+.gh-hbw,.gh-hb .gh-act,input.gh-go,.gh-sbox input.gh-btn {
+	background-image:
+		url("http://q.ebaystatic.com/aw/pics/homepage/sprHdr4.png");
+}
+
+.gh-sbox input.gh-btn {
+	background:
+		url("http://p.ebaystatic.com/aw/pics/cmp/ds2/sprButtons.png") repeat-x
+		scroll 0 -43px #3684CE;
+	border-radius: 3px 3px 3px 3px;
+	font: bold 15px Trebuchet, "Trebuchet MS";
+	padding: 1px 17px;
+}
+
+.gh-hb .gh-mn .gh-ai b,.gh-iA .gh-barr,.gh-hb .gh-mn .gh-ua a,.gh-vnl-1 a,.gh-vnl a b
+	{
+	background-image:
+		url("http://p.ebaystatic.com/aw/pics/homepage/imgArrowDot.png");
+}
+
+.gh-mncn {
+	display: block;
+	left: -9999px;
+	position: absolute;
+}
+
+.gh-hb .gh-mn .gh-ai:link, .gh-hb .gh-mn .gh-ai:visited, .gh-hb .gh-mn .gh-ai:active, .gh-hb .gh-mn .gh-ai:hover {
+text-decoration: none;
+}
+
+body {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+.emlcontent {
+	padding-top: 0 !important;
+}
+
+#globalHeader {
+	position: inherit !important;
+}
+
+.greeting {
+	margin: 28px 0 0 10px;
+}
+
+.addllinks {
+	white-space: nowrap;
+}
+
+.addllinks a:active,.addllinks a:focus,.addllinks a:link,.addllinks a:visited
+	{
+	font-size: x-small;
+}
+
+.addllinks img {
+	padding-right: 5px;
+}
+
+.addllinks a:active,.addllinks a:link,.addllinks a:visited {
+	font: 0.846em verdana;
+	text-decoration: none;
+}
+
+.greeting a:hover,.addllinks a:hover {
+	text-decoration: underline;
+}
+
+#cobrandFooter {
+	text-align: left;
+}
+
+.greeting #bta {
+	display: inline;
+}
+
+.coupon div {
+	vertical-align: bottom;
+}
+
+.coupon {
+	font: 10px verdana;
+	margin-left: 5px;
+	white-space: nowrap;
+}
+
+.coupon span {
+	font: 10px verdana;
+}
+
+.coupon img {
+	margin-right: 5px;
+	vertical-align: text-bottom;
+}
+
+.coupon a:active,.coupon a:link,.coupon a:visited,.coupon a:hover {
+	font: 10px verdana;
+	text-decoration: none;
+}
+
+.rebate img {
+	float: left;
+}
+
+.reward {
+	background:
+		url("http://p.ebaystatic.com/aw/pics/rewards/ebaybucks/imgBucks_35x13.gif")
+		no-repeat scroll left bottom transparent;
+	padding-left: 40px;
+}
+
+.headerBG {
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	bottom: 0;
+	clear: right;
+	float: right;
+	margin: 0;
+	padding: 35px 0 0;
+	right: 0;
+}
+
+.acrc-roundcont {
+	display: none;
+	position: absolute;
+	z-index: 1;
+}
+
+.acrc-roundbottom {
+	background:
+		url("http://p.ebaystatic.com/aw/pics/globalAssets/imgAutofillLLGrey.gif")
+		no-repeat scroll left top transparent;
+	padding-left: 5px;
+}
+
+.acrc-roundbottomright {
+	background:
+		url("http://q.ebaystatic.com/aw/pics/globalAssets/imgAutofillLRGrey.gif")
+		no-repeat scroll right top transparent;
+	padding-right: 5px;
+}
+
+.acrc-roundbottomMiddle {
+	background-color: #FFFFFF;
+	border-color: #7C7C7C;
+	border-style: solid;
+	border-width: 0 0 1px;
+	font-size: 1px;
+	height: 4px;
+}
+
+.acrc-roundoutside {
+	border-color: #7C7C7C;
+	border-style: solid;
+	border-width: 0 1px;
+}
+
+.acrc-roundtopside {
+	border-color: #7C7C7C;
+	border-style: solid;
+	border-width: 1px 0 0;
+}
+
+.ac-ac_div {
+	background-color: white;
+	background-image:
+		url("http://p.ebaystatic.com/aw/pics/icons/iconAutofillDown_12x10.gif");
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-color: #7F9DB9;
+	border-style: solid;
+	border-width: 1px 1px 1px 0 !important;
+	cursor: pointer;
+	display: none;
+	left: -8px;
+	margin-right: -4px;
+	padding: 3px 0;
+	position: relative;
+	width: 18px;
+}
+
+input.ac-ac_div {
+	border-left: 0 solid #AAAAAA;
+	left: -10px;
+	margin: 6px 0 7px !important;
+}
+
+.ac-ac_mo_div {
+	background-color: white;
+	background-image:
+		url("http://p.ebaystatic.com/aw/pics/icons/iconAutofillDown_12x10.gif");
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-color: #7F9DB9;
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+	cursor: pointer;
+	display: none;
+	left: -8px;
+	margin-right: -4px;
+	padding: 2px;
+	position: relative;
+	width: 18px;
+}
+
+.ac-ac_mo_div {
+	left: -10px;
+	margin-bottom: 9px;
+	margin-top: 6px;
+}
+
+input.ac-ac_mo_div {
+	margin-right: 0 !important;
+}
+
+.acl {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	overflow: hidden;
+	text-align: left;
+	width: 233px;
+	z-index: 1000;
+}
+
+.acl .hide {
+	display: none;
+}
+
+.acl .hl {
+	color: #0000CC;
+	font-weight: bold;
+}
+
+.acl .sel {
+	background-color: #E0EDFF;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 0 5px;
+	white-space: nowrap;
+}
+
+.acl .unsel {
+	background-color: #FFFFFF;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 0 5px;
+	white-space: nowrap;
+}
+
+.acl tr.sel {
+	overflow: visible;
+	padding: 0;
+	white-space: normal;
+}
+
+.acl tr.unsel {
+	overflow: visible;
+	padding: 0;
+	white-space: normal;
+}
+
+.acl div.sug {
+	background-color: #FFFFFF;
+	color: #5D5D5D;
+	line-height: 18px;
+	padding: 5px;
+}
+
+.acl div.nosug {
+	background-color: #FFFFFF;
+	color: #5D5D5D;
+	line-height: 18px;
+	padding: 5px 10px;
+}
+
+.acl div.affooter {
+	background-color: #FFFFFF;
+	border-top: 1px solid #E7E7E7;
+	height: 12px;
+	padding-top: 3px;
+	text-align: right;
+}
+
+.acl a.hlink {
+	background:
+		url("http://q.ebaystatic.com/aw/pics/icons/iconAutofillUp_12x10.gif")
+		no-repeat scroll right center transparent;
+	color: #5D5D5D;
+	font-family: Verdana;
+	font-size: x-small;
+	margin-right: 13px;
+	padding-right: 25px;
+	text-decoration: none;
+}
+
+.acl a.hlink:hover {
+	text-decoration: underline;
+}
+
+.acl .prd {
+	font-family: Verdana;
+	font-size: 10px;
+	padding: 5px;
+}
+
+.acl .prd .ptl {
+	background-color: #FFFFFF;
+	font-family: Verdana;
+	font-size: 10px;
+	padding: 0 3px;
+	position: relative;
+	top: -5px;
+}
+
+.acl .pln {
+	border-top: 1px solid #E7E7E7;
+	color: #999999;
+	line-height: 6px;
+	text-align: center;
+}
+
+.acl .prd .hl {
+	font-family: Verdana;
+	font-size: 10px;
+}
+
+.acl .prd td {
+	color: #333333;
+	font-family: Verdana;
+	font-size: 10px;
+}
+
+.acl .prd div.tbw {
+	width: 100%;
+}
+
+div#tdDiv {
+	padding: 3px 5px;
+	width: 222px;
+}
+
+div#tdDiv div {
+	padding: 5px;
+}
+
+div#tdDiv div.sel {
+	border: 1px solid #8DACEA;
+	padding: 4px;
+}
+
+.ghhidden {
+	display: none;
+}
+
+.gh-col {
+	height: 2px;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.gh-col b {
+	display: inline-block;
+	font-size: 0;
+	height: 2px;
+	overflow: hidden;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.gh-col .gh-c1 {
+	background: none repeat scroll 0 0 #FF0000;
+	width: 23%;
+}
+
+.gh-col .gh-c2 {
+	background: none repeat scroll 0 0 #990033;
+	width: 4%;
+}
+
+.gh-col .gh-c3 {
+	background: none repeat scroll 0 0 #000099;
+	width: 22%;
+}
+
+.gh-col .gh-c4 {
+	background: none repeat scroll 0 0 #CC6600;
+	width: 4%;
+}
+
+.gh-col .gh-c5 {
+	background: none repeat scroll 0 0 #FFCC00;
+	width: 22%;
+}
+
+.gh-col .gh-c6 {
+	background: none repeat scroll 0 0 #999900;
+	width: 4%;
+}
+
+.gh-col .gh-c7 {
+	background: none repeat scroll 0 0 #99CC00;
+	width: 22%;
+}
+
+.gh-clr {
+	clear: both;
+	font-size: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.coreFooterLinks a:active,.coreFooterLinks a:focus,.coreFooterLinks a:hover,.coreFooterLinks a:link
+	{
+	color: #0000CC;
+	display: inline-block;
+	font-family: Verdana;
+	font-size: x-small;
+}
+
+.gh-nav a:active,.gh-nav a:focus,.gh-nav a:hover,.gh-nav a:link {
+	color: #333333;
+	font-family: Arial;
+	font-size: small;
+}
+
+.coreFooterLinks a:visited {
+	font-family: Verdana;
+	font-size: x-small;
+}
+
+.coreFooterLegalNotice {
+	color: #666666;
+	font-family: Verdana;
+	font-size: x-small;
+}
+
+.footerBG {
+	padding: 1px 0 5px;
+}
+
+.footerBGPost {
+	padding: 1px 0 5px;
+}
+
+.footerBG img,.footerBGPost img {
+	margin-right: 6px;
+}
+
+.footerBG .bgLinkTD,.footerBGPost .bgLinkTD {
+	white-space: nowrap;
+}
+
+.gh-vs {
+	background-color: #EFEFEF;
+	border: 1px solid #666666;
+	width: 340px;
+}
+
+.gh-vs .gh-cw {
+	padding: 10px 0;
+}
+
+.gh-vs .gh-cbtn {
+	background-color: transparent;
+	background-image:
+		url("http://p.ebaystatic.com/aw/pics/buttons/btnClose_16x16.gif");
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: inline;
+	float: right;
+	height: 16px;
+	padding: 0;
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	width: 16px;
+}
+
+.gh-vs .gh-ttl {
+	color: #333333;
+	font-size: medium;
+	font-weight: bold;
+	padding: 0 15px;
+}
+
+.gh-vs .gh-ct {
+	clear: both;
+	padding: 10px 15px 0;
+}
+
+.gh-hdn {
+	font-size: 0;
+	height: 0;
+	margin-top: 10px;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+}
+
+.gh-fol {
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	display: none;
+	margin-top: -85px;
+	padding: 10px;
+	position: absolute;
+	width: 250px;
+	z-index: 10000;
+}
+
+.gh-fol div {
+	float: left;
+	width: 234px;
+}
+
+.gh-fol-a {
+	float: left;
+}
+
+.gh-fol a b {
+	background:
+		url("http://p.ebaystatic.com/aw/pics/buttons/btnClose_16x16.gif")
+		no-repeat scroll 0 0 transparent;
+	display: block;
+	height: 16px;
+	width: 16px;
+}
+
+.ebayfooter {
+	color: #666666;
+	font-family: Verdana;
+	font-size: x-small;
+}
+
+.gh-esb {
+	margin: -5px 5px 0 0;
+}
+
+.gh-esb,.gh-emn {
+	float: right;
+}
+
+.gh-emn {
+	margin-top: -4px;
+}
+
+.gh-esb input {
+	margin: 0;
+	vertical-align: middle;
+}
+
+.gh-txt {
+	-moz-border-bottom-colors: none;
+	-moz-border-image: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background: none repeat scroll 0 0 #FCFCFC;
+	border-color: #CCCCCC;
+	border-style: solid;
+	border-width: 1px 0 1px 1px;
+	display: inline-block;
+	height: 18px;
+	padding: 0;
+	width: 150px;
+}
+
+.gh-go {
+	-moz-border-bottom-colors: none;
+	-moz-border-image: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background: none repeat-x scroll 0 -292px #BDBABD;
+	border-color: #CCCCCC;
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+	display: inline-block;
+	font: bold 0.846em Trebuchet MS;
+	height: 20px;
+	padding: 0;
+	width: 24px;
+}
+
+a:hover .gh-go {
+	background-position: 0 -330px;
+}
+
+.gh-eb .gh-mn a,.gh-eb .gh-mn a:link,.gh-eb .gh-mn a:visited,.gh-eb .gh-mn a:active
+	{
+	-moz-border-bottom-colors: none;
+	-moz-border-image: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background:
+		url("http://p.ebaystatic.com/aw/pics/globalHeader/imgHdrMainNavBg3.gif")
+		no-repeat scroll 0 3px #FFFFFF;
+	border-color: #FFFFFF;
+	border-style: solid;
+	border-width: 1px 1px 0;
+	color: #666666;
+	display: inline-block;
+	float: none !important;
+	font: bold 0.923em Trebuchet MS;
+	margin-right: -2px;
+	padding: 3px 10px;
+	text-decoration: none;
+}
+
+.gh-eb .gh-mn .gh-fst a,.gh-eb .gh-mn .gh-fst a:visited {
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.gh-eb .gh-mn a:hover {
+	color: #333333;
+	text-decoration: underline;
+}
+
+.gh-eb .gh-mn a:hover,.gh-eb .gh-mn a.gh-hso,.gh-eb .gh-mn a.gh-hso:visited
+	{
+	background-position: -50px 0;
+	border-color: #CCCCCC #CCCCCC #FFFFFF;
+	position: relative;
+	z-index: 10000;
+}
+
+.gh-eb .gh-mn .gh-nho a:hover,.gh-eb .gh-mn .gh-nho a.gh-hso {
+	background-position: 0 3px;
+	border-color: #FFFFFF;
+	position: static;
+}
+
+.gh-hid {
+	display: none;
+}
+
+.gh-esmn table {
+	margin: 5px;
+}
+
+.gh-esmn td a:hover {
+	background: none repeat scroll 0 0 #DDE5F4;
+	text-decoration: none;
+}
+
+.gh-esmn td a,.gh-esmn td a:link,.gh-esmn td a:active,.gh-esmn td a:hover
+	{
+	color: #666666;
+	display: block;
+	font: 0.923em Arial;
+	padding: 5px;
+	text-align: left;
+	text-decoration: none;
+}
+
+.gh-esmn td a:visited {
+	color: #784A99;
+	font: 0.923em Arial;
+}
+
+.gh-esmn div.gh-smn {
+	float: left;
+	padding: 10px 15px 0;
+}
+
+.gh-emn a:hover {
+	text-decoration: underline;
+}
+
+.gh-sbox {
+	background: none repeat scroll 0 0 #F4F4F4;
+	overflow: hidden;
+	padding: 0 10px;
+}
+
+.gh-fl {
+	float: left;
+}
+
+.gh-sbox select,.gh-sbox input {
+	border: 1px solid #AAAAAA;
+	margin: 6px 10px 7px 0;
+	vertical-align: middle;
+}
+
+.gh-sbox .gh-tb {
+	padding: 3px 0;
+	width: 400px;
+}
+
+.gh-sbox .gh-sb {
+	color: #666666;
+	font: bold 0.923em trebuchet MS;
+	padding: 1px 2px;
+	width: 220px;
+}
+
+.gh-sbox .gh-btn,.gh-sbox .gh-bh,.gh-sbox .gh-bc {
+	background: none repeat-x scroll 0 0 #99CC00;
+	border: 0 none;
+	color: #FFFFFF;
+	font: bold 1.077em/16px arial;
+	margin: 0;
+	padding: 3px 17px;
+}
+
+.gh-sbox a.gh-ss:hover {
+	text-decoration: none;
+}
+
+.gh-sbox a:hover .gh-btn {
+	background-position: 0 -48px;
+}
+
+.gh-sbox .gh-as {
+	margin-top: 6px;
+	padding: 7px 0 0 15px;
+}
+
+.gh-sbc {
+	background: none repeat scroll 0 0 #F4F4F4;
+	font: x-small arial;
+	padding: 0 10px 10px;
+}
+
+.gh-sbox .gh-as a {
+	font: 0.846em verdana;
+}
+
+.gh-rsc {
+	width: 675px;
+}
+
+.gh-rls {
+	padding-right: 10px;
+}
+
+.gh-clr {
+	clear: both;
+	font-size: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.gh-hbw {
+	background: url("http://q.ebaystatic.com/aw/pics/homepage/sprHdr4.png")
+		repeat-x scroll 0 -192px transparent;
+	border-bottom: 1px solid #CCCCCC;
+	height: 29px;
+}
+
+.gh-hb,.gh-lbh1,.gh-lbh2,.gh-hb .gh-mn a,.gh-hb .gh-mn span {
+	float: left;
+}
+
+.gh-lbh1,.gh-lbh2 {
+	height: 29px;
+	overflow: hidden;
+}
+
+.gh-hb .gh-mn a {
+	border-left: 1px solid #CCCCCC;
+	display: block;
+	padding: 6px 14px 5px 15px;
+}
+
+div.gh-hb {
+	border-right: 1px solid #CCCCCC;
+}
+
+.gh-hb .gh-mn a,.gh-hb .gh-mn a:link,.gh-hb .gh-mn a:active,.gh-hb .gh-mn a:visited
+	{
+	color: #666666;
+	font: bold 0.923em Trebuchet MS;
+}
+
+.gh-hb .gh-mn #BrowseCategories {
+	height: 18px;
+}
+
+.gh-hb .gh-mn .gh-fst {
+	border: 0 none;
+}
+
+.gh-hb .gh-ua a {
+	background: none no-repeat scroll 50% 100% transparent;
+	border: 0 none;
+	padding: 2px 14px 9px;
+}
+
+.gh-hb .gh-ua a:hover {
+	background-color: transparent !important;
+}
+
+.gh-hb .gh-act {
+	background: url("http://q.ebaystatic.com/aw/pics/homepage/sprHdr4.png")
+		repeat-x scroll 0 -242px #FFFFFF;
+	border-left: 1px solid #CCCCCC;
+	position: relative;
+	top: 1px;
+}
+
+.gh-hb .gh-mn .gh-ua a {
+	background:
+		url("http://p.ebaystatic.com/aw/pics/homepage/imgArrowDot.png")
+		no-repeat scroll 50% 100% transparent;
+	border: 0 none;
+	position: relative;
+	top: 3px;
+}
+
+.gh-hb .gh-mn .gh-ai {
+	border: 0 none;
+	cursor: pointer;
+	padding: 0 0 1px;
+}
+
+.gh-hb .gh-mn .gh-ai b {
+	background-position: 50% -7px;
+	background-repeat: no-repeat;
+	border-left: 1px solid #E8E8E8;
+	display: inline-block;
+	margin: 2px 0;
+	padding: 3px 0;
+	width: 24px;
+}
+
+.gh-hb .gh-mn .gh-ai:link,.gh-hb .gh-mn .gh-ai:visited,.gh-hb .gh-mn .gh-ai:active,.gh-hb .gh-mn .gh-ai:hover
+	{
+	text-decoration: none;
+}
+
+.gh-lbh3 {
+	clear: right;
+	float: right;
+}
+
+.gh-rtm {
+	padding: 2px 0;
+}
+
+.gh-clr {
+	clear: both;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+}
+
+.gh-mn .gh-fst {
+	border-left: 0 none;
+}
+
+.gh-hid {
+	display: none;
+}
+
+.gh-hsmn .gh-smn {
+	float: left;
+	padding: 10px 0;
+}
+
+.gh-hsmn td {
+	padding: 2px 5px;
+}
+
+.gh-hsmn td a,.gh-hsmn td a:link,.gh-hsmn td a:active {
+	color: #666666;
+	display: block;
+	font-size: 0.923em;
+	padding: 2px 10px;
+	text-align: left;
+}
+
+.gh-hsmn td a:visited {
+	color: #784A99;
+}
+
+.gh-hsmn td a:hover {
+	background: none repeat scroll 0 0 #DDE5F4;
+	text-decoration: none;
+}
+
+.gh-hsmn {
+	background-color: #F4F4F4;
+}
+
+.gh-hb .gh-mn .gh-hbdr,.gh-hb .gh-mn .gh-hbdp {
+	background-color: #FFFFFF !important;
+}
+
+.gh-hb .gh-mn .gh-hbdp {
+	padding-bottom: 1px;
+}
+
+.gh-zidx {
+	z-index: 10000;
+}
+
+.gh-eb .gh-mn .gh-fst a,.gh-eb .gh-mn .gh-fst a:visited {
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.gh-eb .gh-mn a,.gh-eb .gh-mn a:link,.gh-eb .gh-mn a:visited,.gh-eb .gh-mn a:active
+	{
+	-moz-border-bottom-colors: none;
+	-moz-border-image: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-color: #FFFFFF;
+	border-style: solid;
+	border-width: 1px 1px 0;
+	color: #666666;
+	display: inline-block;
+	float: none !important;
+	font: bold 0.923em Trebuchet MS;
+	margin-right: -2px;
+	padding: 3px 10px;
+	text-decoration: none;
+}
+
+.gh-eb .gh-mn .gh-fst a,.gh-eb .gh-mn .gh-fst a:visited {
+	background: none;
+	background-color: white;
+}
