@@ -30,7 +30,7 @@
 				src="http://p.ebaystatic.com/aw/pics/in/logos/logoEbay_x45.gif">
 		</a> </span><span class="greeting gh-ui"> <!-- BEGIN: GREETING:SIGNEDOUT -->Welcome!
 			<a onclick="" rel="nofollow" _sp="m570.l1524"
-			href="https://signin.ebay.in/ws/eBayISAPI.dll?SignIn">Sign in</a> or
+			href="loginAction.action">Sign in</a> or
 			<a rel="nofollow" _sp="m570.l2621" id="registerLink"
 			href="https://scgi.ebay.in/ws/eBayISAPI.dll?RegisterEnterInfo">register</a>
 			<!-- END: GREETING:SIGNEDOUT --> <span id="bta"></span> </span><span

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="default" extends="struts-default" namespace="/">
+
+		<action name="login" class="edu.iiitb.mysite.action.loginAction">
+			<result name="success" type="tiles">/ebayLogin.tiles</result>
+			<result name="showLogin" type="tiles">/ebayLogin.tiles</result>
+			<result name="notActivated" type="tiles">/mysite_jsps/notActivated.jsp
+			</result>
+		</action>
+
+
+
+
+	</package>
+</struts>

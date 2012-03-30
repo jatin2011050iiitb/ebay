@@ -20,4 +20,11 @@
     <definition name="/home.tiles" extends="BaseLayout">
         <put-attribute name="body" value="/home.jsp" />
     </definition>
+    <definition name="/ebayLogin.tiles" extends="BaseLayout">
+        <put-attribute name="body" value="/login.jsp" />
+    </definition>
+  
+  <definition name="/ebayLoginSuccess.tiles" extends="BaseLayout">
+   <put-attribute name="body" value="/loginSuccess.jsp" />
+    </definition> 
 </tiles-definitions>
