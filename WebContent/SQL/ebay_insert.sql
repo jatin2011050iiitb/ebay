@@ -31,6 +31,14 @@ INSERT INTO `ebay`.`bankacc` (`bankId`, `accHolder`, `creditCardNo`, `creditCard
 `debitCardNo`, `debitCardVerfNo`, `NEFTcode`, `accBalance`)
 VALUES (2, 'Jatin', 3530111333300000, 123, 3566002020360505, 123, 123, 50000);
 
+INSERT INTO `ebay`.`bankacc` (`bankId`, `accHolder`, `creditCardNo`, `creditCardVerfNo`,
+`debitCardNo`, `debitCardVerfNo`, `NEFTcode`, `accBalance`)
+VALUES (2, 'test', 1234, 123, 1234, 123, 123, 50000);
+
+INSERT INTO `ebay`.`bankacc` (`bankId`, `accHolder`, `creditCardNo`, `creditCardVerfNo`,
+`debitCardNo`, `debitCardVerfNo`, `NEFTcode`, `accBalance`)
+VALUES (1, 'admin', 1234, 123, 1234, 123, 123, 50000);
+
 -- ---------------------------------------------------------------------------------------------------------------------
 -- Insertion into SECRET QUESTION
 
@@ -67,6 +75,14 @@ INSERT INTO `ebay`.`usercredentials`
 (`username`, `password`, `accStatus`) 
 VALUES ('jat', 'jat', '0');
 
+INSERT INTO `ebay`.`usercredentials` 
+(`username`, `password`, `accStatus`) 
+VALUES ('test', 'test', '0');
+
+INSERT INTO `ebay`.`usercredentials` 
+(`username`, `password`, `accStatus`) 
+VALUES ('admin', 'admin', '0');
+
 -- ---------------------------------------------------------------------------------------------------------------------
 -- Insertion into PPACCINFO
 
@@ -82,45 +98,60 @@ INSERT INTO `ebay`.`ppayaccinfo` (`ebayUserId`, `bankId`, `accNo`, `PPayBalance`
 VALUES (5, 2, 4, 0, 0);
 INSERT INTO `ebay`.`ppayaccinfo` (`ebayUserId`, `bankId`, `accNo`, `PPayBalance`, `rating`) 
 VALUES (6, 2, 6, 0, 0);
+INSERT INTO `ebay`.`ppayaccinfo` (`ebayUserId`, `bankId`, `accNo`, `PPayBalance`, `rating`) 
+VALUES (8, 1, 8, 0, 0);
 
 -- ---------------------------------------------------------------------------------------------------------------------
 -- Insertion into USERINFO
 
 INSERT INTO `ebay`.`userinfo` 
 (`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
-`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`) 
+`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`, `PPayAccId`) 
 VALUES (1, 'Animesh', 'Ghosh', 'male', '1988-05-14', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100, 
-'ani007mesh@gmail.com', 9739092136, 1, 'sachin', '0');
+'ani007mesh@gmail.com', 9739092136, 1, 'sachin', '0',1);
 
 INSERT INTO `ebay`.`userinfo` 
-(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`,
-`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`) 
+(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
+`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`, `PPayAccId`) 
 VALUES (2, 'Anup', 'Warnulkar', 'male', '1986-04-28', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
-'anupd.warnulkar@iiitb.org', 9886571228, 1, 'sachin', '0');
+'anupd.warnulkar@iiitb.org', 9886571228, 1, 'sachin', '0',2);
 
 INSERT INTO `ebay`.`userinfo` 
-(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`,
-`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`) 
+(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
+`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`, `PPayAccId`) 
 VALUES (3, 'Ashrith', 'Kulai', 'male', '1989-06-11', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
-'ashrith.kulai@iiitb.org', 7204317825, 1, 'sachin', '0');
+'ashrithkulai@gmail.com', 7204317825, 1, 'sachin', '0',3);
 
 INSERT INTO `ebay`.`userinfo` 
-(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`,
-`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`) 
+(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
+`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`, `PPayAccId`) 
 VALUES (4, 'Eashwar', 'V', 'male', '1989-09-18', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
-'eashwar.v@iiitb.org', 9611920175, 1, 'sachin', '0');
+'eashwar.v@iiitb.org', 9611920175, 1, 'sachin', '0',4);
 
 INSERT INTO `ebay`.`userinfo` 
-(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`,
-`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`) 
+(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
+`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`, `PPayAccId`) 
 VALUES (5, 'Gaurav', 'Kulkarni', 'male', '1986-12-29', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
-'gaurav.vinter@gmail.com', 9742881323, 1, 'sachin', '0');
+'gaurav.vinter@gmail.com', 9742881323, 1, 'sachin', '0',5);
+
+INSERT INTO `ebay`.`userinfo` 
+(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
+`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`, `PPayAccId`) 
+VALUES (6, 'Jatin', 'Chaudhary', 'male', '1987-04-30', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
+'jatin.chaudhary@iiitb.org', 8861047701, 1, 'sachin', '0',6);
 
 INSERT INTO `ebay`.`userinfo` 
 (`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
 `emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`) 
-VALUES (6, 'Jatin', 'Chaudhary', 'male', '1987-04-30', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
-'jatin.chaudhary@iiitb.org', 8861047701, 1, 'jatin', '0');
+VALUES (7, 'test', 'test', 'male', '2000-02-02', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
+'ashrithkulai@gmail.com', 7204317825, 1, 'jatin', '0');
+
+INSERT INTO `ebay`.`userinfo` 
+(`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
+`emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`, `PPayAccId`) 
+VALUES (8, 'admin', 'admin', 'male', '2000-02-02', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
+'ashrithkulai@gmail.com', 7204317825, 1, 'jatin', '1',7);
+
 -- ---------------------------------------------------------------------------------------------------------------------
 -- Insertion into CATEGORY
 
