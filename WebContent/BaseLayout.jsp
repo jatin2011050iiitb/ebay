@@ -12,7 +12,7 @@
 <div align="center">
 	<div id="container" style="width: 1024px;">
 
-		<div id="header" style="background-color: #F8F8FF; text-align: left; height: 127px;">
+		<div id="header" style="background-color: #F8F8FF; text-align: left; height: 55px;">
 			<tiles:insertAttribute name="header" />
 		</div>
 		
