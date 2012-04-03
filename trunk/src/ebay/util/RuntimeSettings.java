@@ -1,4 +1,4 @@
-package util;
+package ebay.util;
 
 public class RuntimeSettings {
 	public static final String APPLICATION_NAME = "Store";
@@ -7,7 +7,7 @@ public class RuntimeSettings {
 	public static final String SERVER_IP = "localhost";
 	static String databaseName = "ebay";
 	static String dbUserID = "root";
-	static String dbPassword = "mysql";
+	static String dbPassword = "password";
 	public static String RUN_MODE = "Test"; 
 	public static boolean IS_IN_DEBUG_MODE = true; 
 	public static int ROWS_IN_PAGE = 10;

@@ -18,9 +18,14 @@
 			<result type="tiles">/home.tiles</result>
 		</action>
 		
-		<action name="loginAction" class="action.loginAction">
+		<action name="LoginShow" class="user.action.LoginAction" method="show">
+			<result name="success" type="tiles">/ebayLogin.tiles</result>
+			<result name="error" type="tiles">/ebayLogin.tiles</result>
+		</action>
+		
+		<action name="LoginAction" class="user.action.LoginAction" method="execute">
 			<result name="success" type="tiles">/ebayLoginSuccess.tiles</result>
-			<result name="showLogin" type="tiles">/ebayLogin.tiles</result>
+			<result name="failure" type="tiles">/ebayLogin.tiles</result>
 			<result name="error" type="tiles">/ebayLogin.tiles</result>
 		</action>
 	</package>

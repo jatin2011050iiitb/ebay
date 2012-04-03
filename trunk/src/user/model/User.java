@@ -1,12 +1,9 @@
-package model;
+package user.model;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.Date;
 
-import util.DB;
-import util.MyLog;
+
+
 
 public class User {
 	
@@ -30,35 +27,7 @@ public class User {
 	private String password;
 	
 	
-	public static int validateUser(String username,String password){
-		ResultSet resultSet = null;
-		String query = "select username,password from usercredentials where username='"+username+"';";
-		Connection connection = DB.getConnection();
-		resultSet = DB.readFromDB(query, connection);
-		User user=null;
-		
-		try {
-			if (resultSet.next()) {
-				user = new User();
-				
-				user.username = resultSet.getString("username");
-				user.password = resultSet.getString("password");
-				
-			}
-		} catch (SQLException e) {
-	        MyLog.myCatch("User.java",61, e);
-			e.printStackTrace();
-		}
-		DB.close(resultSet);
-		DB.close(connection);
-		if(user.password.equals(password)){
-			return 1;
-	}
-		else{
-			return 0;
-		}
-		
-	}
+
 	/**
 	 * @return the userId
 	 */
