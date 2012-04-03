@@ -193,8 +193,7 @@
 				</div>
 			</div>
 			<div class="r3_fm r3_s">
-				<a href="http://shop.ebay.in/allcategories/all-categories"
-					_sp="p3907.m21;">Visit all categories</a>
+				
 			</div>
 		</div>
 	</div>
