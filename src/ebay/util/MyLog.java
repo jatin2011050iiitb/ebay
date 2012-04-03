@@ -1,4 +1,4 @@
-package util;
+package ebay.util;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
