@@ -23,8 +23,9 @@ public class LoginService {
 		try{
 		
 		
-		query1 = "SELECT * FROM student_credentials WHERE username=? and password=?";
-		con = DBconn.getConnection();
+		query1 = "SELECT * FROM userCredentials WHERE username=? and password=?";
+		dbconn = new DBconn();
+		con = dbconn.getConnection();
 		pst = con.prepareStatement(query1);
 		pst.setString(1, username);
 		pst.setString(2, password);

@@ -33,7 +33,7 @@ version="3.0">
   
     <servlet>
 	<servlet-name>Captcha</servlet-name>
-	<servlet-class>util.Captcha</servlet-class>
+	<servlet-class>ebay.util.Captcha</servlet-class>
 	<init-param> 
 			<description>passing height</description> 
 			<param-name>height</param-name> 
