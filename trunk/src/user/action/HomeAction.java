@@ -7,6 +7,7 @@ import user.service.HomeService;
 public class HomeAction {
 	private ArrayList<Category> categoryList;
 	private Category categoryBean;
+	private String categoryIdSelected;
 	
 	public String execute() {
 		HomeService homeService = new HomeService();
@@ -35,4 +36,17 @@ public class HomeAction {
 	public Category getCategoryBean() {
 		return categoryBean;
 	}
+
+
+	public void setCategoryIdSelected(String categoryIdSelected) {
+		this.categoryIdSelected = categoryIdSelected;
+	}
+
+
+	public String getCategoryIdSelected() {
+		return categoryIdSelected;
+	}
+
+
+	
 }
