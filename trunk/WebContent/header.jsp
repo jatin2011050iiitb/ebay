@@ -25,9 +25,9 @@
 		</div>
 	</div>
 	<div class="gh-log">
-		<span class="gh-lg"><a rel="nofollow" href="http://www.ebay.in">
+		<span class="gh-lg"><a rel="nofollow" href="home.action">
 				<img border="0" alt="eBay"
-				src="http://p.ebaystatic.com/aw/pics/in/logos/logoEbay_x45.gif">
+				src="images_page/logoEbay_x45.gif">
 		</a> </span><span class="greeting gh-ui"> <!-- BEGIN: GREETING:SIGNEDOUT -->Welcome!
 			<a onclick="" rel="nofollow" _sp="m570.l1524"
 			href="LoginShow.action">Sign in</a> or
