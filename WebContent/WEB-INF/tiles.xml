@@ -31,4 +31,14 @@
 		<put-attribute name="body" value="/loginSuccess.jsp" />
 	</definition>
 	
+	<!--sub category page -->
+	<definition name="/subcat.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/subCategoryList.jsp" />
+	</definition>
+	
+	<!--product List page -->
+	<definition name="/productList.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/productList.jsp" />
+	</definition>
+	
 </tiles-definitions>

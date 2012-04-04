@@ -20,7 +20,7 @@ color:#000000;
 <body>
 <h4>Welcome to eBay - Sign in</h4>
 
-<s:form name="login_form" method="POST" action="LoginAction.action">             
+<s:form name="login_form" method="POST" action="LoginAction">             
            	<s:textfield name="username" label ="User Id" id="username_id"  />           
    			<s:password name="password"  label="Password" id="password_id" />
    			<s:actionerror /> 

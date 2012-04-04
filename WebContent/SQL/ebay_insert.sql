@@ -157,7 +157,7 @@ VALUES (8, 'admin', 'admin', 'male', '2000-02-02', 'IIIT Bangalore', 'Bangalore'
 
 INSERT INTO `ebay`.`category` (`categoryId`, `categoryDesc`) VALUES (1, 'Clothing & Accessories');
 INSERT INTO `ebay`.`category` (`categoryId`, `categoryDesc`) VALUES (2, 'Books & Magazines');
-INSERT INTO `ebay`.`category` (`categoryId`, `categoryDesc`) VALUES (3, ' Memory Cards, Pen Drives & HDD');
+INSERT INTO `ebay`.`category` (`categoryId`, `categoryDesc`) VALUES (3, 'Memory Cards, Pen Drives & HDD');
 INSERT INTO `ebay`.`category` (`categoryId`, `categoryDesc`) VALUES (4, 'Watches');
 INSERT INTO `ebay`.`category` (`categoryId`, `categoryDesc`) VALUES (5, 'Movies & Music');
 
