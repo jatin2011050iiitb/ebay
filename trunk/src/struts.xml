@@ -28,5 +28,14 @@
 			<result name="failure" type="tiles">/ebayLogin.tiles</result>
 			<result name="error" type="tiles">/ebayLogin.tiles</result>
 		</action>
+		
+		<action name="ShowSubCategory" class="user.action.ShowSubCategoryAction" method="execute">
+			<result name="success" type="tiles">/subcat.tiles</result>
+		</action>
+		
+		<action name="ShowProductList" class="user.action.ShowProductListAction" method="execute">
+			<result name="success" type="tiles">/productList.tiles</result>
+		</action>
+		
 	</package>
 </struts>

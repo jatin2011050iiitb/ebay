@@ -20,7 +20,7 @@
 			</div>
 			<div class="r3_hm">
 				<div style="height: 20px; overflow: auto">
-					<h2 class="g-m g-m0">eBay Categories</h2>
+					<h2 class="g-m g-m0">eBay Sub Categories</h2>
 				</div>
 			</div>
 		</div>
@@ -34,9 +34,9 @@
 							<tbody>
 								<tr>
 									<td valign="top" class="catContent"><h3>
-										<s:iterator value="categoryList"> 
-									<a href="ShowSubCategory?categoryId=<s:property value="categoryId"/>">
-										<s:property value="categoryDesc" /> </a></h3><br/>	
+										<s:iterator value="subCategoryList"> 
+												<a href="ShowProductList?subCategoryId=<s:property value="subCategoryId" />" >
+												<s:property value="subCategoryDesc" /> </a></h3><br/>	
 										 </s:iterator>
 									 </td>
 								</tr>	

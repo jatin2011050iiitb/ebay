@@ -15,34 +15,34 @@ public class HomeService {
 	private DBconn dbconn = null;
 	private Connection con = null;
 	private PreparedStatement pst = null;
-	private ResultSet resultSet = null;
-	private String query = null;
+	private ResultSet resultSet1 = null;
+	private String query1 = null;
 	
 	
 	public ArrayList<Category> getCategoryList() {
 		
 		ArrayList<Category> categoryList = new ArrayList<Category>();
 		
-		query = "SELECT categoryId, categoryDesc FROM category";
+		query1 = "SELECT categoryId, categoryDesc FROM category";
 		
 		try {
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
-			pst = con.prepareStatement(query);
-			resultSet = pst.executeQuery();
+			pst = con.prepareStatement(query1);
+			resultSet1 = pst.executeQuery();
 			
-			while(resultSet.next()) {
+			while(resultSet1.next()) {
 				Category cat = new Category();
-				cat.setCategoryId(resultSet.getInt("categoryId"));
-				cat.setCategoryDesc(resultSet.getString("categoryDesc"));
+				cat.setCategoryId(resultSet1.getInt("categoryId"));
+				cat.setCategoryDesc(resultSet1.getString("categoryDesc"));
 				categoryList.add(cat);
-				System.out.println(resultSet.getString("categoryDesc"));
+				//System.out.println(resultSet1.getString("categoryDesc"));
 			}
 
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
-			dbconn.close(resultSet);
+			dbconn.close(resultSet1);
 			dbconn.close(pst);
 			dbconn.close(con);
 		}

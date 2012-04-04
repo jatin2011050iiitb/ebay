@@ -1,9 +1,13 @@
 package user.action;
 
+import java.util.ArrayList;
 import java.util.Map;	
 import javax.servlet.http.HttpServletRequest;		 
+
+import user.model.Category;
 import user.model.Loggedin;		 
 import user.model.User;		 
+import user.service.HomeService;
 import user.service.LoginService;
 import ebay.util.Captcha;		 
 import com.opensymphony.xwork2.ActionContext;		 
@@ -16,15 +20,17 @@ public class LoginAction  extends ActionSupport{
 	private String signin;
 	private int userId;
 	private Map session;
-	
+	private ArrayList<Category> categoryList;
 	public String show() {
-
+		HomeService homeService = new HomeService();
+		setCategoryList(homeService.getCategoryList());
 		return "success";
 
 	}
 	
 	public String execute() 
-	{
+	{ HomeService homeService = new HomeService();
+	setCategoryList(homeService.getCategoryList());
 		
 		if(signin!=null)
 		{	
@@ -108,4 +114,13 @@ public class LoginAction  extends ActionSupport{
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
+	public ArrayList<Category> getCategoryList() {
+		return categoryList;
+	}
+
+	public void setCategoryList(ArrayList<Category> categoryList) {
+		this.categoryList = categoryList;
+	}
+
 }
