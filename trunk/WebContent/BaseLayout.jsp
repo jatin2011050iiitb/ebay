@@ -24,7 +24,7 @@
 			<tiles:insertAttribute name="navigationbar" />
 		</div>
 		
-		<div id="body" style="background-color:#F0FFF0; height: 500px;">
+		<div id="body" style="background-color:#F0FFF0; height: 500px; overflow:auto; ">
 			<tiles:insertAttribute name="body" />
 		</div>
 		<div id="footer" style="background-color: #FFFFF0; height: 56px;">
