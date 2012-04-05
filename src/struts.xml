@@ -44,6 +44,6 @@
       <action name="SearchItemInCategory" class="user.action.SearchItemInCategoryAction" method="execute">
 			<result name="success" type="tiles">/productList.tiles</result>
 		</action>
-		
+				
 	</package>
 </struts>
