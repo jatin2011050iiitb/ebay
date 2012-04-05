@@ -41,4 +41,9 @@
 		<put-attribute name="body" value="/productList.jsp" />
 	</definition>
 	
+	<!--product List page -->
+	<definition name="/product.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/product.jsp" />
+	</definition>
+	
 </tiles-definitions>
