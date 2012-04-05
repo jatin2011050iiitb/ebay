@@ -32,16 +32,25 @@
 						<a name="mainContent"></a>
 						<table border="0" cellpadding="0" cellspacing="0">
 							<tbody>
+										<s:iterator value="productList"> 	
 								<tr>
-									<td valign="top" class="catContent"><h3>
-										<s:iterator value="productList"> 
-												<a href="ShowProduct?productId=<s:property value="productId" />" >
-												<s:property value="productDesc" /> </a></h3><br/>	
+								
+								<td valign="top" class="catContent"><h3>
+							
+				<img border="1" src="images_product/(<s:property value="productId"/>).JPG"
+				alt="Pic not available" width="75px" height="75px" /></h3>
+									 </td>
+									<td valign="top" class="catContent" ><h3>
+									<%-- 	<s:iterator value="productList"> 	 --%>
+				<%-- <img border="1" src="images_product/(<s:property value="productId"/>).JPG"
+				alt="Pic not available" width="75px" height="75px" /> --%>
+				<a href="ShowProduct?productId=<s:property value="productId" />" >
+				<s:property value="productDesc"/> </a></h3><br/>	
 										 </s:iterator>
 									 </td>
 								</tr>	
-								<s:property value="searchMsg"/>
 								
+						 <s:property value="searchMsg"/>		
 								
 								<!-- <tr>
 									<td valign="top" class="catContent"><h3>
