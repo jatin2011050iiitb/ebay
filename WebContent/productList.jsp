@@ -40,7 +40,7 @@
 										 </s:iterator>
 									 </td>
 								</tr>	
-								
+								<s:property value="searchMsg"/>
 								
 								
 								<!-- <tr>

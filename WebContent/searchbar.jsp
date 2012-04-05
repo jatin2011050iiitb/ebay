@@ -13,7 +13,7 @@
 
 
 	<form id="headerSearch" name="headerSearch"
-		action="searchItem.action" method="get">
+		action="SearchItemInCategory.action" method="get">
 		<div class="gh-sbox">
 			<div class="gh-fl">
 				<input type="text" class="gh-tb" size="60" maxlength="300" value=""
