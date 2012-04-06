@@ -28,7 +28,7 @@
 
 	<!-- login page success -->
 	<definition name="/ebayLoginSuccess.tiles" extends="BaseLayout">
-		<put-attribute name="body" value="/loginSuccess.jsp" />
+		<put-attribute name="body" value="/categorylist.jsp" />
 	</definition>
 	
 	<!--sub category page -->
