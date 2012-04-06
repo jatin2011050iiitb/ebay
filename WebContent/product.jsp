@@ -55,7 +55,8 @@
 				startDate: <s:property value="startDate"/><br/>
 				endDate: <s:property value="endDate"/><br/>
 				shipmentCharges: <s:property value="shipmentCharges"/><br/>
-				stock: <s:property value="stock"/><br/>
+				stock: <s:textfield value="%{product.stock}" size="1"/><br/>
+			
 				
 				
 										 </s:push>
