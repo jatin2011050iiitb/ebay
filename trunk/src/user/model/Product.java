@@ -5,6 +5,11 @@ public class Product {
 	private int auctionId;
 	private String productDesc;
 	private int sellerId;
+	private String sellerFName;
+	private String SellerLName;
+	private String sellerCity;
+	private String sellerState;
+	private String sellerCountry;
 	private int saleType;
 	private String saleTypeDesc;
 	private String  prodCondition;
@@ -114,6 +119,36 @@ public class Product {
 	}
 	public void setBidCount(int bidCount) {
 		this.bidCount = bidCount;
+	}
+	public String getSellerFName() {
+		return sellerFName;
+	}
+	public void setSellerFName(String sellerFName) {
+		this.sellerFName = sellerFName;
+	}
+	public String getSellerLName() {
+		return SellerLName;
+	}
+	public void setSellerLName(String sellerLName) {
+		SellerLName = sellerLName;
+	}
+	public String getSellerCity() {
+		return sellerCity;
+	}
+	public void setSellerCity(String sellerCity) {
+		this.sellerCity = sellerCity;
+	}
+	public String getSellerState() {
+		return sellerState;
+	}
+	public void setSellerState(String sellerState) {
+		this.sellerState = sellerState;
+	}
+	public String getSellerCountry() {
+		return sellerCountry;
+	}
+	public void setSellerCountry(String sellerCountry) {
+		this.sellerCountry = sellerCountry;
 	}
 	
 	

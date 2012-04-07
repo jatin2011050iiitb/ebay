@@ -122,6 +122,31 @@ public class ProductService {
 			dbconn.close(con);
 		}
 		
+		try {
+			query1="SELECT * FROM userinfo WHERE userId=?";
+			dbconn = new DBconn();
+			con = DBconn.getConnection();
+			pst = con.prepareStatement(query1);
+			pst.setInt(1,product.getSellerId());
+			resultSet1 = pst.executeQuery();
+			
+			
+			resultSet1.next();
+			product.setSellerFName(resultSet1.getString("fName"));
+			product.setSellerLName(resultSet1.getString("lName"));
+			product.setSellerCity(resultSet1.getString("city"));
+			product.setSellerState(resultSet1.getString("state"));
+			product.setSellerCountry(resultSet1.getString("country"));
+						
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			dbconn.close(resultSet1);
+			dbconn.close(pst);
+			dbconn.close(con);
+				}
+		
+		
 		if(product.getSaleType()==1){
 			
 			try {
