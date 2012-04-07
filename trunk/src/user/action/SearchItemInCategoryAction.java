@@ -12,9 +12,9 @@ public class SearchItemInCategoryAction extends ActionSupport {
 
 	private static final long serialVersionUID = 6908470320373267510L;
 
-	private String categoryIdSelected;
+	private String searchCategoryIdSelected;
+	private ArrayList<Category> searchCategoryList;
 	
-	private ArrayList<Category> categoryList;
 	private ArrayList<Product> productList;
 	
 	private String searchString;
@@ -22,34 +22,20 @@ public class SearchItemInCategoryAction extends ActionSupport {
 	
 	public String execute() {
 		SearchService searchService = new SearchService();
-		setProductList(searchService.getProductList(Integer.parseInt(getCategoryIdSelected()), getSearchString()));
+		setProductList(searchService.getProductList(Integer.parseInt(getSearchCategoryIdSelected()), getSearchString()));
 		
 		if(getProductList().isEmpty()) {
 			setSearchMsg("No results found");
 		}
 		
-		//repopulate categoryList
 		HomeService homeService = new HomeService();
-		setCategoryList(homeService.getCategoryList());
+		setSearchCategoryList(homeService.getCategoryList());
 		
 		return "success";
 	}
 
-	public String getCategoryIdSelected() {
-		return categoryIdSelected;
-	}
+	
 
-	public void setCategoryIdSelected(String categoryIdSelected) {
-		this.categoryIdSelected = categoryIdSelected;
-	}
-
-	public ArrayList<Category> getCategoryList() {
-		return categoryList;
-	}
-
-	public void setCategoryList(ArrayList<Category> categoryList) {
-		this.categoryList = categoryList;
-	}
 	
 	public ArrayList<Product> getProductList() {
 		return productList;
@@ -73,6 +59,34 @@ public class SearchItemInCategoryAction extends ActionSupport {
 
 	public String getSearchMsg() {
 		return searchMsg;
+	}
+
+
+
+
+	public void setSearchCategoryIdSelected(String searchCategoryIdSelected) {
+		this.searchCategoryIdSelected = searchCategoryIdSelected;
+	}
+
+
+
+
+	public String getSearchCategoryIdSelected() {
+		return searchCategoryIdSelected;
+	}
+
+
+
+
+	public void setSearchCategoryList(ArrayList<Category> searchCategoryList) {
+		this.searchCategoryList = searchCategoryList;
+	}
+
+
+
+
+	public ArrayList<Category> getSearchCategoryList() {
+		return searchCategoryList;
 	}
 
 }

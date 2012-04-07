@@ -34,7 +34,7 @@
 							<tbody>
 								<tr>
 									<td valign="top" class="catContent"><h3>
-										<s:iterator value="categoryList"> 
+										<s:iterator value="searchCategoryList"> 
 									<a href="ShowSubCategory?categoryId=<s:property value="categoryId"/>">
 										<s:property value="categoryDesc" /> </a></h3><br/>	
 										 </s:iterator>
