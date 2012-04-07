@@ -38,6 +38,13 @@
 			<result name="failure" type="tiles">/ebayLogin.tiles</result>
 			<result name="error" type="tiles">/ebayLogin.tiles</result>
 		</action>
+		
+		<action name="logout" class="user.action.LogoutAction">
+            <result name="success" type="tiles">/home.tiles</result>
+            <result type="redirectAction">
+                <param name="actionName">home.action</param>
+            </result>
+         </action>
 
 		<action name="ShowSubCategory" class="user.action.ShowSubCategoryAction"
 			method="execute">
