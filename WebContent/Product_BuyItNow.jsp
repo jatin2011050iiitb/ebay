@@ -53,6 +53,10 @@
 						<b>Product Condition: <s:property value="prodCondition"/></b><br/>
 						<b>shipmentState: <s:property value="shipmentState"/></b><br/>
 						sellerId: <s:property value="sellerId"/><br/>
+						seller Name: <s:property value="sellerFName"/> <s:property value="sellerLName"/><br/>
+						Item number: <s:property value="productId"/><br/>
+						Item location: <s:property value="sellerCity"/>, <s:property value="sellerState"/>, <s:property value="sellerCountry"/><br/>
+						Ships to:  <s:property value="sellerCountry"/><br/>
 						startDate: <s:property value="startDate"/><br/>
 						endDate: <s:property value="endDate"/><br/>
 						shipmentCharges: <s:property value="shipmentCharges"/><br/>
