@@ -754,112 +754,113 @@ INSERT INTO `binproduct` (`productId`,`stock`,`binPrice`) VALUES (100,7,980);
 -- Insertion into AUCTIONPRODUCT TABLE
 
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (1,101,200,100,NULL,NULL);
+VALUES (1,101,200,100,200,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (2,102,300,10,NULL,NULL);
+VALUES (2,102,300,10,300,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (3,103,400,100,NULL,NULL);
+VALUES (3,103,400,100,400,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (4,104,500,30,NULL,NULL);
+VALUES (4,104,500,30,500,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (5,105,150,20,NULL,NULL);
+VALUES (5,105,150,20,150,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (6,106,50,20,NULL,NULL);
+VALUES (6,106,50,20,50,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (7,107,300,70,NULL,NULL);
+VALUES (7,107,300,70,300,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (8,108,600,30,NULL,NULL);
+VALUES (8,108,600,30,600,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (9,109,1000,20,NULL,NULL);
+VALUES (9,109,1000,20,1000,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (10,110,800,70,NULL,NULL);
+VALUES (10,110,800,70,800,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (11,111,900,20,NULL,NULL);
+VALUES (11,111,900,20,900,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (12,112,300,100,NULL,NULL);
+VALUES (12,112,300,100,300,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (13,113,200,60,NULL,NULL);
+VALUES (13,113,200,60,200,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (14,114,400,90,NULL,NULL);
+VALUES (14,114,400,90,400,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (15,115,650,30,NULL,NULL);
+VALUES (15,115,650,30,650,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (16,116,750,40,NULL,NULL);
+VALUES (16,116,750,40,750,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (17,117,450,10,NULL,NULL);
+VALUES (17,117,450,10,450,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (18,118,950,90,NULL,NULL);
+VALUES (18,118,950,90,950,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (19,119,55,60,NULL,NULL);
+VALUES (19,119,55,60,55,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (20,120,750,10,NULL,NULL);
+VALUES (20,120,750,10,750,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (21,121,100,80,NULL,NULL);
+VALUES (21,121,100,80,100,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (22,122,200,10,NULL,NULL);
+VALUES (22,122,200,10,200,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (23,123,270,100,NULL,NULL);
+VALUES (23,123,270,100,270,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (24,124,340,20,NULL,NULL);
+VALUES (24,124,340,20,340,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (25,125,410,30,NULL,NULL);
+VALUES (25,125,410,30,410,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (26,126,480,10,NULL,NULL);
+VALUES (26,126,480,10,480,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (27,127,550,70,NULL,NULL);
+VALUES (27,127,550,70,550,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (28,128,620,50,NULL,NULL);
+VALUES (28,128,620,50,620,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (29,129,690,70,NULL,NULL);
+VALUES (29,129,690,70,690,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (30,130,760,10,NULL,NULL);
+VALUES (30,130,760,10,760,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (31,131,830,90,NULL,NULL);
+VALUES (31,131,830,90,830,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (32,132,900,70,NULL,NULL);
+VALUES (32,132,900,70,900,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (33,133,800,10,NULL,NULL);
+VALUES (33,133,800,10,800,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (34,134,850,90,NULL,NULL);
+VALUES (34,134,850,90,850,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (35,135,900,30,NULL,NULL);
+VALUES (35,135,900,30,900,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (36,136,950,70,NULL,NULL);
+VALUES (36,136,950,70,950,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (37,137,1000,60,NULL,NULL);
+VALUES (37,137,1000,60,1000,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (38,138,1050,50,NULL,NULL);
+VALUES (38,138,1050,50,1050,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (39,139,1100,90,NULL,NULL);
+VALUES (39,139,1100,90,1100,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (40,140,1150,60,NULL,NULL);
+VALUES (40,140,1150,60,1150,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (41,141,1200,100,NULL,NULL);
+VALUES (41,141,1200,100,1200,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (42,142,1250,10,NULL,NULL);
+VALUES (42,142,1250,10,1250,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (43,143,1300,40,NULL,NULL);
+VALUES (43,143,1300,40,1300,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (44,144,500,50,NULL,NULL);
+VALUES (44,144,500,50,500,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (45,145,550,10,NULL,NULL);
+VALUES (45,145,550,10,550,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (46,146,600,100,NULL,NULL);
+VALUES (46,146,600,100,600,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (47,147,650,10,NULL,NULL);
+VALUES (47,147,650,10,650,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (48,148,700,30,NULL,NULL);
+VALUES (48,148,700,30,700,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (49,149,750,40,NULL,NULL);
+VALUES (49,149,750,40,750,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (50,150,800,30,NULL,NULL);
+VALUES (50,150,800,30,800,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (51,151,850,20,NULL,NULL);
+VALUES (51,151,850,20,850,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (52,152,900,10,NULL,NULL);
+VALUES (52,152,900,10,900,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (53,153,950,40,NULL,NULL);
+VALUES (53,153,950,40,950,NULL);
 INSERT INTO `auctionproduct` (`auctionId`,`productId`,`basePrice`,`stepPrice`,`highestBidPrice`,`finalBidderId`)
-VALUES (54,154,1000,40,NULL,NULL);
+VALUES (54,154,1000,40,1000,NULL);
+
 
 -- ---------------------------------------------------------------------------------------------------------------------
