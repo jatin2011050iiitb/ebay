@@ -11,15 +11,13 @@ public class ShowSubCategoryAction extends ActionSupport{
 	
 	private static final long serialVersionUID = 1L;
 	private int categoryId;
-	private String categoryIdSelected;
 	private ArrayList<Category> categoryList;
 	private ArrayList<SubCategory> subCategoryList;
 	
 	public String execute() {
 		ProductService productservice =new ProductService();
 		setSubCategoryList(productservice.getSubCategoryList(categoryId));
-		HomeService homeService = new HomeService();
-		setCategoryList(homeService.getCategoryList());
+	
 	return "success";
 	}
 
@@ -39,14 +37,6 @@ public class ShowSubCategoryAction extends ActionSupport{
 		this.categoryId = categoryId;
 	}
 
-	public String getCategoryIdSelected() {
-		return categoryIdSelected;
-	}
-
-	public void setCategoryIdSelected(String categoryIdSelected) {
-		this.categoryIdSelected = categoryIdSelected;
-	}
-
 	public ArrayList<Category> getCategoryList() {
 		return categoryList;
 	}
@@ -56,6 +46,4 @@ public class ShowSubCategoryAction extends ActionSupport{
 	}
 	
 	
-	
-
 }
