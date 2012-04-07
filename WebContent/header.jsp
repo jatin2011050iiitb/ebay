@@ -30,13 +30,17 @@
 				<img border="0" alt="eBay"
 				src="images_page/logoEbay_x45.gif">
 		</a> </span><span class="greeting gh-ui"> <!-- BEGIN: GREETING:SIGNEDOUT -->Welcome!
-		<s:if test="userId==null">
-		<a onclick="" rel="nofollow" _sp="m570.l1524" href="LoginShow.action">Sign in</a> or
-		<a rel="nofollow" _sp="m570.l2621" id="registerLink" href="https://scgi.ebay.in/ws/eBayISAPI.dll?RegisterEnterInfo">register</a>
-		</s:if>
-		<s:else> 
-		<s:property value="userId" />
-		</s:else>
+
+		<s:if test="%{#session.Loggedin.getStatus()!=null}" >
+				<s:property value="%{#session.objectuser.getfName()}"/>
+				<b>(<s:property value="#session['userName']"/>)!</b>
+				<a href="logout"> Sign out</a>			
+		</s:if>		
+		<s:else>
+				<a onclick="" rel="nofollow" _sp="m570.l1524" href="LoginShow.action">Sign in</a> or
+				<a rel="nofollow" _sp="m570.l2621" id="registerLink" href="https://scgi.ebay.in/ws/eBayISAPI.dll?RegisterEnterInfo">register</a>
+		</s:else>	
+		
 			<!-- END: GREETING:SIGNEDOUT --> <span id="bta"></span> </span><span
 			class="coupon"></span><span></span>
 	</div>
