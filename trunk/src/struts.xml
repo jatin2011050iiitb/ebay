@@ -53,7 +53,8 @@
 		<action name="ShowProduct" class="user.action.ShowProductAction"
 			method="execute">
 			<interceptor-ref name="categoryListInterceptorStack" />
-			<result name="success" type="tiles">/product.tiles</result>
+			<result name="success_bin" type="tiles">/productBin.tiles</result>
+			<result name="success_bid" type="tiles">/productBid.tiles</result>
 		</action>
 
 		<action name="SearchItemInCategory" class="user.action.SearchItemInCategoryAction"

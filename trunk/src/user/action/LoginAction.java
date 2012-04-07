@@ -20,17 +20,15 @@ public class LoginAction  extends ActionSupport{
 	private String signin;
 	private int userId;
 	private Map session;
-	/*private ArrayList<Category> categoryList;*/
+	
 	public String show() {
-		/*HomeService homeService = new HomeService();
-		setCategoryList(homeService.getCategoryList());*/
+		
 		return "success";
 
 	}
 	
 	public String execute() 
-	{ /*HomeService homeService = new HomeService();
-	setCategoryList(homeService.getCategoryList());*/
+	{ 
 		
 		if(signin!=null)
 		{	
@@ -115,12 +113,6 @@ public class LoginAction  extends ActionSupport{
 		this.userId = userId;
 	}
 
-/*	public ArrayList<Category> getCategoryList() {
-		return categoryList;
-	}
 
-	public void setCategoryList(ArrayList<Category> categoryList) {
-		this.categoryList = categoryList;
-	}*/
 
 }

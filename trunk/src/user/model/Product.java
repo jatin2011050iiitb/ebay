@@ -15,6 +15,8 @@ public class Product {
 	private int shipmentCharges;
 	private int stock;
 	private int price;
+	private int stepPrice;
+	private int bidCount;
 	
 	
 	public int getProductId() {
@@ -100,6 +102,18 @@ public class Product {
 	}
 	public void setTimeRemaining(Timestamp timeRemaining) {
 		TimeRemaining = timeRemaining;
+	}
+	public int getStepPrice() {
+		return stepPrice;
+	}
+	public void setStepPrice(int stepPrice) {
+		this.stepPrice = stepPrice;
+	}
+	public int getBidCount() {
+		return bidCount;
+	}
+	public void setBidCount(int bidCount) {
+		this.bidCount = bidCount;
 	}
 	
 	

@@ -15,18 +15,20 @@ public class ShowProductAction extends ActionSupport{
 	private int categoryId;
 	private int subCategoryId; 
 	private int productId;
-/*	private String categoryIdSelected;
-	private ArrayList<Category> categoryList;*/
 	private ArrayList<Product> productList;
 	private Product product;
 	
 	public String execute() {
-		/*HomeService homeService = new HomeService();
-		setCategoryList(homeService.getCategoryList());*/
+	
 		ProductService productservice =new ProductService();
-		/*setProductList(productservice.getProductList(subCategoryId));*/
 		setProduct(productservice.getProduct(getProductId()));
-	return "success";
+		if(product.getSaleType()==1){
+			return "success_bin";
+		}
+		else{
+			return "success_bid";
+		}
+	
 	}
 	public int getCategoryId() {
 		return categoryId;
@@ -40,18 +42,7 @@ public class ShowProductAction extends ActionSupport{
 	public void setSubCategoryId(int subCategoryId) {
 		this.subCategoryId = subCategoryId;
 	}
-/*	public String getCategoryIdSelected() {
-		return categoryIdSelected;
-	}
-	public void setCategoryIdSelected(String categoryIdSelected) {
-		this.categoryIdSelected = categoryIdSelected;
-	}
-	public ArrayList<Category> getCategoryList() {
-		return categoryList;
-	}
-	public void setCategoryList(ArrayList<Category> categoryList) {
-		this.categoryList = categoryList;
-	}*/
+	
 	public ArrayList<Product> getProductList() {
 		return productList;
 	}

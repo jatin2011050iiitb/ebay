@@ -20,12 +20,13 @@ public class ProductService {
 	private Connection con = null;
 	private PreparedStatement pst = null;
 	private ResultSet resultSet1 = null;
-	private String query1,query2 = null;
+	private String query1 = null;
 	
 	public ArrayList<SubCategory> getSubCategoryList(int categoryId) {
 		ArrayList<SubCategory> subCategoryList =new ArrayList<SubCategory>();
-		query1 = "SELECT subcategoryId, subcategoryDesc FROM subcategory where categoryId=?";
+		
 		try {
+			query1 = "SELECT subcategoryId, subcategoryDesc FROM subcategory where categoryId=?";
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
@@ -53,8 +54,9 @@ public class ProductService {
 	public ArrayList<Product> getProductList(int subCategoryId) {
 	
 		ArrayList<Product> productList=new ArrayList<Product>();
-		query1 = "SELECT * FROM product where subcategoryId=?";
+		
 		try {
+			query1 = "SELECT * FROM product where subcategoryId=?";
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
@@ -82,8 +84,9 @@ public class ProductService {
 	public Product getProduct(int productId) {
 		
 		Product product=new Product();
-		query1 = "SELECT * FROM product where productId=?";
+		
 		try {
+			query1 = "SELECT * FROM product where productId=?";
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
@@ -120,8 +123,9 @@ public class ProductService {
 		}
 		
 		if(product.getSaleType()==1){
-			query1="SELECT * FROM binProduct where productId=?";
+			
 			try {
+				query1="SELECT * FROM binProduct where productId=?";
 				dbconn = new DBconn();
 				con = DBconn.getConnection();
 				pst = con.prepareStatement(query1);
@@ -141,8 +145,9 @@ public class ProductService {
 			}
 		}
 		else{
-			query1="SELECT * FROM auctionProduct where productId=?";
+			
 			try {
+				query1="SELECT * FROM auctionProduct where productId=?";
 				dbconn = new DBconn();
 				con = DBconn.getConnection();
 				pst = con.prepareStatement(query1);
@@ -152,22 +157,39 @@ public class ProductService {
 				resultSet1.next(); 
 					product.setStock(1);
 					product.setAuctionId(resultSet1.getInt("auctionId"));
-					product.setPrice(resultSet1.getInt("basePrice"));
-						
+					product.setPrice(resultSet1.getInt("highestBidPrice"));
+					product.setStepPrice(resultSet1.getInt("stepPrice"));			
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());
 			} finally {
 				dbconn.close(resultSet1);
 				dbconn.close(pst);
 				dbconn.close(con);
-			}
+					}
+			
+			try {
+				query1="SELECT count(*) as bidcount FROM bid_list where auctionId=?";
+				dbconn = new DBconn();
+				con = DBconn.getConnection();
+				pst = con.prepareStatement(query1);
+				pst.setInt(1,product.getAuctionId());
+				resultSet1 = pst.executeQuery();
+				
+				
+				resultSet1.next();
+				product.setBidCount(resultSet1.getInt("bidcount"));
+				
+							
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			} finally {
+				dbconn.close(resultSet1);
+				dbconn.close(pst);
+				dbconn.close(con);
+					}
+			
 		}
-		
-		
-		
-		
-		
-		
+			
 		return product;
 	}
 }
