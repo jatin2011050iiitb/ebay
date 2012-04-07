@@ -11,13 +11,9 @@ public class HomeAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Category> categoryList;
 	private Category categoryBean;
-	private String categoryIdSelected;
 	
 	public String execute() {
-		HomeService homeService = new HomeService();
-		setCategoryList(homeService.getCategoryList());
-		System.out.println("after loading categories");
-		
+			
 		return "success";
 	}
 
@@ -39,16 +35,6 @@ public class HomeAction extends ActionSupport{
 
 	public Category getCategoryBean() {
 		return categoryBean;
-	}
-
-
-	public void setCategoryIdSelected(String categoryIdSelected) {
-		this.categoryIdSelected = categoryIdSelected;
-	}
-
-
-	public String getCategoryIdSelected() {
-		return categoryIdSelected;
 	}
 
 

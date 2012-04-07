@@ -4,46 +4,61 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<constant name="struts.devMode" value="true" />
-	
-	<package name="default" extends="struts-default" namespace="/">
-	
- 
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	<package name="default" extends="struts-default">
 		<result-types>
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
 
+		<interceptors>
+			<interceptor name="categoryListInterceptor" class="ebay.interceptor.LoadCategoryList" />
+			<interceptor-stack name="categoryListInterceptorStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="categoryListInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+
 		<action name="home" class="user.action.HomeAction" method="execute">
+		<interceptor-ref name="categoryListInterceptor" />
 			<result name="success" type="tiles">/home.tiles</result>
 		</action>
-		
-		<action name="LoginShow" class="user.action.LoginAction" method="show">
+
+		<action name="LoginShow" class="user.action.LoginAction"
+			method="show">
+			<interceptor-ref name="categoryListInterceptor" />
 			<result name="success" type="tiles">/ebayLogin.tiles</result>
 			<result name="error" type="tiles">/ebayLogin.tiles</result>
 		</action>
-		
-		<action name="LoginAction" class="user.action.LoginAction" method="execute">
+
+		<action name="LoginAction" class="user.action.LoginAction"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptor" />
 			<result name="success" type="tiles">/ebayLoginSuccess.tiles</result>
 			<result name="failure" type="tiles">/ebayLogin.tiles</result>
 			<result name="error" type="tiles">/ebayLogin.tiles</result>
 		</action>
-		
-		<action name="ShowSubCategory" class="user.action.ShowSubCategoryAction" method="execute">
+
+		<action name="ShowSubCategory" class="user.action.ShowSubCategoryAction"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptor" />
 			<result name="success" type="tiles">/subcat.tiles</result>
 		</action>
-		
-		<action name="ShowProductList" class="user.action.ShowProductListAction" method="execute">
+
+		<action name="ShowProductList" class="user.action.ShowProductListAction"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptor" />
 			<result name="success" type="tiles">/productList.tiles</result>
 		</action>
-		
-		<action name="ShowProduct" class="user.action.ShowProductAction" method="execute">
+		<action name="ShowProduct" class="user.action.ShowProductAction"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptor" />
 			<result name="success" type="tiles">/product.tiles</result>
 		</action>
-      
-      <action name="SearchItemInCategory" class="user.action.SearchItemInCategoryAction" method="execute">
+
+		<action name="SearchItemInCategory" class="user.action.SearchItemInCategoryAction"
+			method="execute">
 			<result name="success" type="tiles">/productList.tiles</result>
 		</action>
-				
 	</package>
 </struts>
