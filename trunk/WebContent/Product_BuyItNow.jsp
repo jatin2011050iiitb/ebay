@@ -56,7 +56,11 @@
 						startDate: <s:property value="startDate"/><br/>
 						endDate: <s:property value="endDate"/><br/>
 						shipmentCharges: <s:property value="shipmentCharges"/><br/>
-						Quantity: <s:textfield value="%{product.stock}" size="1"/><br/>
+						<s:form name="buyItNowForm" action="buyItNow.action"  method="post">
+						<s:textfield label="Quantity:" value="1" size="1"/>&nbsp;&nbsp;
+						<s:property value="product.stock" /> available
+		<s:submit method="execute" label="submit" align="right" />
+	</s:form>
 	
 				 </s:push>
 									
