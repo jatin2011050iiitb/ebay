@@ -18,8 +18,8 @@
 			<div class="gh-fl">
 				<input type="text" class="gh-tb" size="60" maxlength="300" value=""
 					id="_nkw" name="searchString" autocomplete="OFF">
-				<s:select class="gh-sb" size="1" id="_sacat" name="categoryIdSelected"
-					list="categoryList" listKey="categoryId" listValue="categoryDesc" headerKey="0" headerValue="All Categories" >
+				<s:select class="gh-sb" size="1" id="_sacat" name="searchCategoryIdSelected"
+					list="searchCategoryList" listKey="categoryId" listValue="categoryDesc" headerKey="0" headerValue="All Categories" >
 				</s:select>
 				<a class="gh-ss"><input type="submit" class="gh-btn"
 					id="ghSearch" value="Search"> </a>
