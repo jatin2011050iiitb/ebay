@@ -20,6 +20,7 @@ public class LoginAction  extends ActionSupport{
 	private String signin;
 	private int userId;
 	private Map session;
+	private User userBean;
 	
 	public String show() {
 		
@@ -29,7 +30,9 @@ public class LoginAction  extends ActionSupport{
 	
 	public String execute() 
 	{ 
-		
+		Loggedin logged = new Loggedin();
+		 logged.setStatus(0);
+		 
 		if(signin!=null)
 		{	
 			HttpServletRequest request  = (HttpServletRequest) ActionContext.getContext().get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
@@ -46,12 +49,13 @@ public class LoginAction  extends ActionSupport{
 			LoginService loginservice =new LoginService();
 			userId= loginservice.validateUser(getUsername(),getPassword());
 			if(this.userId > 0) 
-			{
+			{ 	
+				this.userBean = loginservice.populate(userId);
 				session=ActionContext.getContext().getSession();
-				 Loggedin logged = new Loggedin();
-				  logged.setStatus(1);
+				logged.setStatus(1);
 				session.put("Loggedin",logged);
-				session.put("userId", this.userId);
+				session.put("objectuser", this.userBean);
+				session.put("userName",username);
 				return "success";
 			}
 			
@@ -111,6 +115,14 @@ public class LoginAction  extends ActionSupport{
 
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+
+	public User getUserBean() {
+		return userBean;
+	}
+
+	public void setUserBean(User userBean) {
+		this.userBean = userBean;
 	}
 
 
