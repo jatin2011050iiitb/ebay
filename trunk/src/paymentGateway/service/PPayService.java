@@ -129,7 +129,7 @@ public int commitPPayTransferStaging(PPayTransfer pptran){
 		pst.setInt(2,pptran.getPPayAccId());
 		pst.setInt(3,pptran.getAmount());
 		pst.setInt(4,pptran.getTransferStatus());
-		
+		System.out.println(pst.toString());
 		result = pst.executeUpdate();
 		
 	}catch (SQLException e) {
