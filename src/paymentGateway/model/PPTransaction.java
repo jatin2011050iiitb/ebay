@@ -17,6 +17,51 @@ public class PPTransaction {
 	private Timestamp pPaidTS;
 	private Timestamp pCancelTS;
 	private String status;
+	
+	public PPTransaction(){
+		
+	}
+	
+	public PPTransaction(int buyerId, int sellerId,
+			int cartId, int accNo, int bankId, int pPayAccId,
+			String paymentType, int amount, Timestamp pRecvTS,
+			 String status) {
+		
+		
+		this.buyerId = buyerId;
+		this.sellerId = sellerId;
+		this.cartId = cartId;
+		this.accNo = accNo;
+		this.bankId = bankId;
+		this.PPayAccId = pPayAccId;
+		this.paymentType = paymentType;
+		this.amount = amount;
+		this.pRecvTS = pRecvTS;
+		this.status = status;
+	}
+	
+	
+	public PPTransaction(int transactionId, int buyerId, int sellerId,
+			int cartId, int accNo, int bankId, int pPayAccId,
+			String paymentType, int amount, Timestamp pRecvTS,
+			Timestamp pPaidTS, Timestamp pCancelTS, String status) {
+		
+		this.transactionId = transactionId;
+		this.buyerId = buyerId;
+		this.sellerId = sellerId;
+		this.cartId = cartId;
+		this.accNo = accNo;
+		this.bankId = bankId;
+		this.PPayAccId = pPayAccId;
+		this.paymentType = paymentType;
+		this.amount = amount;
+		this.pRecvTS = pRecvTS;
+		this.pPaidTS = pPaidTS;
+		this.pCancelTS = pCancelTS;
+		this.status = status;
+	}
+	
+	
 	public int getTransactionId() {
 		return transactionId;
 	}

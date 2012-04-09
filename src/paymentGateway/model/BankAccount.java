@@ -6,9 +6,9 @@ public class BankAccount {
 	private int accNo;
 	private String accHolder;
 	private Long creditCardNo;
-	private Long creditCardVerfNo;
+	private int creditCardVerfNo;
 	private Long debitCardNo;
-	private Long debitCardVerfNo;
+	private int debitCardVerfNo;
 	private int NEFTcode;
 	private int accBalance;
 	private int creditPermited;
@@ -37,24 +37,14 @@ public class BankAccount {
 	public void setCreditCardNo(Long creditCardNo) {
 		this.creditCardNo = creditCardNo;
 	}
-	public Long getCreditCardVerfNo() {
-		return creditCardVerfNo;
-	}
-	public void setCreditCardVerfNo(Long creditCardVerfNo) {
-		this.creditCardVerfNo = creditCardVerfNo;
-	}
+	
 	public Long getDebitCardNo() {
 		return debitCardNo;
 	}
 	public void setDebitCardNo(Long debitCardNo) {
 		this.debitCardNo = debitCardNo;
 	}
-	public Long getDebitCardVerfNo() {
-		return debitCardVerfNo;
-	}
-	public void setDebitCardVerfNo(Long debitCardVerfNo) {
-		this.debitCardVerfNo = debitCardVerfNo;
-	}
+	
 	public int getNEFTcode() {
 		return NEFTcode;
 	}
@@ -72,6 +62,18 @@ public class BankAccount {
 	}
 	public void setCreditPermited(int creditPermited) {
 		this.creditPermited = creditPermited;
+	}
+	public void setCreditCardVerfNo(int creditCardVerfNo) {
+		this.creditCardVerfNo = creditCardVerfNo;
+	}
+	public int getCreditCardVerfNo() {
+		return creditCardVerfNo;
+	}
+	public void setDebitCardVerfNo(int debitCardVerfNo) {
+		this.debitCardVerfNo = debitCardVerfNo;
+	}
+	public int getDebitCardVerfNo() {
+		return debitCardVerfNo;
 	}
 	
 
