@@ -1,12 +1,14 @@
 package user.action;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import user.model.Category;
 import user.model.Product;
 import user.service.HomeService;
 import user.service.ProductService;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ShowProductAction extends ActionSupport{
@@ -17,11 +19,15 @@ public class ShowProductAction extends ActionSupport{
 	private int productId;
 	private ArrayList<Product> productList;
 	private Product product;
-	
+	private Map session;
 	public String execute() {
 	
 		ProductService productservice =new ProductService();
 		setProduct(productservice.getProduct(getProductId()));
+		
+		Map session=ActionContext.getContext().getSession();
+		session.put("SessionProduct", this.product);
+		
 		if(product.getSaleType()==1){
 			return "success_bin";
 		}
