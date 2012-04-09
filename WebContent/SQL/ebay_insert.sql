@@ -182,470 +182,160 @@ INSERT INTO `ebay`.`subcategory` (`subcategoryId`, `categoryId`, `subcategoryDes
 
 -- ---------------------------------------------------------------------------------------------------------------------
 -- Insertion into PRODUCT TABLE
-
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (1,1,1,'Men''s COLLAR T shirt size XL',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (2,1,1,'Men''s COLLAR T shirt size L',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (3,1,1,'Men''s COLLAR T shirt size XXL',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (4,1,1,'Men''s COLLAR T shirt long sleeve size M',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (5,1,1,'Best Quality: French Brand: Domyos: Fitness Plain T shirt: SPORTEE size S',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (6,1,1,'WHALE BRANDED ROUND NECK PLAIN T-SHIRTS',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (7,1,1,'GLOBUS BRANDED ROUND NECK PLAIN T-SHIRTS',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (8,1,1,'Collar T-Shirt in 100% cotton Fabric',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (9,1,1,'Round Neck T-Shirt in 100% cotton',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (10,1,1,'Mens Printed Casual T.Shirt - Size - S - ( Discounted Price - LJ 582 )',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (11,1,1,'YouTube Slogan White T-shirt',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (12,1,1,'Rock Star Skull Guitar T Shirt music band custom slogan',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (13,1,1,'Chinese Love symbol logo T shirt tattoo china design',3,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (14,2,1,'Casual shirt in checks Branded',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (15,2,1,'3 Formal shirt plain in single color Branded in price of 1',3,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (16,2,1,'Men''s Casual/Formal Slim fit PartyWear Shirt Large Size Shirt Sz-L S#003W',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (17,2,1,'Combo offer of two Men''s formal or semi formal shirts size 38 ',3,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (18,2,1,'Men''s formal or semi formal green color shirt size 38',4,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (19,2,1,'Men''s formal or semi formal shirt size 42',4,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (20,2,1,'Men''s Full Sleeves Denim Shirt Sz.38 MRP.495/-',4,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (21,2,1,'Yepme Red Turtle Neck Shirt 4388 Size 42',4,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (22,2,1,'Yepme Navy Turtle Neck Shirt 4390 Size 42',4,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`)
-VALUES (23,2,1,'Yepme Swarovski Button White Party Wear Shirt 3589 Size 42',5,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (24,2,1,'Yepme Purple Blue Party Wear Shirt 4719 Size 44',5,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (25,3,1,'Premium Quality (2 PCS) Soft Cotton Short / Bermuda for Men',5,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (26,3,1,'Branded Mens Shorts SJ 09 Size32-35/L, MRP-899/-@40% Discount 550/-',5,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (27,3,1,'"Men''s Formal Trouser Sz.27-28"" MRP.350/-"',5,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (28,3,1,'White Cotton Pant for Men-Waist 36 inches MRP Rs. 1299',6,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (29,3,1,'Men''s FORMAL TROUSERS size 32 ',6,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (30,3,1,'Yepme Office Formal Brown Trousers 4387 Size-38',6,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (31,3,1,'Men''s Formal Trouser Sz.30 MRP.495/-',6,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (32,3,1,'Men Jeans Sz.28 MRP:595/-',6,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (33,3,1,'Mens Jeans Slim Fit - Size - 32 ( M 209 )',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (34,3,1,'"Branded Flying Machine Mens Denim Jeans Slim Waist 32"""',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (35,4,2,'Alexander the Great - Audio Book',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (36,4,2,'The Story of Electricity - Audio Book',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (37,4,2,'Shakespeare - Romeo and Juliet - Audio Book',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (38,4,2,'Conflict Management - CD ROM',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (39,4,2,'Short Science Fiction Collection Vol. 011 Audiobook',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (40,4,2,'Attracting Women from the Inside Out (Audiobook)',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (41,4,2,'48 Laws Of Power - Robert Greene - AudioBook',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (42,4,2,'The Complete Sherlock Holmes Audio+eBook on DVD',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (43,4,2,'Short Science Fiction Collection Vol. 011 Audiobook',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (44,4,2,'Business Reports - CD ROM',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (45,5,2,'ATMEL AVR ATTINY 2313 Motor driver ( Arduino , PIC )',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (46,5,2,'Secure Programming With Static Analysis [With CDROM]',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (47,5,2,'Google Power Search: The Essential Guide to Finding Anything Online with Google',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (48,5,2,'Microsoft Publisher 2000 CBT',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (49,5,2,'I Thought I Knew How to Google 50 Tricks for Refining Your Search',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (50,5,2,'Ultimate Quiz on Computer Science',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (51,5,2,'Android Recipes A Problem-Solution Approach',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (52,5,2,'ACCOUNTING SOFTWARE SINGLE USER',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (53,5,2,'Android Apps For Absolute Beginners ',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (54,5,2,'SQL SERVER 2008 ADMINISTRATION IN ACTION',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (55,6,2,'OPEN : AN AUTOBIOGRAPHY by Andre Agassi BOOK',3,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (56,6,2,'"OLD HAND PAINTING SIGNED KARAM SINGH "" MUSAFIR"" 9.3.67 "',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (57,6,2,'BEYOND THE BEAUTIFUL FOREVERS -KATHERINE BOO ( HARDCOVER )',3,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (58,6,2,'AAP BANENGE CROREPATI Quiz Kaun Banega Crorepati KBC',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (59,6,2,'THE SCIENTIFIC INDIAN BY APJ ABDUL KALAM YS RAJAN',3,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (60,6,2,'Reader''s Digest -QUEST FOR THE PAST - Amazing Answers to the Riddles of History',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (61,6,2,'Reader''s Digest - FAMILY MEDICAL ADVISER - An A-Z guide to everyday ailments',3,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (62,6,2,'Reader''s Digest -NATURAL WONDERS OF THE WORLD',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (63,6,2,'Reader''s Digest - MARVELS & MYSTERIES OF OUR ANIMAL WORLD',3,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (64,6,2,'Wicked Women of the Raj by Coralie Younger - at a huge discount!',4,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (65,7,3,'SONY Memory Stick 16GB PRO HG Duo MS-HX16B - 5YR WAR',4,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (66,7,3,'Samsung 8GB Class 6 Mobile MicroSD SD SDHC Memory Card',4,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (67,7,3,'Sandisk 8GB SD SDHC Class 4 Memory Card + Warranty',4,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (68,7,3,'SanDisk Extreme HD Video SDHC Card 32GB, SD 32 GB',4,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (69,7,3,'Samsung 4Gb Micro SD Card - Class 4 Micro SDHC, With Bill & 5 Years Warranty',4,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (70,7,3,'SanDisk Compact Flash Extreme CF - 16 GB w 5Y Warranty 16GB',4,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (71,7,3,'SanDisk MS Micro M2 - 2GB for Sony Mobile - 2 GB Card',4,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (72,7,3,'Samsung 8Gb Micro SD Card - Class 6 Micro SDHC, With Bill & 5 Years Warranty',4,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (73,7,3,'Sandisk Ultra Compact Flash Card 2GB CF 2 GB 15 Mb NEW',4,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (74,7,3,'SanDisk Extreme III / HD Video SDHC Card 4GB, SD 4 GB',5,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (75,8,3,'SanDisk Ultra 32 GB Pen Drive Buton Bakup 32GB Pendrive',5,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (76,8,3,'Strontium 4GB Bold Series Pen drive with 5 yrs manufacturer''s warranty',5,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (77,8,3,'8GB Kingston USB 2.0 Pen Drive Flash Memory PenDrive + BILL + 5 Year Warranty',5,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (78,8,3,'Original Transcend 4 GB USB Flash Pen Drive ',5,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (79,8,3,'Brand New Sandisk Cruzer Switch 16GB USB Flash DRIVE Pen Drive Memory Waranty',5,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (80,8,3,'16GB Kingston DataTraveller USB 2.0 Pen Drive Flash Memory +BILL+ 3Year Warranty',5,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (81,8,3,'SANDISK CRUZER BLADE 4GB PEN DRIVE WITH 5YEARS WARRANTY',5,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (82,8,3,'Strontium TNT 16GB Pen Drive - Black With 5 Years Warranty',5,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (83,8,3,'128GB Selektronix High Speed Pen Drive - FULL & REAL CAPACITY - Free Shipping',5,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (84,8,3,'HP 4GB USB 2.0 Mini Small Pen Drive Flash Sleak + BILL 2 Year Warranty',6,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (85,9,3,'HIGHLY SAFE CD / DVD MAILERS 30PACK',6,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (86,9,3,'Moser Baer Double Layer 8.5 GB Dual DVD 1Pc Pack +Bill ',6,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (87,9,3,'IMATION LIGHTSCRIBE DVD+R 5 PACK ',6,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (88,9,3,'SONY Blank DVD-R Pack of 10',6,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (89,9,3,'Amaray Blu Ray Double Case Pack 1',6,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (90,9,3,'Amaray Blu Ray Premium Case for 3 discs Pack 1',6,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (91,9,3,'VERBATIM CD-R 10 No SPINDEL',6,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (92,9,3,'JVC CDR80 Music Audio Pack 10 in sleeve',6,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (93,9,3,'JVC DVD-R 1.4Gb 8cm 30min Spindle 10',6,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (94,9,3,'Moser Baer Double Layer 8.5 GB Dual DVD 1Pc Pack +Bill',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (95,10,4,'Multifunction Dual Time Sports Watch ',1,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (96,10,4,'Unique Design Automatic Mechanical Designer Battery Less Steel Watch For Mens',1,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (97,10,4,'New Party Wear Dual Time Black Dial Digital Executive Steel Belt Watch For Mens',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (98,10,4,'Sports Exercise Watch with Pulse and Calorie Reader',2,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (99,10,4,'Automatic Mechanical Designer Battery Less Black Leather Belt Watch [ AWH - B11]',2,'1','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (100,10,4,'HMT ELEGANCE 22kt gold plating DESIGNER MENS gents WRIST WATCH on best deal',3,'1','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (101,10,4,'Master Collection Chronograph Automatic Movement Men`s Gents Wrist Watch',3,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (102,10,4,'Automatic Mechanical Designer Battery Less Black Leather Belt Watch [ AWH - B12]',3,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (103,10,4,'Automatic Mechanical Designer Battery Less Steel Belt Watch [ AWH - B13]',4,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (104,10,4,'AUTOMATIC Watch Works on Pulse auction starts @ 1',4,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (105,11,4,'Star blck roman dial Watch',4,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (106,11,4,'MAXIMA DESIGNER WOMENS LADIES WRIST WATCH ',5,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (107,11,4,'Star Pink roman dial Watch',5,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (108,11,4,'AWESOME PARTYWEAR GOLD PLATED DIAMOND WATCH',5,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (109,11,4,'AUTHENTIC D''SIGNER QUARTZ LADIES WATCH WHITE DIAL FANCY STAINLESS STEEL STRAP',6,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (110,11,4,'Star G Dial Watch',6,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (111,11,4,'AUTHENTIC SONATA QUARTZ LADIES WATCH GOLDEN DIAL FANCY STAINLESS STEEL STRAP',6,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (112,11,4,'Star Charming Oval dial Watch',1,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (113,11,4,'STYLISH WHITE FORMAL, CASUAL, TRENDY WOMEN''S WRIST WATCH',1,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (114,11,4,'Star Elegant Grey dial Watch',1,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (115,12,4,'Embossed Pocket Watch with chain',1,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (116,12,4,'Pocket Watch with Chain',1,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (117,12,4,'Men''s Pocket Watch - Hunter Design Pocket Watch golden',2,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (118,12,4,'Men''s Wild West Pocket Watch with Embossed design in brown colour',2,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (119,12,4,'Avalon 17 Jewel Mechanical(Wind-Up) Skeleton Pocket-YCM',2,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (120,12,4,'Antique style brown pocker watch with chain',2,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (121,12,4,'Colibri Mechanical Pocket Watch Skeleton Movement -BOP',2,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (122,12,4,'Avalon 17 Jewel Mechanical Skeleton Silver-tone Poc-DIL',3,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (123,12,4,'SUPERMAN RETURNS POCKET WATCH EXCLUSIVE WB DC WARN-REG',3,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (124,12,4,'Avalon Classic II Series Gold Tone Covered Pocket W-RIL',3,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (125,13,5,'YAMLA PAGLA DEEWANA (DHARMENDRA, SUNNY) - 2 DISC DVD',3,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (126,13,5,'Sardar - The Iron Man of India - Paresh Rawal, Benjamin Gilani, Annu Kapoor',3,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (127,13,5,'HAI MARJAWAAN / IT''S A WONDERFUL AFTERLIFE - DVD PAYPAL',4,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (128,13,5,'SADIYAAN (LUV SINHA, FERENA WAZEIR) - HINDI DVD PAYPAL',4,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (129,13,5,'AARAKSHAN (AMITABH, SAIF ALI, MANOJ BAJPAI, DEEPIKA) - HINDI DVD PAYPAL',4,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (130,13,5,'RAAVAN (ABHISHEK BACHCHAN, AISHWARYA)- HINDI DVD PAYPAL',4,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (131,13,5,'KRAZZY 4 {ARSHAD WARSI, IRFAN KHAN} ORIGINAL HINDI DVD',4,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (132,13,5,'BHAGAM BHAG {GOVINDA, AKSHAY} COMEDY HINDI MOVIE DVD',4,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (133,13,5,'ACHANAK {VINOD KHANNA} - HINDI MOVIE DVD',5,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (134,13,5,'BHOOL BHULAIYA {Akshay Kumar} - HINDI MOVIE DVD',5,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (135,14,5,'BULLET (IQBAL KHAN, ASAD SIKANDAR) - HINDI VCD PAYPAL',5,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (136,14,5,'STYLE (SHERMAN, RIA SEN,SAHIL) - HINDI VCD PAYPAL',5,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (137,14,5,'JAAL (DEV ANAND, GEETA BALI) - HINDI VCD PAYPAL',5,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (138,14,5,'RAJHATH (MADHUBALA, SOHRAB MODI) - HINDI VCD PAYPAL',6,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (139,14,5,'BILLU - Shah Rukh Khan (Original VCD) 5% off',6,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (140,14,5,'WARIS SHAH (GURDAS MANN, JUHI CHAWLA)- HINDI VCD PAYPAL',6,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (141,14,5,'AAJ KA ARJUN ( AMITHAB, JAYA PRADA ) - HINDI VCD PAYPAL',6,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (142,14,5,'Hanuman - Animated VCD With Hindi / English Language',6,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (143,14,5,'PARWANA (K.L.SAIGAL, SURAIYA, NAZMA) - HINDI VCD PAYPAL',1,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (144,14,5,'FAMILY (AMITABH BACHCHAN, BHUMIKA ) - HINDI VCD PAYPAL',1,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (145,15,5,'THE TOUCH (10% OFF ON MRP) - ENGLISH DVD',2,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (146,15,5,'Inspector Gadget 2 - Tony Martin - (Valentine Day Sale)',2,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (147,15,5,'Learn To Play - TABLA Vol 2 - DVD 5% Off',3,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (148,15,5,'THE TAMARIND SEED - ENGLISH MOVIE DVD',3,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (149,15,5,'The Princess and the Frog (2009) - 3 Oscar Nominee - (Valentine Day Sale)',4,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (150,15,5,'THE HOUND OF BASKERVILLES (10% OFF ON MRP)- ENGLISH DVD',4,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (151,15,5,'TERMINATOR SALVATION - Movie Bluray W 3 Languages',5,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (152,15,5,'I WALK THE LINE (10% OFF ON MRP) - ENGLISH DVD',5,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (153,15,5,'Tinker Bell - Anjelica Huston - (Valentine Day Sale)',6,'2','used','2012-03-30 00:00:00','2012-04-30 00:00:00','free',0);
-INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,
-`startDate`,`endDate`,`shipmentState`,`shipmentCharges`) 
-VALUES (154,15,5,'Monsters vs Aliens - Reese Witherspoon - (Valentine Day Sale)',6,'2','new','2012-03-30 00:00:00','2012-04-30 00:00:00','chargeable',50);
-
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (1,1,1,'Men''s COLLAR T shirt size XL',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (2,1,1,'Men''s COLLAR T shirt size L',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (3,1,1,'Men''s COLLAR T shirt size XXL',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (4,1,1,'Men''s COLLAR T shirt long sleeve size M',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (5,1,1,'Best Quality: French Brand: Domyos: Fitness Plain T shirt: SPORTEE size S',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (6,1,1,'WHALE BRANDED ROUND NECK PLAIN T-SHIRTS',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (7,1,1,'GLOBUS BRANDED ROUND NECK PLAIN T-SHIRTS',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (8,1,1,'Collar T-Shirt in 100% cotton Fabric',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (9,1,1,'Round Neck T-Shirt in 100% cotton',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (10,1,1,'Mens Printed Casual T.Shirt - Size - S - ( Discounted Price - LJ 582 )',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (11,1,1,'YouTube Slogan White T-shirt',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (12,1,1,'Rock Star Skull Guitar T Shirt music band custom slogan',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (13,1,1,'Chinese Love symbol logo T shirt tattoo china design',3,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (14,2,1,'Casual shirt in checks Branded',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (15,2,1,'3 Formal shirt plain in single color Branded in price of 1',3,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (16,2,1,'Men''s Casual/Formal Slim fit PartyWear Shirt Large Size Shirt Sz-L S#003W',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (17,2,1,'Combo offer of two Men''s formal or semi formal shirts size 38 ',3,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (18,2,1,'Men''s formal or semi formal green color shirt size 38',4,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (19,2,1,'Men''s formal or semi formal shirt size 42',4,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (20,2,1,'Men''s Full Sleeves Denim Shirt Sz.38 MRP.495/-',4,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (21,2,1,'Yepme Red Turtle Neck Shirt 4388 Size 42',4,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (22,2,1,'Yepme Navy Turtle Neck Shirt 4390 Size 42',4,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (23,2,1,'Yepme Swarovski Button White Party Wear Shirt 3589 Size 42',5,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (24,2,1,'Yepme Purple Blue Party Wear Shirt 4719 Size 44',5,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (25,3,1,'Premium Quality (2 PCS) Soft Cotton Short / Bermuda for Men',5,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (26,3,1,'Branded Mens Shorts SJ 09 Size32-35/L, MRP-899/-@40% Discount 550/-',5,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (27,3,1,'"Men''s Formal Trouser Sz.27-28"" MRP.350/-"',5,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (28,3,1,'White Cotton Pant for Men-Waist 36 inches MRP Rs. 1299',6,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (29,3,1,'Men''s FORMAL TROUSERS size 32 ',6,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (30,3,1,'Yepme Office Formal Brown Trousers 4387 Size-38',6,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (31,3,1,'Men''s Formal Trouser Sz.30 MRP.495/-',6,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (32,3,1,'Men Jeans Sz.28 MRP:595/-',6,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (33,3,1,'Mens Jeans Slim Fit - Size - 32 ( M 209 )',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (34,3,1,'"Branded Flying Machine Mens Denim Jeans Slim Waist 32"""',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (35,4,2,'Alexander the Great - Audio Book',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (36,4,2,'The Story of Electricity - Audio Book',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (37,4,2,'Shakespeare - Romeo and Juliet - Audio Book',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (38,4,2,'Conflict Management - CD ROM',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (39,4,2,'Short Science Fiction Collection Vol. 011 Audiobook',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (40,4,2,'Attracting Women from the Inside Out (Audiobook)',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (41,4,2,'48 Laws Of Power - Robert Greene - AudioBook',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (42,4,2,'The Complete Sherlock Holmes Audio+eBook on DVD',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (43,4,2,'Short Science Fiction Collection Vol. 011 Audiobook',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (44,4,2,'Business Reports - CD ROM',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (45,5,2,'ATMEL AVR ATTINY 2313 Motor driver ( Arduino , PIC )',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (46,5,2,'Secure Programming With Static Analysis [With CDROM]',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (47,5,2,'Google Power Search: The Essential Guide to Finding Anything Online with Google',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (48,5,2,'Microsoft Publisher 2000 CBT',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (49,5,2,'I Thought I Knew How to Google 50 Tricks for Refining Your Search',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (50,5,2,'Ultimate Quiz on Computer Science',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (51,5,2,'Android Recipes A Problem-Solution Approach',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (52,5,2,'ACCOUNTING SOFTWARE SINGLE USER',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (53,5,2,'Android Apps For Absolute Beginners ',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (54,5,2,'SQL SERVER 2008 ADMINISTRATION IN ACTION',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (55,6,2,'OPEN : AN AUTOBIOGRAPHY by Andre Agassi BOOK',3,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (56,6,2,'"OLD HAND PAINTING SIGNED KARAM SINGH "" MUSAFIR"" 9.3.67 "',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (57,6,2,'BEYOND THE BEAUTIFUL FOREVERS -KATHERINE BOO ( HARDCOVER )',3,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (58,6,2,'AAP BANENGE CROREPATI Quiz Kaun Banega Crorepati KBC',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (59,6,2,'THE SCIENTIFIC INDIAN BY APJ ABDUL KALAM YS RAJAN',3,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (60,6,2,'Reader''s Digest -QUEST FOR THE PAST - Amazing Answers to the Riddles of History',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (61,6,2,'Reader''s Digest - FAMILY MEDICAL ADVISER - An A-Z guide to everyday ailments',3,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (62,6,2,'Reader''s Digest -NATURAL WONDERS OF THE WORLD',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (63,6,2,'Reader''s Digest - MARVELS & MYSTERIES OF OUR ANIMAL WORLD',3,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (64,6,2,'Wicked Women of the Raj by Coralie Younger - at a huge discount!',4,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (65,7,3,'SONY Memory Stick 16GB PRO HG Duo MS-HX16B - 5YR WAR',4,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (66,7,3,'Samsung 8GB Class 6 Mobile MicroSD SD SDHC Memory Card',4,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (67,7,3,'Sandisk 8GB SD SDHC Class 4 Memory Card + Warranty',4,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (68,7,3,'SanDisk Extreme HD Video SDHC Card 32GB, SD 32 GB',4,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (69,7,3,'Samsung 4Gb Micro SD Card - Class 4 Micro SDHC, With Bill & 5 Years Warranty',4,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (70,7,3,'SanDisk Compact Flash Extreme CF - 16 GB w 5Y Warranty 16GB',4,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (71,7,3,'SanDisk MS Micro M2 - 2GB for Sony Mobile - 2 GB Card',4,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (72,7,3,'Samsung 8Gb Micro SD Card - Class 6 Micro SDHC, With Bill & 5 Years Warranty',4,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (73,7,3,'Sandisk Ultra Compact Flash Card 2GB CF 2 GB 15 Mb NEW',4,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (74,7,3,'SanDisk Extreme III / HD Video SDHC Card 4GB, SD 4 GB',5,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (75,8,3,'SanDisk Ultra 32 GB Pen Drive Buton Bakup 32GB Pendrive',5,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (76,8,3,'Strontium 4GB Bold Series Pen drive with 5 yrs manufacturer''s warranty',5,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (77,8,3,'8GB Kingston USB 2.0 Pen Drive Flash Memory PenDrive + BILL + 5 Year Warranty',5,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (78,8,3,'Original Transcend 4 GB USB Flash Pen Drive ',5,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (79,8,3,'Brand New Sandisk Cruzer Switch 16GB USB Flash DRIVE Pen Drive Memory Waranty',5,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (80,8,3,'16GB Kingston DataTraveller USB 2.0 Pen Drive Flash Memory +BILL+ 3Year Warranty',5,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (81,8,3,'SANDISK CRUZER BLADE 4GB PEN DRIVE WITH 5YEARS WARRANTY',5,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (82,8,3,'Strontium TNT 16GB Pen Drive - Black With 5 Years Warranty',5,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (83,8,3,'128GB Selektronix High Speed Pen Drive - FULL & REAL CAPACITY - Free Shipping',5,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (84,8,3,'HP 4GB USB 2.0 Mini Small Pen Drive Flash Sleak + BILL 2 Year Warranty',6,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (85,9,3,'HIGHLY SAFE CD / DVD MAILERS 30PACK',6,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (86,9,3,'Moser Baer Double Layer 8.5 GB Dual DVD 1Pc Pack +Bill ',6,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (87,9,3,'IMATION LIGHTSCRIBE DVD+R 5 PACK ',6,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (88,9,3,'SONY Blank DVD-R Pack of 10',6,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (89,9,3,'Amaray Blu Ray Double Case Pack 1',6,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (90,9,3,'Amaray Blu Ray Premium Case for 3 discs Pack 1',6,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (91,9,3,'VERBATIM CD-R 10 No SPINDEL',6,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (92,9,3,'JVC CDR80 Music Audio Pack 10 in sleeve',6,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (93,9,3,'JVC DVD-R 1.4Gb 8cm 30min Spindle 10',6,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (94,9,3,'Moser Baer Double Layer 8.5 GB Dual DVD 1Pc Pack +Bill',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (95,10,4,'Multifunction Dual Time Sports Watch ',1,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (96,10,4,'Unique Design Automatic Mechanical Designer Battery Less Steel Watch For Mens',1,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (97,10,4,'New Party Wear Dual Time Black Dial Digital Executive Steel Belt Watch For Mens',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (98,10,4,'Sports Exercise Watch with Pulse and Calorie Reader',2,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (99,10,4,'Automatic Mechanical Designer Battery Less Black Leather Belt Watch [ AWH - B11]',2,'1','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (100,10,4,'HMT ELEGANCE 22kt gold plating DESIGNER MENS gents WRIST WATCH on best deal',3,'1','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (101,10,4,'Master Collection Chronograph Automatic Movement Men`s Gents Wrist Watch',3,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (102,10,4,'Automatic Mechanical Designer Battery Less Black Leather Belt Watch [ AWH - B12]',3,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (103,10,4,'Automatic Mechanical Designer Battery Less Steel Belt Watch [ AWH - B13]',4,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (104,10,4,'AUTOMATIC Watch Works on Pulse auction starts @ 1',4,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (105,11,4,'Star blck roman dial Watch',4,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (106,11,4,'MAXIMA DESIGNER WOMENS LADIES WRIST WATCH ',5,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (107,11,4,'Star Pink roman dial Watch',5,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (108,11,4,'AWESOME PARTYWEAR GOLD PLATED DIAMOND WATCH',5,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (109,11,4,'AUTHENTIC D''SIGNER QUARTZ LADIES WATCH WHITE DIAL FANCY STAINLESS STEEL STRAP',6,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (110,11,4,'Star G Dial Watch',6,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (111,11,4,'AUTHENTIC SONATA QUARTZ LADIES WATCH GOLDEN DIAL FANCY STAINLESS STEEL STRAP',6,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (112,11,4,'Star Charming Oval dial Watch',1,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (113,11,4,'STYLISH WHITE FORMAL, CASUAL, TRENDY WOMEN''S WRIST WATCH',1,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (114,11,4,'Star Elegant Grey dial Watch',1,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (115,12,4,'Embossed Pocket Watch with chain',1,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (116,12,4,'Pocket Watch with Chain',1,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (117,12,4,'Men''s Pocket Watch - Hunter Design Pocket Watch golden',2,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (118,12,4,'Men''s Wild West Pocket Watch with Embossed design in brown colour',2,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (119,12,4,'Avalon 17 Jewel Mechanical(Wind-Up) Skeleton Pocket-YCM',2,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (120,12,4,'Antique style brown pocker watch with chain',2,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (121,12,4,'Colibri Mechanical Pocket Watch Skeleton Movement -BOP',2,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (122,12,4,'Avalon 17 Jewel Mechanical Skeleton Silver-tone Poc-DIL',3,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (123,12,4,'SUPERMAN RETURNS POCKET WATCH EXCLUSIVE WB DC WARN-REG',3,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (124,12,4,'Avalon Classic II Series Gold Tone Covered Pocket W-RIL',3,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (125,13,5,'YAMLA PAGLA DEEWANA (DHARMENDRA, SUNNY) - 2 DISC DVD',3,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (126,13,5,'Sardar - The Iron Man of India - Paresh Rawal, Benjamin Gilani, Annu Kapoor',3,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (127,13,5,'HAI MARJAWAAN / IT''S A WONDERFUL AFTERLIFE - DVD PAYPAL',4,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (128,13,5,'SADIYAAN (LUV SINHA, FERENA WAZEIR) - HINDI DVD PAYPAL',4,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (129,13,5,'AARAKSHAN (AMITABH, SAIF ALI, MANOJ BAJPAI, DEEPIKA) - HINDI DVD PAYPAL',4,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (130,13,5,'RAAVAN (ABHISHEK BACHCHAN, AISHWARYA)- HINDI DVD PAYPAL',4,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (131,13,5,'KRAZZY 4 {ARSHAD WARSI, IRFAN KHAN} ORIGINAL HINDI DVD',4,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (132,13,5,'BHAGAM BHAG {GOVINDA, AKSHAY} COMEDY HINDI MOVIE DVD',4,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (133,13,5,'ACHANAK {VINOD KHANNA} - HINDI MOVIE DVD',5,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (134,13,5,'BHOOL BHULAIYA {Akshay Kumar} - HINDI MOVIE DVD',5,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (135,14,5,'BULLET (IQBAL KHAN, ASAD SIKANDAR) - HINDI VCD PAYPAL',5,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (136,14,5,'STYLE (SHERMAN, RIA SEN,SAHIL) - HINDI VCD PAYPAL',5,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (137,14,5,'JAAL (DEV ANAND, GEETA BALI) - HINDI VCD PAYPAL',5,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (138,14,5,'RAJHATH (MADHUBALA, SOHRAB MODI) - HINDI VCD PAYPAL',6,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (139,14,5,'BILLU - Shah Rukh Khan (Original VCD) 5% off',6,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (140,14,5,'WARIS SHAH (GURDAS MANN, JUHI CHAWLA)- HINDI VCD PAYPAL',6,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (141,14,5,'AAJ KA ARJUN ( AMITHAB, JAYA PRADA ) - HINDI VCD PAYPAL',6,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (142,14,5,'Hanuman - Animated VCD With Hindi / English Language',6,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (143,14,5,'PARWANA (K.L.SAIGAL, SURAIYA, NAZMA) - HINDI VCD PAYPAL',1,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (144,14,5,'FAMILY (AMITABH BACHCHAN, BHUMIKA ) - HINDI VCD PAYPAL',1,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (145,15,5,'THE TOUCH (10% OFF ON MRP) - ENGLISH DVD',2,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (146,15,5,'Inspector Gadget 2 - Tony Martin - (Valentine Day Sale)',2,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (147,15,5,'Learn To Play - TABLA Vol 2 - DVD 5% Off',3,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (148,15,5,'THE TAMARIND SEED - ENGLISH MOVIE DVD',3,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (149,15,5,'The Princess and the Frog (2009) - 3 Oscar Nominee - (Valentine Day Sale)',4,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (150,15,5,'THE HOUND OF BASKERVILLES (10% OFF ON MRP)- ENGLISH DVD',4,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (151,15,5,'TERMINATOR SALVATION - Movie Bluray W 3 Languages',5,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (152,15,5,'I WALK THE LINE (10% OFF ON MRP) - ENGLISH DVD',5,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (153,15,5,'Tinker Bell - Anjelica Huston - (Valentine Day Sale)',1,'2','used','2012-04-09 23:07:35','2012-04-30 00:00:00','free',0,'0');
+INSERT INTO `product` (`productId`,`subcategoryId`,`categoryId`,`productDesc`,`sellerId`,`saleType`,`prodCondition`,`startDate`,`endDate`,`shipmentState`,`shipmentCharges`,`sold`) VALUES (154,15,5,'Monsters vs Aliens - Reese Witherspoon - (Valentine Day Sale)',6,'2','new','2012-04-09 23:07:35','2012-04-30 00:00:00','chargeable',50,'0');
 -- ---------------------------------------------------------------------------------------------------------------------
 -- Insertion into BINPRODUCT TABLE
 
