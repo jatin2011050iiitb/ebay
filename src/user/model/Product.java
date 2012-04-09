@@ -22,6 +22,7 @@ public class Product {
 	private int price;
 	private int stepPrice;
 	private int bidCount;
+	private int quantity;
 	
 	
 	public int getProductId() {
@@ -149,6 +150,12 @@ public class Product {
 	}
 	public void setSellerCountry(String sellerCountry) {
 		this.sellerCountry = sellerCountry;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 	
