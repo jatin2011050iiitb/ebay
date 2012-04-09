@@ -201,7 +201,7 @@ public class BuyItNowService {
 			dbconn.close(con);
 		}
 		if(isSuccessful==1){
-	 shoppingCart.setGrandTotal(grandTotal); // short cut you could also write a select query and set the grand total ;)
+	 shoppingCart.setGrandTotal(grandTotal); // this is short cut. you could also write a select query and set the grand total ;)
 		}
 	 return shoppingCart;
  }
