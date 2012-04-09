@@ -233,3 +233,11 @@ FOREIGN KEY (categoryId) REFERENCES category(categoryId),
 FOREIGN KEY (subcategoryId) REFERENCES subcategory(subcategoryId)
 );
 -- ---------------------------------------------------------------------------------------------------------------------
+
+-- TRIGGER FOR UPDATING HIGHEST BID VALUE FROM bid_list INTO auctionProduct
+DELIMITER $$
+create trigger update_highest_bid after insert on bid_list FOR EACH ROW
+begin
+  update auctionProduct set highestBidPrice=(select max(bidValue) from bid_list WHERE auctionId=NEW.auctionId), finalBidderId=(select bidderId from bid_list where bidValue=(select max(bidValue) from bid_list WHERE auctionId=NEW.auctionId)) where auctionProduct.auctionId=NEW.auctionId;
+end$$
+DELIMITER ;
