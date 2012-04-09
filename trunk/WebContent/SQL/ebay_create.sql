@@ -97,11 +97,12 @@ categoryId INT NOT NULL,
 productDesc TINYTEXT,
 sellerId INT NOT NULL, 
 saleType ENUM('1','2'), -- 1=binProduct  2=auctionProduct
-prodCondition enum('used','new'),
+prodCondition ENUM('used','new'),
 startDate TIMESTAMP,
 endDate TIMESTAMP, 
-shipmentState enum('free','chargeable'),
+shipmentState ENUM('free','chargeable'),
 shipmentCharges INT,
+sold ENUM('0','1'),  -- 0 = not sold.  1= sold out
 FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
 FOREIGN KEY (categoryId) REFERENCES category(categoryId),
 FOREIGN KEY (subcategoryId) REFERENCES subcategory(subcategoryId)
@@ -145,7 +146,7 @@ buyerId INT,
 sellerId INT,
 paymentConfirmation ENUM('0','1','-1'), -- 0=unpaid 1=success -1=failure
 recieptConfirmation ENUM('1','2'), -- 1=recieved 2=not recieved
-paymentTS TIMESTAMP, 
+paymentTS TIMESTAMP NULL, 
 FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
 FOREIGN KEY (buyerId) REFERENCES userCredentials(userId)
 );
@@ -154,11 +155,15 @@ CREATE TABLE shoppingCartItem(
 cartId INT,
 cartItemId INT AUTO_INCREMENT PRIMARY KEY,
 productId INT,
+productDesc TINYTEXT,
 quantity INT,
-unitPrice INT, -- app layer has to pass binPrice(quantity>=1)/highestBidPrice(quantity=1) 
+unitPrice INT, -- app layer has to pass binPrice and quantity>=1 / highestBidPrice and quantity=1
 subtotal INT,
+shippingPrice INT,
 buyerId INT,
 sellerId INT,
+sellerName TINYTEXT,
+itemDeselected int, -- insert 0 while creating cart. and insert 1 if user clicks on remove item. need not delete. the item loaded. 
 FOREIGN KEY (productId) REFERENCES product(productId),
 FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
 FOREIGN KEY (buyerId) REFERENCES userCredentials(userId),
@@ -205,7 +210,7 @@ transferId INT AUTO_INCREMENT PRIMARY KEY,
 transactionId INT,
 PPayAccId INT,
 amount INT,
-transferStatus ENUM('0','1'),
+transferStatus INT,
 transferTS TIMESTAMP,
 FOREIGN KEY (transactionId) REFERENCES PPTransaction(transactionId),
 FOREIGN KEY (PPayAccId) REFERENCES PPayAccInfo(PPayAccId)
