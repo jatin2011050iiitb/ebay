@@ -51,4 +51,10 @@
 		<put-attribute name="body" value="/Product_Auction.jsp" />
 	</definition>
 	
+	<!-- BuyItNow  page -->
+	<definition name="/BuyItNow.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/BuyItNow.jsp" />
+		<put-attribute name="searchbar" value="" />
+	</definition>
+	
 </tiles-definitions>

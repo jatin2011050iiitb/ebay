@@ -57,6 +57,7 @@
 			<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/productList.tiles</result>
 		</action>
+		
 		<action name="ShowProduct" class="user.action.ShowProductAction"
 			method="execute">
 			<interceptor-ref name="categoryListInterceptorStack" />
@@ -68,5 +69,13 @@
 			method="execute">
 			<result name="success" type="tiles">/productList.tiles</result>
 		</action>
+		
+		<action name="BuyItNow" class="buyer.action.BuyItNowAction"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/BuyItNow.tiles</result>
+			<result name="input" type="tiles">/BuyItNow.tiles</result>
+		</action>
+		
 	</package>
 </struts>
