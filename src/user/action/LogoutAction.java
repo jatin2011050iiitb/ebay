@@ -11,6 +11,10 @@ public class LogoutAction {
 		session.remove("Loggedin");
 		session.remove("objectuser");
 		session.remove("userName");
+		session.remove("SessionProduct");
+		session.remove("SessionCarts");
+		session.remove("sessionCartItems");
+		
 		return "success";
 	}
 }
