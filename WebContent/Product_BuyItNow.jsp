@@ -47,7 +47,6 @@
 						alt="Pic not available" width="75px" height="75px" /> --%>
 					
 						<h1><s:property value="productDesc"/></h1><br/>
-						
 						<b>Price: <s:property value="price"/></b><br/>
 						<b>saleType: <s:property value="saleTypeDesc"/></b><br/>
 						<b>Product Condition: <s:property value="prodCondition"/></b><br/>
@@ -56,17 +55,25 @@
 						seller Name: <s:property value="sellerFName"/> <s:property value="sellerLName"/><br/>
 						Item number: <s:property value="productId"/><br/>
 						Item location: <s:property value="sellerCity"/>, <s:property value="sellerState"/>, <s:property value="sellerCountry"/><br/>
-						Ships to:  <s:property value="sellerCountry"/><br/>
-						startDate: <s:property value="startDate"/><br/>
-						endDate: <s:property value="endDate"/><br/>
+						
 						shipmentCharges: <s:property value="shipmentCharges"/><br/>
-						<s:form name="buyItNowForm" action="buyItNow.action"  method="post">
-						<s:textfield label="Quantity:" value="1" size="1"/>&nbsp;&nbsp;
+						
+				 </s:push>		
+						<s:form name="buyItNowForm" action="BuyItNow"  method="post">
+						
+						<s:textfield label="Quantity:" value="1" name="quantity" size="1"/>&nbsp;&nbsp;
 						<s:property value="product.stock" /> available
-		<s:submit method="execute" label="submit" align="right" />
-	</s:form>
+						<s:submit method="execute" value="Buy It Now" align="right" />
+						</s:form>
+						
+						<b>Or combine multiple purchases:</b>
+						
+						<s:form name="addToCartForm" action="addToCart.action"  method="post">
+						<s:submit method="execute" value="Add To Cart" align="right" />
+						</s:form>
 	
-				 </s:push>
+	
+				
 									
 								
 								

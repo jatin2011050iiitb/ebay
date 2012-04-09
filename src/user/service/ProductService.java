@@ -86,11 +86,12 @@ public class ProductService {
 		Product product=new Product();
 		
 		try {
-			query1 = "SELECT * FROM product where productId=?";
+			query1 = "SELECT * FROM product where productId=? and sold=?";
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,productId);
+			pst.setString(2,"0");
 			resultSet1 = pst.executeQuery();
 			
 			resultSet1.next(); 

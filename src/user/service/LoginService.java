@@ -74,6 +74,13 @@ public class LoginService {
 			userbean.setfName(resultSet1.getString("fName"));
 			userbean.setlName(resultSet1.getString("lName"));
 			userbean.setUserId(resultSet1.getInt("userId"));
+			userbean.setAddress(resultSet1.getString("address"));
+			userbean.setCity(resultSet1.getString("city"));
+			userbean.setState(resultSet1.getString("state"));
+			userbean.setCountry(resultSet1.getString("country"));
+			userbean.setPincode(resultSet1.getInt("pincode"));
+			userbean.setGender(resultSet1.getString("gender"));
+			userbean.setEmailId(resultSet1.getString("emailId"));
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 
