@@ -34,6 +34,7 @@ public class BuyItNowAction extends ActionSupport{
 	if(shoppingCartItem!=null){
 	setShoppingCart(buyItNowService.calcGrandTotalBuyItNow(shoppingCart,shoppingCartItem));	
 	}
+	System.out.println("");
 	session.put("SessionCarts",shoppingCart);
 	session.put("sessionCartItems", shoppingCartItem);
 

@@ -84,5 +84,64 @@
 			<result name="input" type="tiles">/BuyItNow.tiles</result>
 		</action>
 		
+		<action name="PlaceBid" class="buyer.action.ProductAuctionAction"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/productBidSummary.tiles</result>
+			<result name="failure" type="tiles">/productBid.tiles</result>
+		</action>
+		
+		<action name="MyPaisaPayHome" class="buyer.action.MyPaisaPayAction"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/MyPaisaPay.tiles</result>
+			<result name="showLoginPage" type="tiles">/ebayLogin.tiles</result>
+		</action>
+		
+		<action name="MyPaisaPayRegister" class="buyer.action.MyPaisaPayRegister"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/MyPaisaPayRegister.tiles</result>
+			<result name="showLoginPage" type="tiles">/ebayLogin.tiles</result>
+		</action>
+		
+		<!-- <action name="ShoppingCartMgmt" class="buyer.action.ShoppingCartMgmtAction"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/cartMgmt.tiles</result>
+			<result name="input" type="tiles">/cartMgmt.tiles</result>
+		</action> -->
+		
+		 <action name="GatewayDemo" class="paymentGateway.action.GatewayDemo">
+		<result name="success">/GatewayDemo.jsp</result>
+		</action>
+		
+		<action name="ProceedToPay" class="paymentGateway.action.ProceedToPay">
+		<result name="showPaymentOptions">/PaymentOptions.jsp</result>
+		<result name="showDebitCardPayment" >/DebitCardPayment.jsp</result>
+		<result name="showCreditCardPayment" >/CreditCardPayment.jsp</result>
+		<result name="showNetBankingPayment" >/NetBankingPayment.jsp</result>
+		<result name="showLoginPage" type = "redirectAction">LoginShow</result>
+		</action>
+		
+		
+		<action name="DebitCardPayment" class="paymentGateway.action.DebitCardPayment">
+		<result name="showPaymentSuccess">/PaymentSuccess.jsp</result>
+		<result name="showLoginPage" type = "redirectAction">LoginShow</result>    
+		<result name="showEnterDetails">/DebitCardPayment.jsp</result>    
+		</action>
+		
+		<action name="CreditCardPayment" class="paymentGateway.action.CreditCardPayment">
+		<result name="showPaymentSuccess">/PaymentSuccess.jsp</result>
+		<result name="showLoginPage" type = "redirectAction">LoginShow</result>    
+		<result name="showEnterDetails">/CreditCardPayment.jsp</result>    
+		</action>
+		
+		<action name="NetBankingPayment" class="paymentGateway.action.NetBankingPayment">
+		<result name="showPaymentSuccess">/PaymentSuccess.jsp</result>
+		<result name="showLoginPage" type = "redirectAction">LoginShow</result>    
+		<result name="showEnterDetails">/NetBankingPayment.jsp</result>    
+		</action>
+	
 	</package>
 </struts>

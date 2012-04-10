@@ -46,17 +46,17 @@
 	</div>
 	<div class="gh-rph" style="text-align: right;">
 		<span class="addllinks"><img width="15" height="15"
-			src="http://q.ebaystatic.com/aw/pics/cart.gif"> <a
-			href="http://orders.ebay.in/ws/eBayISAPI.dll?ShoppingCartMgmt">My
-				Shopping Cart</a><span id="glb_cart"></span> <script
+			src="images_page/cart.gif"> <a
+			href="ShoppingCartMgmt.action">My
+				Shopping Cart</a><span id="glb_cart"></span> <%-- <script
 				type="text/javascript">
 					vjo.darwin.core.ebayheader.cart.Cart
 							.init(
 									"glb_cart",
 									"http://payments.ebay.in/ws/eBayISAPI.dll?GetCartDetails",
 									"http://orders.ebay.in/ws/eBayISAPI.dll?ShoppingCartMgmt");
-				</script> | <a href="http://orders.ebay.in/ws/eBayISAPI.dll?MyPaisaPaySummary">My
-				PaisaPay</a> | <a href="http://pages.ebay.in/sitemap.html">Site Map</a>
+				</script>  --%>| <a href="MyPaisaPayHome.action">My
+				PaisaPay</a> | <!-- <a href="http://pages.ebay.in/sitemap.html">Site Map</a> -->
 		</span>
 	</div>
 </div>
