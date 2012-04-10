@@ -1,6 +1,7 @@
 package paymentGateway.action;
 
 import java.util.Date;
+import java.util.Map;
 import java.sql.Timestamp;
 
 import paymentGateway.model.BankAccount;
@@ -9,11 +10,15 @@ import paymentGateway.model.PPayAccInfo;
 import paymentGateway.model.PPayTransfer;
 import paymentGateway.service.BankService;
 import paymentGateway.service.PPayService;
+import user.model.Loggedin;
 
+import buyer.model.ShoppingCart;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class DebitCardPayment extends ActionSupport{
-	
+public class DebitCardPayment extends ActionSupport {
+
 	private int buyerId;
 	private int sellerId;
 	private int cartId;
@@ -26,58 +31,91 @@ public class DebitCardPayment extends ActionSupport{
 	private Long debitCardNo;
 	private int debitCardVerfNo;
 	private int transactionId;
-	
-	public String execute(){
-		
-		
-		if(submit==null){
-			
-			return "showEnterDetails";
-		}
-		if(submit.equals("ConfirmPayment")){
-			int result = 0;
-			System.out.println(getDebitCardNo());
-			System.out.println(getDebitCardVerfNo());
-			BankService bs = new BankService();
-			BankAccount ba = new BankAccount();
-			ba = bs.getDebitCardDetails(getBankId(), getDebitCardNo(), getDebitCardVerfNo());
-			if(ba.getDebitCardVerfNo()== getDebitCardVerfNo()){
-				System.out.println("CVV Match");
-				
-				result = bs.debitCardPayment(ba, getTotalAmount());
-				if(result ==1){
-				
-					PPayService ps = new PPayService();
-					PPayAccInfo pi = new PPayAccInfo();
-					pi=ps.getPPayAccInfoByEbayUserId(getSellerId());
-					//java.util.Date dt = new java.util.Date();
-					//java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-					PPTransaction ppt = new PPTransaction(getBuyerId(), getSellerId(),getCartId(), ba.getAccNo(), ba.getBankId(),pi.getPPayAccId(),"debitcard",getTotalAmount(),new Timestamp(new Date().getTime()), "paymentRecieved");
-					//PPTransaction ppt = new PPTransaction(getBuyerId(), getSellerId(),getCartId(), ba.getAccNo(), ba.getBankId(),pi.getPPayAccId(),"debitcard",getTotalAmount(),sdf.format(dt), "paymentRecieved");
-					int commitresult=ps.commitPPTransaction(ppt);
-					
-					if(commitresult ==1){
-						
-						transactionId = ps.getTransactionId(getCartId(), getSellerId());
-						PPayTransfer pt = new PPayTransfer(transactionId, pi.getPPayAccId(), getTotalAmount(),0);
-						
-						int insertStagingResult = ps.commitPPayTransferStaging(pt);
-						
-						return "showPaymentSuccess";
-						
-					}
-				
-				
-				
+
+	public String execute() {
+
+		try {
+
+			Map session = ActionContext.getContext().getSession();
+			Loggedin logged = new Loggedin();
+			logged = (Loggedin) session.get("Loggedin");
+
+			if (logged.getStatus() == 1) {
+
+				ShoppingCart sc = (ShoppingCart) session.get("SessionCarts");
+				setBuyerId(sc.getBuyerId());
+				setSellerId(sc.getSellerId());
+				setCartId(sc.getCartId());
+				setTotalAmount(sc.getGrandTotal());
+
+				if (submit == null) {
+
+					return "showEnterDetails";
 				}
-				
-				
-				
+				if (submit.equals("ConfirmPayment")) {
+					int result = 0;
+					System.out.println(getDebitCardNo());
+					System.out.println(getDebitCardVerfNo());
+					BankService bs = new BankService();
+					BankAccount ba = new BankAccount();
+					ba = bs.getDebitCardDetails(getBankId(), getDebitCardNo(),
+							getDebitCardVerfNo());
+					if (ba.getDebitCardVerfNo() == getDebitCardVerfNo()) {
+						System.out.println("CVV Match");
+
+						result = bs.debitCardPayment(ba, getTotalAmount());
+						if (result == 1) {
+
+							PPayService ps = new PPayService();
+							PPayAccInfo pi = new PPayAccInfo();
+							pi = ps.getPPayAccInfoByEbayUserId(getSellerId());
+
+							PPTransaction ppt = new PPTransaction(getBuyerId(),
+									getSellerId(), getCartId(), ba.getAccNo(),
+									ba.getBankId(), pi.getPPayAccId(),
+									"debitcard", getTotalAmount(),
+									new Timestamp(new Date().getTime()),
+									"paymentRecieved");
+							int commitresult = ps.commitPPTransaction(ppt);
+
+							if (commitresult == 1) {
+
+								transactionId = ps.getTransactionId(
+										getCartId(), getSellerId());
+								
+								PPayTransfer pt = new PPayTransfer(
+										transactionId, pi.getPPayAccId(),
+										getTotalAmount(), 0);
+
+								int insertStagingResult = ps
+										.commitPPayTransferStaging(pt);
+
+								if (insertStagingResult == 1)
+									return "showPaymentSuccess";
+
+							}
+
+						}
+
+					} else {
+
+						addActionError("Invalid Details!!! Please re - enter Correct Details");
+						return "showEnterDetails";
+					}
+
+				}
+
+			} else {
+				addActionError("Please Login to Continue");
+				return "showLoginPage";
 			}
-			return "success";
+		} catch (Exception e) {
+			addActionError("Please Login to Continue");
+			return "showLoginPage";
 		}
-		
-		return "showEnterDetails";
+
+		addActionError("Please Login to Continue");
+		return "showLoginPage";
 	}
 
 	public int getBuyerId() {

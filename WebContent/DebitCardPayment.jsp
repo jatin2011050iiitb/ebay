@@ -11,6 +11,7 @@
 <h2 align="center">Welcome to Bank Payment GateWay</h2>
 <h3><s:property value="cartId"/></h3>
 <h3 align="center">Please Enter Your Debit Card Details</h3><br/>
+<h2><s:actionerror /></h2> 
 <h4>Amount to be Paid: <s:property value="totalAmount"/></h4>
 <s:form name="DebitCardPayment" method="POST" action="DebitCardPayment">             
            	<input  name="sellerId" value = "<s:property value="sellerId"/>" type="hidden"/>

@@ -80,7 +80,7 @@ return bankId;
 
 	}
 
-	public BankAccount validateAccountWithoutPassword(int bankId, int accNo, String accHolder) {
+	public BankAccount validateAccountWithoutPassword(int bankId, int accNo) {
 
 
 		BankAccount ba = null;
@@ -96,7 +96,7 @@ return bankId;
 
 			if(resultSet1.next()){
 
-				if(accHolder.equals(resultSet1.getString("accHolder"))){
+				
 					ba  = new BankAccount();
 					ba.setBankId(resultSet1.getInt("bankId"));
 					ba.setAccNo(resultSet1.getInt("accNo"));
@@ -110,7 +110,7 @@ return bankId;
 					ba.setCreditPermited(resultSet1.getInt("creditPermited"));
 
 
-				}
+				
 
 			}
 
@@ -294,7 +294,7 @@ return bankId;
 	public int netbankingPayment(BankAccount ba, int amount, int NEFTcode ){
 
 		int result = 0;
-		query1 = "update table BankAcc set accBalance=? where bankId=? and NEFTcode=? and  accNo =?";
+		query1 = "update BankAcc set accBalance=? where bankId=? and NEFTcode=? and  accNo =?";
 
 		if(ba.getAccBalance()>= amount){
 
