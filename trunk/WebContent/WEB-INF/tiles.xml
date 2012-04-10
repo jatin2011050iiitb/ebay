@@ -46,7 +46,7 @@
 		<put-attribute name="body" value="/Product_BuyItNow.jsp" />
 	</definition>
 	
-	<!-- BId product  page -->
+	<!-- auction product  page -->
 	<definition name="/productBid.tiles" extends="BaseLayout">
 		<put-attribute name="body" value="/Product_Auction.jsp" />
 	</definition>
@@ -56,5 +56,27 @@
 		<put-attribute name="body" value="/BuyItNow.jsp" />
 		<put-attribute name="searchbar" value="" />
 	</definition>
+	
+	<!-- BId summary  page -->
+	<definition name="/productBidSummary.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/BidSummary.jsp" />
+	</definition>
+	
+	<!-- ShoppingCartMgmt page -->
+	<definition name="/cartMgmt.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/BuyItNow.jsp" />
+		<put-attribute name="searchbar" value="" />
+	</definition>
+	
+		<!-- MyPaisaPay product  page -->
+	<definition name="/MyPaisaPay.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/MyPaisaPayHome.jsp" />
+	</definition>
+	
+		<!-- MyPaisaPayRegister product  page -->
+	<definition name="/MyPaisaPayRegister.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/MyPaisaPayRegister.jsp" />
+	</definition>
+	
 	
 </tiles-definitions>

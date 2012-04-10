@@ -44,32 +44,13 @@
 											 </td>
 						<td valign="top" class="catContent" >
 											
-						<h1><s:property value="shoppingCartItem.productDesc"/></h1><br/>
-						
-						<b>Price: <s:property value="shoppingCartItem.unitPrice"/></b><br/>
-						
-						<s:form name="updateQuantityForm" action="UpdateQuantity"  method="post">
-						<s:textfield label="Quantity:" value="%{shoppingCartItem.quantity}" name="quantity" size="1"/>&nbsp;&nbsp;
-						<s:submit method="execute" value="Update Quantity" align="right" />
+						<s:form name="MyPaisaPayRegisterForm" action="MyPaisaPayRegister"  method="post">
+						<s:textfield label="Bank Name:" name="accNo" size="10"/> 
+						<s:textfield label="Bank Account Number:" name="accNo" size="10"/> <!-- &nbsp;&nbsp; -->						
+						<s:submit method="execute" value="Register" align="right" />
 						</s:form>
 						
-					<%-- 	<b>Quantity:<s:property  value="shoppingCartItem.quantity" /></b><br/> --%>
-						<b>Sub-total <s:property value="shoppingCartItem.subtotal"/></b><br/>
-						<b>Shipment Charges: <s:property value="shoppingCartItem.shippingPrice"/></b><br/>
-						<b>Grand Total: <s:property value="shoppingCart.grandTotal"/></b><br/>
-						SellerId: <s:property value="shoppingCartItem.sellerId"/><br/>
-						Seller Name: <s:property value="shoppingCartItem.sellerName"/><br/>
-						
-							 Shipping Address: <s:property value="buyer.address"/><br/>
-							 				<s:property value="buyer.city"/><br/>
-							 				<s:property value="buyer.state"/>,<s:property value="buyer.country"/><br/>
-							 				Pincode: <s:property value="buyer.pincode"/><br/>
-						<b> You will confirm the order in the next step.</b>	
-						
-						<s:form name="ProceedToPay" action="ProceedToPay"  method="post">
-						<input name=cartId value="<s:property value="shoppingCart.cartId"/>" type="hidden"/>
-						<s:submit name="submit" value="ProceedToPay" id="ProceedToPay_id" align="right" />
-						</s:form>
+				
 						
 	
 	

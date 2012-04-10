@@ -42,6 +42,7 @@ public class ProceedToPay extends ActionSupport {
 
 				ShoppingCart sc = (ShoppingCart) session.get("SessionCarts");
 				setBuyerId(sc.getBuyerId());
+
 				setSellerId(sc.getSellerId());
 				setCartId(sc.getCartId());
 				setTotalAmount(sc.getGrandTotal());
@@ -72,10 +73,9 @@ public class ProceedToPay extends ActionSupport {
 						System.out.println(bankId);
 						return "showNetBankingPayment";
 					}
-					
+
 					addActionError("Please Select An Option to proceed!!");
 					return "showPaymentOptions";
-					
 
 				}
 
@@ -91,8 +91,6 @@ public class ProceedToPay extends ActionSupport {
 		addActionError("Please Login to Continue");
 		return "showLoginPage";
 	}
-	
-	
 
 	public int getBuyerId() {
 		return buyerId;
