@@ -16,6 +16,7 @@
 <h4>Shipping Charges : <s:property value="shippingCharge"/></h4><br/>
 <h4>Total Amount: <s:property value="totalAmount"/></h4><br/>
 <h3 align="center">Select Payment Option and Bank</h3>
+<h2><s:actionerror /></h2>
 <s:form name="ProceedToPay" method="POST" action="ProceedToPay">             
            	<input  name="sellerId" value = "<s:property value="sellerId"/>" type="hidden"/>
            	<input  name="buyerId" value = "<s:property value="buyerId"/>" type="hidden">

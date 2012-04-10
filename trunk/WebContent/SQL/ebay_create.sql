@@ -191,7 +191,7 @@ cartId INT,
 accNo INT,   -- of buyer 
 bankId INT,     -- of buyer
 PPayAccId INT,  -- of seller 
-paymentType ENUM('creditcard','debitcard','banktrasfer'),
+paymentType ENUM('creditcard','debitcard','banktransfer'),
 amount INT,
 pRecvTS TIMESTAMP,
 pPaidTS TIMESTAMP,
