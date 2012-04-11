@@ -56,7 +56,7 @@ public class ProductService {
 		ArrayList<Product> productList=new ArrayList<Product>();
 		
 		try {
-			query1 = "SELECT * FROM product where subcategoryId=?and sold=?";
+			query1 = "SELECT * FROM product where subcategoryId=? and sold=?";
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);

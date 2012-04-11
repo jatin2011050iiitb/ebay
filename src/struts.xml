@@ -23,6 +23,23 @@
 		<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/home.tiles</result>
 		</action>
+		
+		<action name="RegisterShow" class="user.action.RegisterShow" method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/register.tiles</result>
+			<result name="input" type="tiles">/register.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+		</action>
+		
+		<action name="RegisterSubmit" class="user.action.RegisterSubmit" method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="input" type="redirectAction">
+				<param name="actionName">RegisterShow</param>
+			</result>
+			<result name="success" type="tiles">/home.tiles</result>
+			<result name="error" type="tiles">/error.tiles</result>
+			<result name="failure" type="tiles">/register.tiles</result>
+		</action>
 
 		<action name="LoginShow" class="user.action.LoginAction"
 			method="show">

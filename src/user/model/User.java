@@ -19,7 +19,8 @@ public class User {
 	private int pincode;
 	private String emailId;
 	private int phone;
-	private int secretQID; 
+	private int secretQID;
+	private String question;
 	private String secretAnswer; 
 	private int isAdmin;
 	private int PPayAccId;
@@ -43,25 +44,25 @@ public class User {
 	/**
 	 * @return the fName
 	 */
-	public String getfName() {
+	public String getFName() {
 		return fName;
 	}
 	/**
 	 * @param fName the fName to set
 	 */
-	public void setfName(String fName) {
+	public void setFName(String fName) {
 		this.fName = fName;
 	}
 	/**
 	 * @return the lName
 	 */
-	public String getlName() {
+	public String getLName() {
 		return lName;
 	}
 	/**
 	 * @param lName the lName to set
 	 */
-	public void setlName(String lName) {
+	public void setLName(String lName) {
 		this.lName = lName;
 	}
 	/**
@@ -243,6 +244,12 @@ public class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getQuestion() {
+		return question;
+	}
+	public void setQuestion(String question) {
+		this.question = question;
 	}
 
 }

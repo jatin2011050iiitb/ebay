@@ -34,11 +34,11 @@
 		<s:if test="%{#session.Loggedin.getStatus()!=null}" >
 				<s:property value="%{#session.objectuser.getfName()}"/>
 				<b>(<s:property value="#session['userName']"/>)!</b>
-				<a href="logout"> Sign out</a>			
+				<a href="logout.action"> Sign out</a>			
 		</s:if>		
 		<s:else>
 				<a onclick="" rel="nofollow" _sp="m570.l1524" href="LoginShow.action">Sign in</a> or
-				<a rel="nofollow" _sp="m570.l2621" id="registerLink" href="https://scgi.ebay.in/ws/eBayISAPI.dll?RegisterEnterInfo">register</a>
+				<a rel="nofollow" _sp="m570.l2621" id="registerLink" href="RegisterShow.action">register</a>
 		</s:else>	
 		
 			<!-- END: GREETING:SIGNEDOUT --> <span id="bta"></span> </span><span
