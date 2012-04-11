@@ -56,11 +56,12 @@ public class ProductService {
 		ArrayList<Product> productList=new ArrayList<Product>();
 		
 		try {
-			query1 = "SELECT * FROM product where subcategoryId=?";
+			query1 = "SELECT * FROM product where subcategoryId=?and sold=?";
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,subCategoryId);
+			pst.setString(2,"0");
 			resultSet1 = pst.executeQuery();
 			
 			while(resultSet1.next()) {
