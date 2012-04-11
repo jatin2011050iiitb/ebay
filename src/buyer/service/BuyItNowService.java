@@ -61,6 +61,8 @@ public class BuyItNowService {
 				if (resultSet1.next()) {
 					isSuccessful = 1;
 					shoppingCart.setCartId(resultSet1.getInt("cartId"));
+					shoppingCart.setBuyerId(resultSet1.getInt("buyerId"));
+					shoppingCart.setSellerId(resultSet1.getInt("sellerId"));
 				}
 
 			} catch (SQLException e) {

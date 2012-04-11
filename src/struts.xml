@@ -98,11 +98,24 @@
 			<result name="showLoginPage" type="tiles">/ebayLogin.tiles</result>
 		</action>
 		
-		<action name="MyPaisaPayRegister" class="buyer.action.MyPaisaPayRegister"
-			method="execute">
+		<action name="MyPaisaPayRegisterShow" class="seller.action.MyPaisaPayRegister"
+			method="show">
 			<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/MyPaisaPayRegister.tiles</result>
 			<result name="showLoginPage" type="tiles">/ebayLogin.tiles</result>
+		</action>
+		
+		<action name="MyPaisaPayRegisterSubmit" class="seller.action.MyPaisaPayRegister"
+			method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/MyPaisaPayRegisterSuccess.tiles</result>
+			<result name="showLoginPage" type="tiles">/ebayLogin.tiles</result>
+		</action>
+		
+		<action name="BidHistory" class="buyer.action.ShowBidHistory" method="execute">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/productBidHistory.tiles</result>
+			<result name="failure" type="tiles">/productBid.tiles</result>
 		</action>
 		
 		<!-- <action name="ShoppingCartMgmt" class="buyer.action.ShoppingCartMgmtAction"

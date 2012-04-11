@@ -78,5 +78,14 @@
 		<put-attribute name="body" value="/MyPaisaPayRegister.jsp" />
 	</definition>
 	
+		<!-- MyPaisaPayRegisterSuccess product  page -->
+	<definition name="/MyPaisaPayRegisterSuccess.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/MyPaisaPayRegisterSuccess.jsp" />
+	</definition>
+	
+	<!-- BId summary  page -->
+	<definition name="/productBidHistory.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/BidHistory.jsp" />
+	</definition>
 	
 </tiles-definitions>

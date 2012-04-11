@@ -92,6 +92,7 @@ public class ProductService {
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,productId);
 			pst.setString(2,"0");
+			System.out.println("Product setting:"+pst);
 			resultSet1 = pst.executeQuery();
 			
 			resultSet1.next(); 
@@ -129,6 +130,7 @@ public class ProductService {
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,product.getSellerId());
+			System.out.println("Product setting:"+pst);
 			resultSet1 = pst.executeQuery();
 			
 			
@@ -156,6 +158,7 @@ public class ProductService {
 				con = DBconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,productId);
+				System.out.println("Product setting:"+pst);
 				resultSet1 = pst.executeQuery();
 				
 				resultSet1.next(); 
@@ -178,6 +181,7 @@ public class ProductService {
 				con = DBconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,productId);
+				System.out.println("Product setting:"+pst);
 				resultSet1 = pst.executeQuery();
 				
 				resultSet1.next(); 
@@ -199,6 +203,7 @@ public class ProductService {
 				con = DBconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,product.getAuctionId());
+				System.out.println("Product setting:"+pst);
 				resultSet1 = pst.executeQuery();
 				
 				
