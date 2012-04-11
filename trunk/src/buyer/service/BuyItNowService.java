@@ -48,7 +48,7 @@ public class BuyItNowService {
 		if (isSuccessful == 1) {
 			try {
 				isSuccessful = 0;
-				query1 = "SELECT cartId FROM shoppingCart where buyerId=? and sellerId=? and paymentConfirmation=?";
+				query1 = "SELECT * FROM shoppingCart where buyerId=? and sellerId=? and paymentConfirmation=?";
 				dbconn = new DBconn();
 				con = DBconn.getConnection();
 				pst = con.prepareStatement(query1);

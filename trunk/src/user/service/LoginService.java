@@ -71,8 +71,8 @@ public class LoginService {
 			System.out.println("query is::: "+ query);
 			
 			System.out.println("First name is in populate-------"+ resultSet1.getString("fName") );
-			userbean.setfName(resultSet1.getString("fName"));
-			userbean.setlName(resultSet1.getString("lName"));
+			userbean.setFName(resultSet1.getString("fName"));
+			userbean.setLName(resultSet1.getString("lName"));
 			userbean.setUserId(resultSet1.getInt("userId"));
 			userbean.setAddress(resultSet1.getString("address"));
 			userbean.setCity(resultSet1.getString("city"));

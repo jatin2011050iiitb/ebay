@@ -31,6 +31,10 @@
 		<put-attribute name="body" value="/categorylist.jsp" />
 	</definition>
 	
+	<definition name="/register.tiles" extends="BaseLayout">
+        <put-attribute name="body" value="/register.jsp" />
+    </definition>
+    
 	<!--sub category page -->
 	<definition name="/subcat.tiles" extends="BaseLayout">
 		<put-attribute name="body" value="/subCategoryList.jsp" />
