@@ -241,3 +241,40 @@ begin
   update auctionProduct set highestBidPrice=(select max(bidValue) from bid_list WHERE auctionId=NEW.auctionId), finalBidderId=(select bidderId from bid_list where bidValue=(select max(bidValue) from bid_list WHERE auctionId=NEW.auctionId)) where auctionProduct.auctionId=NEW.auctionId;
 end$$
 DELIMITER ;
+-- ---------------------------------------------------------------------------------------------------------------------
+
+-- TRIGGER FOR UPDATING CART WHEN BIDDING HAS TIMEDOUT
+
+DELIMITER $$
+CREATE TRIGGER update_cart_before BEFORE INSERT ON shoppingCartItem FOR EACH ROW
+BEGIN
+  IF NOT EXISTS(SELECT * FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId) THEN
+    INSERT INTO shoppingCart(buyerId, sellerId, paymentConfirmation, recieptConfirmation) VALUES(NEW.buyerId, NEW.sellerId, '0', '0');
+  END IF;
+  SET NEW.cartId = (SELECT cartId FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId);
+END$$
+DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE TRIGGER update_cart_after AFTER INSERT ON shoppingCartItem FOR EACH ROW
+BEGIN
+  UPDATE shoppingCart SET grandTotal=(NEW.subtotal + NEW.quantity * NEW.shippingPrice) WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId;
+END$$
+DELIMITER ;
+-- ---------------------------------------------------------------------------------------------------------------------
+
+-- EVENT TO SET THE STATUS OF PRODUCT TO SOLD WHEN ENDDATE HAS CROSSED. ALSO INSERT IN TABLE SHOPPING CART ITEM
+SET GLOBAL event_scheduler = 1;
+delimiter |
+CREATE EVENT end_bid
+	ON SCHEDULE
+	EVERY 1 SECOND
+	DO
+    BEGIN
+      INSERT INTO shoppingCartItem(productId,productDesc,quantity,unitPrice,subtotal,shippingPrice,buyerId,sellerId,sellerName,itemDeselected)
+          SELECT p.productId, p.productDesc, 1, a.highestBidPrice, a.highestBidPrice, p.shipmentCharges, a.finalBidderId, p.sellerId, u.fName, 0
+              FROM product p, auctionProduct a, userInfo u WHERE p.productId=a.productId AND u.userId=p.sellerId AND p.sold='0' AND p.endDate < now();
+      UPDATE product SET sold='1' WHERE endDate < now() AND productId in (SELECT productId FROM auctionProduct);
+    END;
