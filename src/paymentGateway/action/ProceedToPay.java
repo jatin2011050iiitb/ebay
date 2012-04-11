@@ -41,13 +41,16 @@ public class ProceedToPay extends ActionSupport {
 			if (logged.getStatus() == 1) {
 
 				ShoppingCart sc = (ShoppingCart) session.get("SessionCarts");
+				
+				System.out.println("shopping cart details="+sc.getBuyerId());
+				System.out.println("shopping cart details="+sc.getSellerId());
+				System.out.println("shopping cart details="+sc.getCartId());
+				System.out.println("shopping cart details="+sc.getGrandTotal());
+				
 				setBuyerId(sc.getBuyerId());
-
 				setSellerId(sc.getSellerId());
 				setCartId(sc.getCartId());
 				setTotalAmount(sc.getGrandTotal());
-				setShippingCharge(sc.getShipmentCharges());
-				setAmount(sc.getGrandTotal() - sc.getShipmentCharges());
 
 				if (submit.equals("ProceedToPay")) {
 
