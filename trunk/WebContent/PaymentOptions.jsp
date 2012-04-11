@@ -10,11 +10,10 @@
 <body>
 <h3 align="center">Your Cart Details</h3><br/>
 <h4>Buyer Id: <s:property value="buyerId"/></h4><br/>
+<h4>Seller Id: <s:property value="sellerId"/></h4><br/>
 <h3>Cart Id: <s:property value="cartId"/></h3>
-<h4>Product: <s:property value="productName"/></h4><br/>
-<h4>Amount: <s:property value="amount"/></h4><br/>
-<h4>Shipping Charges : <s:property value="shippingCharge"/></h4><br/>
-<h4>Total Amount: <s:property value="totalAmount"/></h4><br/>
+<h4>Grand Total: <s:property value="amount"/></h4><br/>
+
 <h3 align="center">Select Payment Option and Bank</h3>
 <h2><s:actionerror /></h2>
 <s:form name="ProceedToPay" method="POST" action="ProceedToPay">             

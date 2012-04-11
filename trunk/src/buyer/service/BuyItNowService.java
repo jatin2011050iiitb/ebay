@@ -156,7 +156,7 @@ public class BuyItNowService {
 		
 	 try {
 		 	shoppingCart.setCartId(0);
-			query1 = "SELECT cartId FROM shoppingCart where buyerId=? and sellerId=? and paymentConfirmation=?";
+			query1 = "SELECT * FROM shoppingCart where buyerId=? and sellerId=? and paymentConfirmation=?";
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
@@ -169,6 +169,8 @@ public class BuyItNowService {
 			if (resultSet1.next()) {
 				
 				shoppingCart.setCartId(resultSet1.getInt("cartId"));
+				shoppingCart.setBuyerId(resultSet1.getInt("buyerId"));
+				shoppingCart.setSellerId(resultSet1.getInt("sellerId"));
 			System.out.println("cart id exists id="+shoppingCart.getCartId());
 			}
 
