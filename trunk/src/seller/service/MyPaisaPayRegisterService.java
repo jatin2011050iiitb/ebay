@@ -34,6 +34,8 @@ public class MyPaisaPayRegisterService {
 			
 			while(resultSet1.next()){
 				
+				
+				
 				Bank bank =new Bank();
 				bank.setBankId(resultSet1.getInt("bankId"));
 				bank.setBankName(resultSet1.getString("bankName"));
