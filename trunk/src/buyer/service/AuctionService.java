@@ -172,7 +172,7 @@ public class AuctionService {
 	
 	public ArrayList<Bid> getBiddingHistory(int auctionId) {
 		ArrayList<Bid> bidHistoryList = new ArrayList<Bid>();
-		query1 = "SELECT bidderId, bidValue, bidTS FROM bid_list WHERE auctionId=?";
+		query1 = "SELECT bidderId, bidValue, bidTS FROM bid_list WHERE auctionId=? order by bidValue DESC";
 		
 		try {
 			dbconn = new DBconn();
