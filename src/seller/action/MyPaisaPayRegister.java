@@ -22,6 +22,7 @@ public class MyPaisaPayRegister extends ActionSupport{
 		return "success";
 	}
 	
+	
 	public String execute(){
 	BankAccount bankAccount =new BankAccount();
 	bankAccount.setAccNo(bankAcc);
