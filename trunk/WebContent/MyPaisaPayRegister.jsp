@@ -20,7 +20,7 @@
 			</div>
 			<div class="r3_hm">
 				<div style="height: 20px; overflow: auto">
-					<h2 class="g-m g-m0">eBay select Shipping and Payment Method</h2>
+					<h2 class="g-m g-m0">PaisaPay Registration</h2>
 				</div>
 			</div>
 		</div>
@@ -32,38 +32,31 @@
 						<a name="mainContent"></a>
 						<table border="0" cellpadding="0" cellspacing="0">
 							<tbody>
-				
-			<img border="1" src="images_product/(<s:property value="shoppingCartItem.productId"/>).JPG"
-						alt="Pic not available" width="150px" height="150px" />
-				
-										<tr>
-										
-										<td valign="top" class="catContent">
-									
-						
-											 </td>
-						<td valign="top" class="catContent" >
-											
-						<s:form name="MyPaisaPayRegisterForm" action="MyPaisaPayRegister"  method="post">
-						<s:textfield label="Bank Name:" name="accNo" size="10"/> 
-						<s:textfield label="Bank Account Number:" name="accNo" size="10"/> <!-- &nbsp;&nbsp; -->						
-						<s:submit method="execute" value="Register" align="right" />
-						</s:form>
-						
-				
-						
-	
-	
-								
-	
+
+
+
+								<tr>
+
+									<td valign="top" class="catContent"></td>
+									<td valign="top" class="catContent"><s:form
+											name="MyPaisaPayRegisterForm" action="MyPaisaPayRegisterSubmit"
+											method="post">
+											<s:select class="gh-sb" size="1" label="Bank Name"
+												 name="bankIdSelected" list="bankList"
+												listKey="bankId" listValue="bankName" headerKey="0"
+												headerValue="Select Bank">
+											</s:select>
+											<s:textfield label="Bank Account Number" name="accNo"
+												size="10" />
+											<!-- &nbsp;&nbsp; -->
+											<s:submit method="execute" value="Register" align="right" />
+										</s:form>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
-			<div class="r3_fm r3_s">
-				
-			</div>
+			<div class="r3_fm r3_s"></div>
 		</div>
 	</div>
 

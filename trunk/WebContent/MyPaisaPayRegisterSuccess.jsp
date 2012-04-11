@@ -20,7 +20,7 @@
 			</div>
 			<div class="r3_hm">
 				<div style="height: 20px; overflow: auto">
-					<h2 class="g-m g-m0">My PaisaPay Home</h2>
+					<h2 class="g-m g-m0">PaisaPay Registration Completed</h2>
 				</div>
 			</div>
 		</div>
@@ -30,30 +30,23 @@
 					<div>
 						<h1 class="hidh1">Home Page</h1>
 						<a name="mainContent"></a>
-						<!-- <h2 align="center" >Buyer Tasks</h2><br/> -->
-						<h4><a href="MyPaisaPayConfirm.action">Confirm Item Delivery</a></h4>
-						<!-- <h2 align="center">Seller Tasks</h2><br/> -->
-						<h4><a href="MyPaisaPayShipmentDetails.action">Enter Item Delivery Info</a></h4>
-						<h4><a href="MyPaisaPayRegisterShow.action">Register With PaisaPay</a></h4>
 						<table border="0" cellpadding="0" cellspacing="0">
 							<tbody>
+
+
+
 								<tr>
-								
-									<td valign="top" class="catContent"><h3>
-										
-									</h3> </td>
-								
-								</tr>		
+
+									<td valign="top" class="catContent"></td>
+								     <b>Detail goes here</b>
+									<td valign="top" class="catContent">
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
-			<div class="r3_fm r3_s">
-				
-			</div>
+			<div class="r3_fm r3_s"></div>
 		</div>
 	</div>
 
 </body>
-</html>

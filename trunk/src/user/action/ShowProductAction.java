@@ -16,14 +16,15 @@ public class ShowProductAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private int categoryId;
 	private int subCategoryId; 
-	private int productId;
+	private String productId;
 	private ArrayList<Product> productList;
 	private Product product;
 	private Map session;
 	public String execute() {
-	
+		
+	System.out.println("ShowProductAction Product id:"+productId);
 		ProductService productservice =new ProductService();
-		setProduct(productservice.getProduct(getProductId()));
+		setProduct(productservice.getProduct(Integer.parseInt(getProductId())));
 		
 		Map session=ActionContext.getContext().getSession();
 		session.put("SessionProduct", this.product);
@@ -61,11 +62,12 @@ public class ShowProductAction extends ActionSupport{
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	public int getProductId() {
+	public String getProductId() {
 		return productId;
 	}
-	public void setProductId(int productId) {
+	public void setProductId(String productId) {
 		this.productId = productId;
 	}
+	
 
 }

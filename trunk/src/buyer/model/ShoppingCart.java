@@ -10,10 +10,10 @@ public class ShoppingCart {
 	private int paymentConfirmation; // ENUM('0','1','-1') (0=unpaid 1=success -1=failure)
 	private int recieptConfirmation; // ENUM('1','2')       (1=recieved 2=not recieved)
 	private Timestamp paymentTS;
-	////////////
+	//////////// seller will enter details below. not for display by bank.
 	private String courierCompany;
 	private String shippingAddress;
-	private int shipmentCharges;
+
 	private String ETD; 		// ETA=Estimated time of delivary for Ex. 5days, 3 days etc
 	private int shipmentStatus; //    ENUM(0,1,2)=('processing','shipped','delivered'),
 	
@@ -71,12 +71,7 @@ public class ShoppingCart {
 	public void setShippingAddress(String shippingAddress) {
 		this.shippingAddress = shippingAddress;
 	}
-	public int getShipmentCharges() {
-		return shipmentCharges;
-	}
-	public void setShipmentCharges(int shipmentCharges) {
-		this.shipmentCharges = shipmentCharges;
-	}
+
 	public String getETD() {
 		return ETD;
 	}
