@@ -15,7 +15,7 @@
 <h4>Amount to be Paid: <s:property value="totalAmount"/></h4>
 <s:form name="NetBankingPayment" method="POST" action="NetBankingPayment">             
            	<input  name="bankId" value = "<s:property value="bankId"/>" type="hidden">
-      		<s:textfield name ="accNo" label = "Credit Card Number" id="accNo_id"></s:textfield>
+      		<s:textfield name ="accNo" label = "Account Number" id="accNo_id"></s:textfield>
       		<s:password name ="NEFTcode" label = "NEFT code" id="NEFTcode_id"></s:password>
       		<s:submit name="submit" id="ProceedToPay_id" value="ConfirmPayment" align= "center"/><br>
 </s:form>
