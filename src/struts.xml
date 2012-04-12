@@ -172,6 +172,10 @@
 		<result name="showLoginPage" type = "redirectAction">LoginShow</result>    
 		<result name="showEnterDetails">/NetBankingPayment.jsp</result>    
 		</action>
-	
+		
+		<action name="ShowBankAccount" class="paymentGateway.action.ShowBankAccount">
+		<result name="ShowDetails">/BankAccountDetails.jsp</result>   
+		<result name="input">/BankAccountDetails.jsp</result>    
+		</action>
 	</package>
 </struts>
