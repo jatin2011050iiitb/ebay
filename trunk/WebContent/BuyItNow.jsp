@@ -66,9 +66,9 @@
 							 				Pincode: <s:property value="buyer.pincode"/><br/>
 						<b> You will confirm the order in the next step.</b>	
 						
-						<s:form name="ProceedToPay" action="ProceedToPay"  method="post">
+						<s:form name="ProceedToPay" method="POST" action="ProceedToPay">  
 						<input name=cartId value="<s:property value="shoppingCart.cartId"/>" type="hidden"/>
-						<s:submit name="submit" value="ProceedToPay" id="ProceedToPay_id" align="right" />
+						<s:submit name="submit" id="ProceedToPay_id" value="ProceedToPay" align= "right"/><br>
 						</s:form>
 						
 	

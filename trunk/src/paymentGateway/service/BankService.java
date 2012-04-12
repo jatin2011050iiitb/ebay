@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Date;
+
 import paymentGateway.model.BankAccount;
 import ebay.util.DBconn;
 
@@ -181,7 +184,7 @@ return bankId;
 	public int creditCardPayment(BankAccount ba, int amount ){
 
 		int result = 0;
-		query1 = "update table BankAcc set creditPermited=? where bankId=? and creditCardNo=? and  creditCardVerfNo =?";
+		query1 = "update BankAcc set creditPermited=? where bankId=? and creditCardNo=? and  creditCardVerfNo =?";
 
 		if(ba.getCreditPermited()>= amount){
 
@@ -322,6 +325,56 @@ return bankId;
 		return result;
 	}
 
+	public int updateShoppingCart(int cartId, String paymentConfirmation, String recieptConfirmation){
+		
+		int result = 0;
+		
+		query1 = "update ShoppingCart set paymentConfirmation = ? , recieptConfirmation =? where cartId = ?";
+		try{
+
+			dbconn = new DBconn();
+			con = DBconn.getConnection();
+			pst = con.prepareStatement(query1);
+			pst.setString(1,paymentConfirmation);
+			pst.setString(2,recieptConfirmation);
+			pst.setInt(3,cartId);
+			result = pst.executeUpdate();
+
+		}catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			dbconn.close(resultSet1);
+			dbconn.close(pst);
+			dbconn.close(con);
+		}
+		return result;
+	}
+
+public int updateShoppingCartWithTS(int cartId, String paymentConfirmation, String recieptConfirmation){
+		
+		int result = 0;
+		
+		query1 = "update ShoppingCart set paymentConfirmation = ? , recieptConfirmation =?,paymentTS=? where cartId = ?";
+		try{
+
+			dbconn = new DBconn();
+			con = DBconn.getConnection();
+			pst = con.prepareStatement(query1);
+			pst.setString(1,paymentConfirmation);
+			pst.setString(2,recieptConfirmation);
+			pst.setTimestamp(3, new Timestamp(new Date().getTime()));
+			pst.setInt(4,cartId);
+			result = pst.executeUpdate();
+
+		}catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			dbconn.close(resultSet1);
+			dbconn.close(pst);
+			dbconn.close(con);
+		}
+		return result;
+	}
 
 	/**
 	 * @param args
