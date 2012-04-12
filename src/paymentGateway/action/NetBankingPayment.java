@@ -87,6 +87,14 @@ public class NetBankingPayment extends ActionSupport {
 
 								int insertStagingResult = ps
 										.commitPPayTransferStaging(pt);
+								
+								try{
+									int shoppingCartResult = bs.updateShoppingCart(sc.getCartId(),"1","2");
+									int shoppinCartTSResult = bs.updateShoppingCartWithTS(sc.getCartId(),"1","2");
+									System.out.println("shoppingCartResult="+ shoppingCartResult +"  shoppinCartTSResult="+shoppinCartTSResult);
+									}catch(Exception e){
+										System.out.println("Some error while updating cart details");
+									}
 
 								if (insertStagingResult == 1)
 									return "showPaymentSuccess";
