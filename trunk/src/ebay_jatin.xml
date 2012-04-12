@@ -6,16 +6,40 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default" namespace="/">
-
-		<action name="login" class="edu.iiitb.mysite.action.loginAction">
-			<result name="success" type="tiles">/ebayLogin.tiles</result>
-			<result name="showLogin" type="tiles">/ebayLogin.tiles</result>
-			<result name="notActivated" type="tiles">/mysite_jsps/notActivated.jsp
-			</result>
+	<action name="GatewayDemo" class="paymentGateway.action.GatewayDemo">
+		<result name="success">/GatewayDemo.jsp</result>
 		</action>
-
-
-
-
+		
+		<action name="ProceedToPay" class="paymentGateway.action.ProceedToPay">
+		<result name="showPaymentOptions">/PaymentOptions.jsp</result>
+		<result name="showDebitCardPayment" >/DebitCardPayment.jsp</result>
+		<result name="showCreditCardPayment" >/CreditCardPayment.jsp</result>
+		<result name="showNetBankingPayment" >/NetBankingPayment.jsp</result>
+		<result name="showLoginPage" type = "redirectAction">LoginShow</result>
+		</action>
+		
+		
+		<action name="DebitCardPayment" class="paymentGateway.action.DebitCardPayment">
+		<result name="showPaymentSuccess">/PaymentSuccess.jsp</result>
+		<result name="showLoginPage" type = "redirectAction">LoginShow</result>    
+		<result name="showEnterDetails">/DebitCardPayment.jsp</result>    
+		</action>
+		
+		<action name="CreditCardPayment" class="paymentGateway.action.CreditCardPayment">
+		<result name="showPaymentSuccess">/PaymentSuccess.jsp</result>
+		<result name="showLoginPage" type = "redirectAction">LoginShow</result>    
+		<result name="showEnterDetails">/CreditCardPayment.jsp</result>    
+		</action>
+		
+		<action name="NetBankingPayment" class="paymentGateway.action.NetBankingPayment">
+		<result name="showPaymentSuccess">/PaymentSuccess.jsp</result>
+		<result name="showLoginPage" type = "redirectAction">LoginShow</result>    
+		<result name="showEnterDetails">/NetBankingPayment.jsp</result>    
+		</action>
+		
+		<action name="ShowBankAccount" class="paymentGateway.action.ShowBankAccount">
+		<result name="ShowDetails">/BankAccountDetails.jsp</result>   
+		<result name="input">/BankAccountDetails.jsp</result>    
+		</action>
 	</package>
 </struts>
