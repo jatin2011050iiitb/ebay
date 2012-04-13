@@ -1,19 +1,23 @@
 package seller.action;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import paymentGateway.model.Bank;
 import paymentGateway.model.BankAccount;
 import seller.service.MyPaisaPayRegisterService;
+import user.model.User;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPaisaPayRegister extends ActionSupport{
 	
 	private static final long serialVersionUID = 1L;
 	ArrayList<Bank> bankList = new ArrayList<Bank>();
-	private int bankIdSelected;
+	private int bankIdSelected; 
 	private int bankAcc;
+	private User user;
 	
 
 	public String show(){
@@ -24,9 +28,16 @@ public class MyPaisaPayRegister extends ActionSupport{
 	
 	
 	public String execute(){
+	
+	Map session = ActionContext.getContext().getSession();
+	user =(User) session.get("objectuser");
+		System.out.println("bank acc="+bankAcc);
+		System.out.println("bank id="+bankIdSelected);
 	BankAccount bankAccount =new BankAccount();
 	bankAccount.setAccNo(bankAcc);
 	bankAccount.setBankId(bankIdSelected);
+	MyPaisaPayRegisterService myPaisaPayRegisterService = new MyPaisaPayRegisterService();
+	myPaisaPayRegisterService.RegisterPaisaPay(bankAccount,user.getUserId());
 	
 		return "success";
 	}

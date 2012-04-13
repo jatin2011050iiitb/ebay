@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import paymentGateway.model.Bank;
+import paymentGateway.model.BankAccount;
 
 import ebay.util.DBconn;
 
@@ -27,7 +28,7 @@ public class MyPaisaPayRegisterService {
 			
 			query1 = "SELECT * from bankMaster";
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			System.out.println(pst);
 			resultSet1 = pst.executeQuery();
@@ -50,4 +51,54 @@ public class MyPaisaPayRegisterService {
 		}
 	return bankList;	
 	}
+
+	public void RegisterPaisaPay(BankAccount bankAcc, int ebayUserId){
+		isSuccessful = 0;
+		try {
+			query1 = "INSERT into PPayAccInfo (ebayUserId,bankId,accNo,PPayBalance,rating) VALUES(?,?,?,?,?) ";
+			dbconn = new DBconn();
+			con = dbconn.getConnection();
+			pst = con.prepareStatement(query1);
+			pst.setInt(1, ebayUserId);
+			pst.setInt(2, bankAcc.getBankId());
+			pst.setInt(3, bankAcc.getAccNo());
+			pst.setInt(4, 0);
+			pst.setInt(5, 0);
+			System.out.println(pst);
+			isSuccessful = pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			dbconn.close(pst);
+			dbconn.close(con);
+		}
+		/*if(isSuccessful==1){
+			isSuccessful=0;
+			try {
+				query1 = "UPDATE userInfo SET PPayAccId=? where userId=? ";
+				dbconn = new DBconn();
+				con = DBconn.getConnection();
+				pst = con.prepareStatement(query1);
+				pst.setInt(1, ebayUserId);
+				pst.setInt(2, bankAcc.getBankId());
+				pst.setInt(3, bankAcc.getAccNo());
+				pst.setInt(4, 0);
+				pst.setInt(5, 0);
+				System.out.println(pst);
+				isSuccessful = pst.executeUpdate();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			} finally {
+				dbconn.close(pst);
+				dbconn.close(con);
+			}
+		}*/
+	}
+
+
+
+
+
+
+
 }
