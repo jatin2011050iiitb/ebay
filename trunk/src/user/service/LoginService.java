@@ -26,7 +26,7 @@ public class LoginService {
 		
 		query1 = "SELECT * FROM userCredentials WHERE username=? and password=?";
 		dbconn = new DBconn();
-		con = DBconn.getConnection();
+		con = dbconn.getConnection();
 		pst = con.prepareStatement(query1);
 		pst.setString(1, username);
 		pst.setString(2, password);
@@ -62,7 +62,7 @@ public class LoginService {
 			String query = "SELECT * FROM userinfo WHERE userId=?";
 
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query);
 			pst.setInt(1, userid);
 			resultSet1 = pst.executeQuery();
@@ -81,6 +81,7 @@ public class LoginService {
 			userbean.setPincode(resultSet1.getInt("pincode"));
 			userbean.setGender(resultSet1.getString("gender"));
 			userbean.setEmailId(resultSet1.getString("emailId"));
+			userbean.setPPayAccId(resultSet1.getInt("pPayAccId"));
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 
