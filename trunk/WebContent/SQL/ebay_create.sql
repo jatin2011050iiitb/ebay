@@ -16,7 +16,7 @@ CREATE TABLE bankMaster(
 bankId INT AUTO_INCREMENT PRIMARY KEY,
 bankName VARCHAR(50)
 );
-
+ 
 CREATE TABLE BankAcc(
 bankId INT,
 accNo INT AUTO_INCREMENT PRIMARY KEY,
@@ -147,6 +147,13 @@ sellerId INT,
 paymentConfirmation ENUM('0','1','-1'), -- 0=unpaid 1=success -1=failure
 recieptConfirmation ENUM('1','2'), -- 1=recieved 2=not recieved
 paymentTS TIMESTAMP NULL, 
+courierNum INT,
+courierCompany VARCHAR(20),
+shippingAddress VARCHAR(500),
+shipmentCharges INT,
+ETD int, -- ETA=Estimated time of delivary for Ex. 5days, 3 days etc
+shipmentStatus ENUM('processing','shipped','delivered'),
+shipTS TIMESTAMP NULL,
 FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
 FOREIGN KEY (buyerId) REFERENCES userCredentials(userId)
 );
@@ -170,7 +177,7 @@ FOREIGN KEY (buyerId) REFERENCES userCredentials(userId),
 FOREIGN KEY (cartId) REFERENCES shoppingCart(cartId)
 );
 
-CREATE TABLE shipmentDetail(
+/*CREATE TABLE shipmentDetail(
 cartId INT PRIMARY KEY,
 courierCompany VARCHAR(20),
 shippingAddress VARCHAR(500),
@@ -178,7 +185,7 @@ shipmentCharges INT,
 ETD VARCHAR(5), -- ETA=Estimated time of delivary for Ex. 5days, 3 days etc
 shipmentStatus ENUM('processing','shipped','delivered'),
 FOREIGN KEY (cartId) REFERENCES shoppingCart(cartId)
-);
+);*/
 
 -- ---------------------------------------------------------------------------------------------------------------------
 -- EBAY TRANSACTIONS
@@ -238,7 +245,9 @@ FOREIGN KEY (subcategoryId) REFERENCES subcategory(subcategoryId)
 DELIMITER $$
 create trigger update_highest_bid after insert on bid_list FOR EACH ROW
 begin
-  update auctionProduct set highestBidPrice=(select max(bidValue) from bid_list WHERE auctionId=NEW.auctionId), finalBidderId=(select bidderId from bid_list where bidValue=(select max(bidValue) from bid_list WHERE auctionId=NEW.auctionId)) where auctionProduct.auctionId=NEW.auctionId;
+  update auctionProduct set highestBidPrice=(select max(bidValue) from bid_list WHERE auctionId=NEW.auctionId), 
+  finalBidderId=(select bidderId from bid_list where bidValue=(select max(bidValue) from bid_list
+  WHERE auctionId=NEW.auctionId)) where auctionProduct.auctionId=NEW.auctionId;
 end$$
 DELIMITER ;
 -- ---------------------------------------------------------------------------------------------------------------------
