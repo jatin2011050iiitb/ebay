@@ -24,22 +24,26 @@ public class BuyItNowAction extends ActionSupport{
 		buyer =(User) session.get("objectuser");
 		productc =(Product)session.get("SessionProduct");
 		
+		String completeAddress=null;
+		completeAddress=buyer.getAddress()+"\n"+buyer.getCity()+"\n"+buyer.getState()+","+buyer.getCountry()+
+		"\n"+"Pincode:"+buyer.getPincode();
+		
 		System.out.println("Hi. in buyitnow action..");
 		System.out.println("seller id retried from session"+ productc.getSellerId());
 		
 	BuyItNowService buyItNowService = new BuyItNowService();
-	setShoppingCart(buyItNowService.createShoppingCart(getProductc(),buyer.getUserId()));
+	setShoppingCart(buyItNowService.createShoppingCart(getProductc(),buyer.getUserId(),completeAddress));
 	if(shoppingCart!=null){
 	setShoppingCartItem(buyItNowService.getShoppingCartItem(getShoppingCart(),getProductc(),buyer.getUserId(),quantity));
 	}
-	if(shoppingCartItem!=null){
+	/*if(shoppingCartItem!=null){
 	setShoppingCart(buyItNowService.calcGrandTotalBuyItNow(shoppingCart,shoppingCartItem));	
-	}
+	}*/
 	
-	System.out.println("shopping cart details="+shoppingCart.getBuyerId());
-	System.out.println("shopping cart details="+shoppingCart.getSellerId());
-	System.out.println("shopping cart details="+shoppingCart.getCartId());
-	System.out.println("shopping cart details="+shoppingCart.getGrandTotal());
+	System.out.println("shopping cart details buyer="+shoppingCart.getBuyerId());
+	System.out.println("shopping cart details seller="+shoppingCart.getSellerId());
+	System.out.println("shopping cart details cartid="+shoppingCart.getCartId());
+	
 	
 	session.put("SessionCarts",shoppingCart);
 	session.put("sessionCartItems", shoppingCartItem);
