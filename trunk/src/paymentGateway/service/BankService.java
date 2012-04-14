@@ -25,7 +25,7 @@ public class BankService {
 		query1 = "Select bankId from bankmaster where bankname=?";
 		try{
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setString(1,bankName);
 			resultSet1 = pst.executeQuery();
@@ -56,7 +56,7 @@ return bankId;
 
 		try {
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,bankId);
 			pst.setInt(2, accNo);
@@ -91,7 +91,7 @@ return bankId;
 
 		try {
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,bankId);
 			pst.setInt(2, accNo);
@@ -139,7 +139,7 @@ return bankId;
 
 		try {
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,bankId);
 			pst.setLong(2, creditCardNo);
@@ -191,7 +191,7 @@ return bankId;
 			try{
 
 				dbconn = new DBconn();
-				con = DBconn.getConnection();
+				con = dbconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,ba.getCreditPermited()-amount);
 				pst.setInt(2,ba.getBankId());
@@ -221,7 +221,7 @@ return bankId;
 
 		try {
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,bankId);
 			pst.setLong(2, debitCardNo);
@@ -270,7 +270,7 @@ return bankId;
 			try{
 
 				dbconn = new DBconn();
-				con = DBconn.getConnection();
+				con = dbconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,ba.getAccBalance()-amount);
 				pst.setInt(2,ba.getBankId());
@@ -304,7 +304,7 @@ return bankId;
 			try{
 
 				dbconn = new DBconn();
-				con = DBconn.getConnection();
+				con = dbconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,ba.getAccBalance()-amount);
 				pst.setInt(2,ba.getBankId());
@@ -329,15 +329,17 @@ return bankId;
 		
 		int result = 0;
 		
-		query1 = "update ShoppingCart set paymentConfirmation = ? , recieptConfirmation =? where cartId = ?";
+		query1 = "update ShoppingCart set paymentConfirmation = ? , recieptConfirmation =?, shipmentStatus=? where cartId = ?";
 		try{
 
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setString(1,paymentConfirmation);
 			pst.setString(2,recieptConfirmation);
-			pst.setInt(3,cartId);
+			pst.setString(3, "processing");
+			pst.setInt(4,cartId);
+			System.out.println(pst);
 			result = pst.executeUpdate();
 
 		}catch (SQLException e) {
@@ -358,7 +360,7 @@ public int updateShoppingCartWithTS(int cartId, String paymentConfirmation, Stri
 		try{
 
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setString(1,paymentConfirmation);
 			pst.setString(2,recieptConfirmation);
