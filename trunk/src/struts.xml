@@ -13,11 +13,19 @@
 
 		<interceptors>
 			<interceptor name="categoryListInterceptor" class="ebay.interceptor.LoadCategoryList" />
+				<interceptor name="loginInterceptor" class="ebay.interceptor.LoginCheck" />
 			<interceptor-stack name="categoryListInterceptorStack">
 				<interceptor-ref name="defaultStack" />
 				<interceptor-ref name="categoryListInterceptor" />
 			</interceptor-stack>
 		</interceptors>
+		
+		<default-action-ref name="home" />
+		
+		 <global-results>
+            <result name="login" type="redirectAction">LoginShow.action</result>
+            <result name="error">/Error.jsp</result>
+        </global-results>
 
 		<action name="home" class="user.action.HomeAction" method="execute">
 		<interceptor-ref name="categoryListInterceptorStack" />
@@ -89,6 +97,7 @@
 		
 		<action name="BuyItNow" class="buyer.action.BuyItNowAction"
 			method="execute">
+			<interceptor-ref name="loginInterceptor" />
 			<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/BuyItNow.tiles</result>
 			<result name="input" type="tiles">/BuyItNow.tiles</result>
@@ -96,6 +105,7 @@
 		
 		<action name="UpdateQuantity" class="buyer.action.UpdateQuantityAction"
 			method="execute">
+				<interceptor-ref name="loginInterceptor" />
 			<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/BuyItNow.tiles</result>
 			<result name="input" type="tiles">/BuyItNow.tiles</result>
@@ -103,6 +113,7 @@
 		
 		<action name="PlaceBid" class="buyer.action.ProductAuctionAction"
 			method="execute">
+				<interceptor-ref name="loginInterceptor" />
 			<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/productBidSummary.tiles</result>
 			<result name="failure" type="tiles">/productBid.tiles</result>
@@ -110,6 +121,7 @@
 		
 		<action name="MyPaisaPayHome" class="buyer.action.MyPaisaPayAction"
 			method="execute">
+				<interceptor-ref name="loginInterceptor" />
 			<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/MyPaisaPay.tiles</result>
 			<result name="showLoginPage" type="tiles">/ebayLogin.tiles</result>
@@ -117,32 +129,64 @@
 		
 		<action name="MyPaisaPayRegisterShow" class="seller.action.MyPaisaPayRegister"
 			method="show">
-			<interceptor-ref name="categoryListInterceptorStack" />
+			<!-- 	<interceptor-ref name="loginInterceptor" />
+			<interceptor-ref name="categoryListInterceptorStack" /> -->
 			<result name="success" type="tiles">/MyPaisaPayRegister.tiles</result>
 			<result name="showLoginPage" type="tiles">/ebayLogin.tiles</result>
 		</action>
 		
 		<action name="MyPaisaPayRegisterSubmit" class="seller.action.MyPaisaPayRegister"
 			method="execute">
-			<interceptor-ref name="categoryListInterceptorStack" />
+			<!-- 	<interceptor-ref name="loginInterceptor" />
+			<interceptor-ref name="categoryListInterceptorStack" /> -->
 			<result name="success" type="tiles">/MyPaisaPayRegisterSuccess.tiles</result>
 			<result name="showLoginPage" type="tiles">/ebayLogin.tiles</result>
 		</action>
 		
 		<action name="BidHistory" class="buyer.action.ShowBidHistory" method="execute">
+		
 			<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/productBidHistory.tiles</result>
 			<result name="failure" type="tiles">/productBid.tiles</result>
 		</action>
 		
-		<!-- <action name="ShoppingCartMgmt" class="buyer.action.ShoppingCartMgmtAction"
+		<action name="ShoppingCart" class="buyer.action.ShoppingCartAction"
 			method="execute">
+			<interceptor-ref name="loginInterceptor" />
 			<interceptor-ref name="categoryListInterceptorStack" />
 			<result name="success" type="tiles">/cartMgmt.tiles</result>
 			<result name="input" type="tiles">/cartMgmt.tiles</result>
-		</action> -->
+		</action> 
 		
-		 <action name="GatewayDemo" class="paymentGateway.action.GatewayDemo">
+		<action name="ShowCartByCartId" class="buyer.action.ShowCartByCartIdAction"
+			method="execute">
+			<interceptor-ref name="loginInterceptor" />
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/ShowCartByCartId.tiles</result>
+		</action> 
+		
+		<!-- Actions for seller -->
+        <action name="ShowSellerPendingShipmentList" class="seller.action.ShowPendingShipments">
+        <interceptor-ref name="loginInterceptor" />
+        <interceptor-ref name="categoryListInterceptorStack" />
+        <result name="success" type="tiles">/sellerPendingShipmentShow.tiles</result>    
+        </action>
+        
+        <action name="ConfirmShipmentShow" class="seller.action.ConfirmShipmentAction" method="show">
+        <interceptor-ref name="categoryListInterceptorStack" />
+        <result name="success" type="tiles">/sellerConfirmShipment.tiles</result>
+        <result name="input" type="tiles">/sellerConfirmShipment.tiles</result>
+        </action>
+        
+        <action name="ConfirmShipmentSubmit" class="seller.action.ConfirmShipmentAction" >
+        <result name="success" type="redirectAction">ShowSellerPendingShipmentList.action</result>
+       <result name="input" type="redirectAction">ShowSellerPendingShipmentList.action</result>
+        </action>
+		
+		
+		
+<!-- ................................BANK MODULE............................................. -->
+			<action name="GatewayDemo" class="paymentGateway.action.GatewayDemo">
 		<result name="success">/GatewayDemo.jsp</result>
 		</action>
 		
@@ -177,5 +221,6 @@
 		<result name="ShowDetails">/BankAccountDetails.jsp</result>   
 		<result name="input">/BankAccountDetails.jsp</result>    
 		</action>
+	
 	</package>
 </struts>
