@@ -44,7 +44,7 @@ public class ShipmentService {
 			return cartIdList;
 
 		} catch (SQLException e) {
-			System.out.println("Error in AuctionService: setBid()");
+			System.out.println("Error in ShipmentService: getCartIdList()");
 			System.out.println(e.getMessage());
 			return cartIdList;
 		} finally {
@@ -84,7 +84,7 @@ public class ShipmentService {
 			return shipmentItems;
 
 		} catch (SQLException e) {
-			System.out.println("Error in AuctionService: setBid()");
+			System.out.println("Error in ShipmentService: getShipmentItems()");
 			System.out.println(e.getMessage());
 			return shipmentItems;
 		} finally {
@@ -99,7 +99,7 @@ public class ShipmentService {
 	public ShipmentCartDetails getShipmentCartDetails(int cartId) {
 		ShipmentCartDetails shipmentCartDetails = new ShipmentCartDetails();
 		
-		query1 = "SELECT shippingAddress, buyerId,grandTotal,fName FROM shoppingCart,userInfo WHERE shoppingCartItem.cartId=? AND userInfo.userId=shoppingCartItem.buyerId";
+		query1 = "SELECT shippingAddress, buyerId,grandTotal,fName FROM shoppingCart,userInfo WHERE shoppingCart.cartId=? AND userInfo.userId=shoppingCart.buyerId";
 		
 		try {
 			dbconn = new DBconn();
@@ -120,7 +120,7 @@ public class ShipmentService {
 			return shipmentCartDetails;
 
 		} catch (SQLException e) {
-			System.out.println("Error in AuctionService: setBid()");
+			System.out.println("Error in ShipmentService: getShipmentCartDetails()");
 			System.out.println(e.getMessage());
 			return shipmentCartDetails;
 		} finally {
@@ -140,12 +140,18 @@ public class ShipmentService {
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
 			
+			
 			pst.setInt(1, shipmentCart.getShipmentCartDetails().getShipmentId());
+			
 			pst.setString(2, shipmentCart.getShipmentCartDetails().getShipmentCompany());
+			
 			pst.setInt(3, shipmentCart.getShipmentCartDetails().getETD());
-			pst.setString(4, "processing");
+			
+			pst.setString(4, "shipped");
+			
 			pst.setInt(5, shipmentCart.getCartId());
-			pst.setString(6, "shipped");
+			
+			pst.setString(6, "processing");
 			pst.setString(7, "1");
 			
 			pst.executeUpdate();	

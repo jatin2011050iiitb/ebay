@@ -20,6 +20,7 @@ public class ConfirmShipmentAction extends ActionSupport {
 	private Map session;
 	
 	public String show() {
+		
 		// get the id of the seller
 		session=ActionContext.getContext().getSession();
 		user = (User) session.get("objectuser");
