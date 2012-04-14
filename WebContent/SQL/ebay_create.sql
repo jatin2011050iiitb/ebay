@@ -256,24 +256,19 @@ DELIMITER ;
 
 -- TRIGGER FOR UPDATING CART WHEN BIDDING HAS TIMEDOUT
 
+-- TRIGGER FOR UPDATING CART WHEN BIDDING HAS TIMEDOUT
+
 DELIMITER $$
 CREATE TRIGGER update_cart_before BEFORE INSERT ON shoppingCartItem FOR EACH ROW
 BEGIN
-  IF NOT EXISTS(SELECT * FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId) THEN
-    INSERT INTO shoppingCart(buyerId, sellerId, paymentConfirmation, recieptConfirmation) VALUES(NEW.buyerId, NEW.sellerId, '0', '0');
+  IF NOT EXISTS(SELECT * FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId AND paymentConfirmation='0') THEN
+    INSERT INTO shoppingCart(buyerId, sellerId, paymentConfirmation, recieptConfirmation,grandTotal,grandSubTotal) VALUES(NEW.buyerId, NEW.sellerId, '0', '0', 0, 0);
   END IF;
-  SET NEW.cartId = (SELECT cartId FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId);
+  SET NEW.cartId = (SELECT cartId FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId AND paymentConfirmation='0');
 END$$
 DELIMITER ;
 
 
-
-DELIMITER $$
-CREATE TRIGGER update_cart_after AFTER INSERT ON shoppingCartItem FOR EACH ROW
-BEGIN
-  UPDATE shoppingCart SET grandTotal=(NEW.subtotal + NEW.quantity * NEW.shippingPrice) WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId;
-END$$
-DELIMITER ;
 -- ---------------------------------------------------------------------------------------------------------------------
 
 -- EVENT TO SET THE STATUS OF PRODUCT TO SOLD WHEN ENDDATE HAS CROSSED. ALSO INSERT IN TABLE SHOPPING CART ITEM
@@ -289,3 +284,13 @@ CREATE EVENT end_bid
               FROM product p, auctionProduct a, userInfo u WHERE p.productId=a.productId AND u.userId=p.sellerId AND p.sold='0' AND p.endDate < now();
       UPDATE product SET sold='1' WHERE endDate < now() AND productId in (SELECT productId FROM auctionProduct);
     END;
+
+-- ---------------------------------------------------------------------------------------------------------------------
+
+-- upon paisa pay account registration auto setting of PPayAccId in userInfo table
+DELIMITER $$
+CREATE TRIGGER update_PPayinfo AFTER INSERT ON PPayAccInfo FOR EACH ROW
+BEGIN
+  UPDATE userInfo SET PPayAccId=NEW.PPayAccId WHERE userId=NEW.ebayUserId;
+END$$
+DELIMITER ;

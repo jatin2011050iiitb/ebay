@@ -57,7 +57,7 @@
 	
 	<!-- BuyItNow  page -->
 	<definition name="/BuyItNow.tiles" extends="BaseLayout">
-		<put-attribute name="body" value="/BuyItNow.jsp" />
+		<put-attribute name="body" value="/UpdateQuantity.jsp" />
 		<put-attribute name="searchbar" value="" />
 	</definition>
 	
@@ -68,7 +68,14 @@
 	
 	<!-- ShoppingCartMgmt page -->
 	<definition name="/cartMgmt.tiles" extends="BaseLayout">
-		<put-attribute name="body" value="/BuyItNow.jsp" />
+		<put-attribute name="body" value="/shoppingCartArray.jsp" />
+		<put-attribute name="searchbar" value="" />
+	</definition>
+	
+		
+	<!-- ShowCartByCartId page -->
+	<definition name="/ShowCartByCartId.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/ShowSingleCart.jsp" />
 		<put-attribute name="searchbar" value="" />
 	</definition>
 	
@@ -80,16 +87,43 @@
 		<!-- MyPaisaPayRegister product  page -->
 	<definition name="/MyPaisaPayRegister.tiles" extends="BaseLayout">
 		<put-attribute name="body" value="/MyPaisaPayRegister.jsp" />
+		<put-attribute name="searchbar" value="" />
 	</definition>
 	
 		<!-- MyPaisaPayRegisterSuccess product  page -->
 	<definition name="/MyPaisaPayRegisterSuccess.tiles" extends="BaseLayout">
 		<put-attribute name="body" value="/MyPaisaPayRegisterSuccess.jsp" />
+		<put-attribute name="searchbar" value="" />
 	</definition>
 	
 	<!-- BId summary  page -->
 	<definition name="/productBidHistory.tiles" extends="BaseLayout">
 		<put-attribute name="body" value="/BidHistory.jsp" />
-	</definition>
+	</definition><definition name="/ebaySellItemFormShow.tiles" extends="BaseLayout">
+   		<put-attribute name="body" value="/seller/sellerHome.jsp" />
+    </definition>
+<!-- seller   page -->
+    <definition name="/ebaySellItemSuccess.tiles" extends="BaseLayout">
+   		<put-attribute name="body" value="/seller/sellItemSuccess.jsp" />
+    </definition>
+  <!-- UpdateQuantity.jsp page -->  
+    <definition name="/buyitnow.tiles" extends="BaseLayout">
+   		<put-attribute name="body" value="/seller/UpdateQuantity.jsp" />
+    </definition>
+<!-- seller  summary  page -->    
+    <definition name="/auction.tiles" extends="BaseLayout">
+   		<put-attribute name="body" value="/seller/auction.jsp" />
+    </definition>
+	
+	
+<!-- Seller shipment confirmation -->
+    <definition name="/sellerPendingShipmentShow.tiles" extends="BaseLayout">
+        <put-attribute name="body" value="/SellerPendingShipmentList.jsp" />
+    </definition>
+    
+    <definition name="/sellerConfirmShipment.tiles" extends="BaseLayout">
+        <put-attribute name="body" value="/SellerConfirmShipment.jsp" />
+    </definition>
+	
 	
 </tiles-definitions>

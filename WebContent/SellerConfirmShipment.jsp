@@ -8,7 +8,7 @@
 <title>Confirm Payment</title>
 </head>
 <body>
-	<s:form name="ShipmentConfirmationForm" method="POST" action="ConfirmShipmentSubmit.action">
+	<s:form name="ShipmentConfirmationForm" method="POST" action="ConfirmShipmentSubmit">
 		CartID: <s:property value="shipmentCart.cartId" /><br>
 		<input  name="shipmentCart.cartId" value = "<s:property value="shipmentCart.cartId"/>" type="hidden"/>
 		<%-- <s:push value="shipmentCart"> --%>
