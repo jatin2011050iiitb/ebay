@@ -33,7 +33,7 @@
 						<!-- <h2 align="center" >Buyer Tasks</h2><br/> -->
 						<h4><a href="MyPaisaPayConfirm.action">Confirm Item Delivery</a></h4>
 						<!-- <h2 align="center">Seller Tasks</h2><br/> -->
-						<h4><a href="MyPaisaPayShipmentDetails.action">Enter Item Delivery Info</a></h4>
+						<h4><a href="ShowSellerPendingShipmentList.action">Enter Item Delivery Info</a></h4>
 						<h4><a href="MyPaisaPayRegisterShow.action">Register With PaisaPay</a></h4>
 						<table border="0" cellpadding="0" cellspacing="0">
 							<tbody>

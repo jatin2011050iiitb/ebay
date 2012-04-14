@@ -38,7 +38,8 @@
 								<tr>
 
 									<td valign="top" class="catContent"></td>
-								     <b>Detail goes here</b>
+									<br/> <br/>
+								     <b>PaisaPay Registration Completed.</b>
 									<td valign="top" class="catContent">
 							</tbody>
 						</table>

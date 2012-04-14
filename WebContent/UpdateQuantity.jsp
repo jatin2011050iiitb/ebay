@@ -20,7 +20,7 @@
 			</div>
 			<div class="r3_hm">
 				<div style="height: 20px; overflow: auto">
-					<h2 class="g-m g-m0">eBay select Shipping and Payment Method</h2>
+					<h2 class="g-m g-m0">eBay Update quantity</h2>
 				</div>
 			</div>
 		</div>
@@ -56,23 +56,31 @@
 					<%-- 	<b>Quantity:<s:property  value="shoppingCartItem.quantity" /></b><br/> --%>
 						<b>Sub-total <s:property value="shoppingCartItem.subtotal"/></b><br/>
 						<b>Shipment Charges: <s:property value="shoppingCartItem.shippingPrice"/></b><br/>
-						<b>Grand Total: <s:property value="shoppingCart.grandTotal"/></b><br/>
+						<%-- <b>Grand Total: <s:property value="shoppingCart.grandTotal"/></b><br/> --%>
 						SellerId: <s:property value="shoppingCartItem.sellerId"/><br/>
-						Seller Name: <s:property value="shoppingCartItem.sellerName"/><br/>
+						<%-- Seller Name: <s:property value="shoppingCart.sellerName"/><br/> --%>
 						
-							 Shipping Address: <s:property value="buyer.address"/><br/>
+						<%-- 	 Shipping Address: <s:property value="buyer.address"/><br/>
 							 				<s:property value="buyer.city"/><br/>
 							 				<s:property value="buyer.state"/>,<s:property value="buyer.country"/><br/>
-							 				Pincode: <s:property value="buyer.pincode"/><br/>
-						<b> You will confirm the order in the next step.</b>	
+							 				Pincode: <s:property value="buyer.pincode"/><br/> --%>
+						<%-- Shipping Address: <s:property value="shoppingCart.shippingAddress"/><br/> --%>
+						<br/>
+						<br/>
+						<a href="ShowCartByCartId?cartId=<s:property value="shoppingCart.cartId" />" >
+						<b><font size="3">Update/Proceed to Cart</font></b></a>
+						
+						<%-- <a href="ShowCartByCartId?cartId=<s:property value="shoppingCart.cartId" />" >
+						Update/Proceed to Cart<s:property value="shoppingCart.cartId" /></a></h3> --%>
+						<%-- <b> You will confirm the order in the next step.</b>	
 						
 						<s:form name="ProceedToPay" method="POST" action="ProceedToPay">  
 						<input name=cartId value="<s:property value="shoppingCart.cartId"/>" type="hidden"/>
 						<s:submit name="submit" id="ProceedToPay_id" value="ProceedToPay" align= "right"/><br>
-						</s:form>
+						</s:form> --%>
 						
 	
-	
+	</td></tr>
 								
 	
 							</tbody>

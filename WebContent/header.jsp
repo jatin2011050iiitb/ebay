@@ -16,7 +16,7 @@
 			<span class="gh-fst"><a rel="nofollow"
 				href="http://my.ebay.in/ws/eBayISAPI.dll?MyEbay&amp;gbh=1"
 				id="MyEbay" class="              ">My eBay</a> </span><span id="glb_cart"></span>
-			| <a href="http://sell.ebay.in/sell" id="Sell" class="             ">Sell</a><span
+			| <a href="sellItemFormShow.action" id="Sell" class="             ">Sell</a><span
 				id="glb_cart"></span> | <a href="http://hub.ebay.in/community"
 				id="Community" class="           ">Community</a><span id="glb_cart"></span>
 			| <a
@@ -47,7 +47,7 @@
 	<div class="gh-rph" style="text-align: right;">
 		<span class="addllinks"><img width="15" height="15"
 			src="images_page/cart.gif"> <a
-			href="ShoppingCartMgmt.action">My
+			href="ShoppingCart.action">My
 				Shopping Cart</a><span id="glb_cart"></span> <%-- <script
 				type="text/javascript">
 					vjo.darwin.core.ebayheader.cart.Cart
