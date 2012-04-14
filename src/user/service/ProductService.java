@@ -28,7 +28,7 @@ public class ProductService {
 		try {
 			query1 = "SELECT subcategoryId, subcategoryDesc FROM subcategory where categoryId=?";
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,categoryId);
 			resultSet1 = pst.executeQuery();
@@ -68,6 +68,7 @@ public class ProductService {
 				Product product = new Product();
 				product.setProductId(resultSet1.getInt("productId"));
 				product.setProductDesc(resultSet1.getString("productDesc"));
+				product.setSaleType(resultSet1.getInt("saleType"));
 				productList.add(product);
 				//System.out.println(resultSet1.getString("productDesc"));
 			}
@@ -89,7 +90,7 @@ public class ProductService {
 		try {
 			query1 = "SELECT * FROM product where productId=? and sold=?";
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,productId);
 			pst.setString(2,"0");
@@ -128,7 +129,7 @@ public class ProductService {
 		try {
 			query1="SELECT * FROM userinfo WHERE userId=?";
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,product.getSellerId());
 			System.out.println("Product setting:"+pst);
@@ -156,7 +157,7 @@ public class ProductService {
 			try {
 				query1="SELECT * FROM binProduct where productId=?";
 				dbconn = new DBconn();
-				con = DBconn.getConnection();
+				con = dbconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,productId);
 				System.out.println("Product setting:"+pst);
@@ -179,7 +180,7 @@ public class ProductService {
 			try {
 				query1="SELECT * FROM auctionProduct where productId=?";
 				dbconn = new DBconn();
-				con = DBconn.getConnection();
+				con = dbconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,productId);
 				System.out.println("Product setting:"+pst);
@@ -201,7 +202,7 @@ public class ProductService {
 			try {
 				query1="SELECT count(*) as bidcount FROM bid_list where auctionId=?";
 				dbconn = new DBconn();
-				con = DBconn.getConnection();
+				con = dbconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1,product.getAuctionId());
 				System.out.println("Product setting:"+pst);
