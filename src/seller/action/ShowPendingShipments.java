@@ -24,6 +24,7 @@ public class ShowPendingShipments extends ActionSupport {
 		
 		ShipmentService shipmentService = new ShipmentService();
 		setCartIdList(shipmentService.getCartIdList(sellerId));
+		System.out.println("In execute method of ShowPendingShipments");
 		return "success";
 	}
 
