@@ -27,7 +27,7 @@ public class HomeService {
 		
 		try {
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			resultSet1 = pst.executeQuery();
 			

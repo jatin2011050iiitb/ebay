@@ -236,7 +236,7 @@ public class RegistrationService {
 		{
 
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			
 			pst = con.prepareStatement(query6);
 
@@ -270,7 +270,7 @@ public class RegistrationService {
 		try {
 
 			dbconn = new DBconn();
-			con = DBconn.getConnection();
+			con = dbconn.getConnection();
 			pst = con.prepareStatement(query7);
 
 			resultSet = pst.executeQuery();
