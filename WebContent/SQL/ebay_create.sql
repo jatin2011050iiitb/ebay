@@ -142,6 +142,8 @@ FOREIGN KEY (auctionId) REFERENCES auctionProduct(auctionId)
 CREATE TABLE shoppingCart(
 cartId INT AUTO_INCREMENT PRIMARY KEY,
 grandTotal INT,
+grandSubTotal INT,
+shipmentCharges INT,
 buyerId INT,
 sellerId INT,
 sellerName varchar(50),
@@ -151,9 +153,8 @@ paymentTS TIMESTAMP NULL,
 courierNum INT,
 courierCompany VARCHAR(20),
 shippingAddress VARCHAR(500),
-shipmentCharges INT,
 ETD int, -- ETA=Estimated time of delivary for Ex. 5days, 3 days etc but enter just 5, 3 etc
-shipmentStatus ENUM('processing','shipped','delivered'),
+shipmentStatus ENUM('processing','shipped','delivered','failed'),
 shipTS TIMESTAMP NULL,
 FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
 FOREIGN KEY (buyerId) REFERENCES userCredentials(userId)
