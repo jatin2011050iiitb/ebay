@@ -20,7 +20,7 @@
 			</div>
 			<div class="r3_hm">
 				<div style="height: 20px; overflow: auto">
-					<h2 class="g-m g-m0">PaisaPay Registration</h2>
+					<h2 class="g-m g-m0">Shopping Cart Array Page</h2>
 				</div>
 			</div>
 		</div>
@@ -30,29 +30,15 @@
 					<div>
 						<h1 class="hidh1">Home Page</h1>
 						<a name="mainContent"></a>
-						<table border="0" cellpadding="0" cellspacing="0">
-							<tbody>
-
-
-
-								<tr>
-
-									<td valign="top" class="catContent"></td>
-									<td valign="top" class="catContent"><s:form
-											name="MyPaisaPayRegisterForm" action="MyPaisaPayRegisterSubmit"
-											method="post">
-											<s:select class="gh-sb" size="1" label="Bank Name"
-												 name="bankIdSelected" list="bankList"
-												listKey="bankId" listValue="bankName" headerKey="0"
-												headerValue="Select Bank">
-											</s:select>
-											<s:textfield label="Bank Account Number" name="bankAcc"
-												size="10" />
-											<!-- &nbsp;&nbsp; -->
-											<s:submit method="execute" value="Register" align="right" />
-										</s:form>
-							</tbody>
-						</table>
+						<br/><br/>
+						<s:push value="shoppingCartArray">
+							<s:iterator value="shoppingCartList">
+							Go to cart<s:property  value=""/>
+									<a href="ShowCartByCartId?cartId=<s:property value="cartId" />" >
+									CartID <s:property value="cartId" /></a><br/><br/>	
+							</s:iterator>		
+						</s:push>
+						 <s:property value="message"/>
 					</div>
 				</div>
 			</div>

@@ -45,7 +45,11 @@
 				<%-- <img border="1" src="images_product/(<s:property value="productId"/>).JPG"
 				alt="Pic not available" width="75px" height="75px" /> --%>
 				<a href="ShowProduct?productId=<s:property value="productId" />" >
-				<s:property value="productDesc"/> </a></h3><br/>	
+				<s:property value="productDesc"/> </a></h3>
+						<br>Product Type: 
+                        <s:if test="saleType == 1">Buy It Now</s:if>
+                        <s:elseif test="saleType == 2">Auction</s:elseif>
+                        <s:else>Unknown</s:else><br/>	
 										 </s:iterator>
 									
 								

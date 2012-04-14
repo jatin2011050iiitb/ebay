@@ -66,11 +66,12 @@
 						<s:submit method="execute" value="Buy It Now" align="right" />
 						</s:form>
 						
-						<b>Or combine multiple purchases:</b>
+						 <b>Or combine multiple purchases:</b>
 						
-						<s:form name="addToCartForm" action="addToCart.action"  method="post">
+						<s:form name="addToCartForm" action="BuyItNow"  method="post">
+						<s:textfield label="Quantity:" value="1" name="quantity" size="1" type="hidden" />
 						<s:submit method="execute" value="Add To Cart" align="right" />
-						</s:form>
+						</s:form> 
 	
 	
 				
