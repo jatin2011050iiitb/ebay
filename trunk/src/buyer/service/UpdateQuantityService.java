@@ -2,7 +2,6 @@ package buyer.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import buyer.model.ShoppingCartItem;
@@ -13,7 +12,7 @@ public class UpdateQuantityService {
 	private DBconn dbconn = null;
 	private Connection con = null;
 	private PreparedStatement pst = null;
-	private ResultSet resultSet1 = null;
+	//private ResultSet resultSet1 = null;
 	private String query1 = null;
 	private int isSuccessful = 0;
 	
