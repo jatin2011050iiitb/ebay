@@ -219,7 +219,7 @@ transferId INT AUTO_INCREMENT PRIMARY KEY,
 transactionId INT,
 PPayAccId INT,
 amount INT,
-transferStatus INT,
+transferStatus INT, -- 0 means not yet trasferred. 1 means moved from ebay to seller ,-1 refunded
 transferTS TIMESTAMP,
 FOREIGN KEY (transactionId) REFERENCES PPTransaction(transactionId),
 FOREIGN KEY (PPayAccId) REFERENCES PPayAccInfo(PPayAccId)

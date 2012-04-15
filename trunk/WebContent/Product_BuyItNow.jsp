@@ -18,6 +18,15 @@
 				<div class="r3_hm"
 					style="border-width: 1px 1px 0; padding: 0; height: 5px; font-size: 0; overflow: hidden;"></div>
 			</div>
+			<div align="left" style="width: 100%; height: 35px; position: relative; left: 20px; top: 10px;">
+			<s:a href="home">Home</s:a>
+			>
+			<s:a href="ShowSubCategory?categoryId=%{categoryDetails.CategoryId}">${categoryDetails.getCategoryDesc()}</s:a>
+			>
+			<s:a href="ShowProductList?subCategoryId=%{subcategorydetails.SubCategoryId}">${subcategorydetails.getSubCategoryDesc()}</s:a>
+			
+			
+			</div> 
 			<div class="r3_hm">
 				<div style="height: 20px; overflow: auto">
 					<h2 class="g-m g-m0">eBay Product Page</h2>

@@ -44,9 +44,10 @@ public class auctionService {
 				
 				pst.setString(1, product.getProductDesc());
 				
+				System.out.println(pst);
 				resultSet3=pst.executeQuery();
 				
-				System.out.println(pst);
+				
 			
 				if(resultSet3.next())
 				{
@@ -87,9 +88,10 @@ public class auctionService {
 				
 				pst = con.prepareStatement(query1);
 				pst.setString(1, category);
+				System.out.println(pst);
 				resultSet1=pst.executeQuery();
 				
-				System.out.println(pst);
+				
 				
 				if(resultSet1.next())
 				{
@@ -121,9 +123,10 @@ public class auctionService {
 					
 					pst = con.prepareStatement(query2);
 					pst.setString(1, subcategory);
+					System.out.println(pst);
 					resultSet2=pst.executeQuery();
 					
-					System.out.println(pst);
+					
 					
 					if(resultSet2.next())
 					{
@@ -176,11 +179,11 @@ public class auctionService {
 //					System.out.println("product.getShipmentCharges()="+product.getShipmentCharges());
 					pst.setInt(10, product.getShipmentCharges());
 					pst.setString(11, "0");
-					
+					System.out.println("insert query="+pst);
 //					System.out.println("insert query="+pst);
 					pst.executeUpdate();
 					
-					System.out.println("insert query="+pst);
+				
 										
 				}
 
@@ -238,17 +241,18 @@ public class auctionService {
 							dbconn = new DBconn();
 							con = dbconn.getConnection();
 							
-							query5 = "INSERT INTO auctionproduct(productId, basePrice, stepPrice) VALUES(?,?,?)";
+							query5 = "INSERT INTO auctionproduct(productId, basePrice, stepPrice, highestBidPrice) VALUES(?,?,?,?)";
 							
 							pst = con.prepareStatement(query5);
 							
 							pst.setInt(1, productId);
 							pst.setInt(2, auctionproduct.getBasePrice());
 							pst.setInt(3, auctionproduct.getStepPrice());
-							
+							pst.setInt(4, auctionproduct.getBasePrice());
+							System.out.println(pst);
 							pst.executeUpdate();
 							
-							System.out.println(pst);
+							
 														
 						}
 

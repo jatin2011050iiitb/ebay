@@ -14,7 +14,7 @@
 		<div class="gh-hid"></div>
 		<div class="gh-mn">
 			<span class="gh-fst"><a rel="nofollow"
-				href="http://my.ebay.in/ws/eBayISAPI.dll?MyEbay&amp;gbh=1"
+				href="MyEbayHome.action"
 				id="MyEbay" class="              ">My eBay</a> </span><span id="glb_cart"></span>
 			| <a href="sellItemFormShow.action" id="Sell" class="             ">Sell</a><span
 				id="glb_cart"></span> | <a href="http://hub.ebay.in/community"
