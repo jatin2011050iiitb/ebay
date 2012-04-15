@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import ebay.util.DBconn;
 import paymentGateway.model.PPTransaction;
@@ -164,6 +165,46 @@ public int statusUpdatePPayTransfer(int transactionId, int status){
 	}
 	return result;
 	
+}
+
+public ArrayList<PPTransaction> getAllPPTransactions(){
+	ArrayList<PPTransaction> ppt = new ArrayList<PPTransaction>();
+	PPTransaction p;
+	query1 = "select * from PPTransaction";
+	try {
+		dbconn = new DBconn();
+		con = DBconn.getConnection();
+		pst = con.prepareStatement(query1);
+		resultSet1 = pst.executeQuery();
+		
+		while(resultSet1.next()){
+			p = new PPTransaction();
+			p.setTransactionId(resultSet1.getInt("transactionId"));
+			p.setBuyerId(resultSet1.getInt("buyerId"));
+			p.setSellerId(resultSet1.getInt("sellerId"));
+			p.setCartId(resultSet1.getInt("cartId"));
+			p.setAccNo(resultSet1.getInt("accNo"));
+			p.setBankId(resultSet1.getInt("bankId"));
+			p.setPPayAccId(resultSet1.getInt("PPayAccId"));
+			p.setPaymentType(resultSet1.getString("paymentType"));
+			p.setAmount(resultSet1.getInt("amount"));
+			p.setpRecvTS(resultSet1.getTimestamp("pRecvTS"));
+			p.setpPaidTS(resultSet1.getTimestamp("pPaidTS"));
+			p.setpCancelTS(resultSet1.getTimestamp("pCancelTS"));
+			p.setStatus(resultSet1.getString("status"));
+			
+			ppt.add(p);
+					
+		}
+	}catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			dbconn.close(resultSet1);
+			dbconn.close(pst);
+			dbconn.close(con);
+		}
+	
+	return ppt;
 }
 
 }
