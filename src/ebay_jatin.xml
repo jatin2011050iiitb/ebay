@@ -41,5 +41,9 @@
 		<result name="ShowDetails">/BankAccountDetails.jsp</result>   
 		<result name="input">/BankAccountDetails.jsp</result>    
 		</action>
+		
+		<action name="ShowPaisaPayAccount" class="paymentGateway.action.ShowPaisaPayAccount">
+		<result name="success">/PPAccountDetails.jsp</result>   
+		</action>
 	</package>
 </struts>
