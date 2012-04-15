@@ -21,7 +21,7 @@ public class ShoppingCart {
 	//////////// seller will enter details below. not for display by bank.
 	private String courierCompany;
 	private String shippingAddress;
-	private String ETD; 		// ETA=Estimated time of delivary for Ex. 5days, 3 days etc
+	private int ETD; 		// ETA=Estimated time of delivary for Ex. 5days, 3 days etc
 	private String shipmentStatus; //    ENUM(0,1,2)=('processing','shipped','delivered'),
 	
 	public String getSellerName() {
@@ -88,14 +88,12 @@ public class ShoppingCart {
 	public void setShippingAddress(String shippingAddress) {
 		this.shippingAddress = shippingAddress;
 	}
-
-	public String getETD() {
+	public int getETD() {
 		return ETD;
 	}
-	public void setETD(String eTD) {
+	public void setETD(int eTD) {
 		ETD = eTD;
 	}
-	
 	public String getShipmentStatus() {
 		return shipmentStatus;
 	}

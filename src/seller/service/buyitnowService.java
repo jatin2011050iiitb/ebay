@@ -43,10 +43,10 @@ public class buyitnowService {
 				pst = con.prepareStatement(query4);
 				
 				pst.setString(1, product.getProductDesc());
-				
+				System.out.println(pst);
 				resultSet3=pst.executeQuery();
 				
-				System.out.println(pst);
+				
 			
 				if(resultSet3.next())
 				{
@@ -84,9 +84,9 @@ public void insert(Product product, BinProduct binproduct, String category, Stri
 				
 				pst = con.prepareStatement(query1);
 				pst.setString(1, category);
+				System.out.println(pst);
 				resultSet1=pst.executeQuery();
 				
-				System.out.println(pst);
 				
 				if(resultSet1.next())
 				{
@@ -117,9 +117,10 @@ public void insert(Product product, BinProduct binproduct, String category, Stri
 					
 					pst = con.prepareStatement(query2);
 					pst.setString(1, subcategory);
+					System.out.println(pst);
 					resultSet2=pst.executeQuery();
 					
-					System.out.println(pst);
+					
 					
 					if(resultSet2.next())
 					{
@@ -171,10 +172,11 @@ public void insert(Product product, BinProduct binproduct, String category, Stri
 						pst.setInt(10, product.getShipmentCharges());
 						pst.setString(11, "0");
 						
+
+						System.out.println("insert query="+pst);
+						
 //						System.out.println("insert query="+pst);
 						pst.executeUpdate();
-						
-						System.out.println("insert query="+pst);
 											
 					}
 
@@ -239,10 +241,10 @@ public void insert(Product product, BinProduct binproduct, String category, Stri
 							pst.setInt(1, productId);
 							pst.setInt(2, binproduct.getStock());
 							pst.setInt(3, binproduct.getBinPrice());
-							
+							System.out.println(pst);
 							pst.executeUpdate();
 							
-							System.out.println(pst);
+							
 														
 						}
 

@@ -23,6 +23,8 @@ public class Product {
 	private int stepPrice;
 	private int bidCount;
 	private int quantity;
+	private int categoryId;
+	private int subcategoryId;
 	
 	
 	public int getProductId() {
@@ -157,9 +159,17 @@ public class Product {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
-	
-	
-	
-	 
+	public int getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
+	public int getSubcategoryId() {
+		return subcategoryId;
+	}
+	public void setSubcategoryId(int subcategoryId) {
+		this.subcategoryId = subcategoryId;
+	}
+		 
 }

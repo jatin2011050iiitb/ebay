@@ -182,6 +182,97 @@
         <result name="success" type="redirectAction">ShowSellerPendingShipmentList.action</result>
        <result name="input" type="redirectAction">ShowSellerPendingShipmentList.action</result>
         </action>
+        
+        
+<!-- ************************Start of MyeBay******************************************* -->
+		<action name="MyEbayHome" class="user.action.MyEbayAction" method="showEbayHome">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type="tiles">/myEbayHome.tiles</result>
+		</action>
+		
+		<action name="showProfileEdit" class="user.action.MyEbayAction" method="showProfileEdit">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="animesh" type="tiles">/editProfile.tiles</result>
+		</action>
+		
+		<action name="submitProfileEdit" class="user.action.MyEbayAction" method="submitProfileEditMethod">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type="tiles">/myEbayHome.tiles</result>
+		</action>
+		
+		<action name="purchaseHistory" class="user.action.MyEbayAction" method="purchaseHistoryMethod">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type="tiles">/purchaseHistory.tiles</result>
+		</action>
+		
+		
+		<action name="receiptConfirmationShow" class="user.action.MyEbayAction" method="receiptConfirmationShowMethod">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type="tiles">/receiptConfirmationShow.tiles</result>
+		</action>
+		
+		<action name="receiptConfirmationSubmit" class="user.action.MyEbayAction" method="receiptConfirmationSubmitMethod">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type = "redirectAction">purchaseHistory</result> 
+		</action>
+		<action name="mySellPage" class="user.action.MyEbayAction" method="mySellPageMethod">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type="tiles">/mySellPage.tiles</result>
+		</action>
+		<action name="allSellItems" class="user.action.MyEbayAction" method="allSellItems">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type="tiles">/allSellItems.tiles</result>
+		</action>	
+
+		<action name="bidOrOffer" class="user.action.MyEbayAction" method="bidOrOfferMethod">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type="tiles">/bidOrOffer.tiles</result>
+		</action>
+		
+		<action name="MyPaisaPayConfirm" class="user.action.MyEbayAction" method="cartConfirmItemDeliveryMethod">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<interceptor-ref name="loginInterceptor" />
+			<result name="success" type="tiles">/MyPaisaPayConfirm.tiles</result>
+		</action>
+<!-- ************************End of MyeBay******************************************* -->
+
+<!-- ************************Actions for seller********************************************* -->
+		<action name="sellItemFormShow" class="seller.action.SellItemFormShowAction" method="input">
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="success" type="tiles">/ebaySellItemFormShow.tiles</result>
+			<result name="failure" type="tiles">/ebayLogin.tiles</result>
+			<!-- <result name="ppayreg" type="tiles">/MyPaisaPayRegister.tiles</result> -->
+			<result name="ppayreg" type = "redirectAction">MyPaisaPayRegisterShow</result> 
+		</action>
+		
+		<action name="auctionFormShow" class="seller.action.auctionFormShowAction" method="input">
+			<result name="success" type="tiles">/auction.tiles</result>
+		</action>
+		
+		<action name="binFormShow" class="seller.action.binFormShowAction" method="input">
+			<result name="success" type="tiles">/buyitnow.tiles</result>
+		</action>
+		
+		<action name="auctionFormSubmit" class="seller.action.auctionFormSubmitAction" method="execute">
+			<result name="success" type="tiles">/ebaySellItemSuccess.tiles</result>
+		</action>
+		
+		<action name="binFormSubmit" class="seller.action.binFormSubmitAction" method="execute">
+			<result name="success" type="tiles">/ebaySellItemSuccess.tiles</result>
+		</action>
+		
+		
+<!-- ************************End of seller actions******************************************* -->
+
 		
 		
 		
@@ -221,6 +312,11 @@
 		<result name="ShowDetails">/BankAccountDetails.jsp</result>   
 		<result name="input">/BankAccountDetails.jsp</result>    
 		</action>
+		
+		<action name="ShowPaisaPayAccount" class="paymentGateway.action.ShowPaisaPayAccount">
+		<result name="success">/PPAccountDetails.jsp</result>   
+		</action>
+		
 	
 	</package>
 </struts>

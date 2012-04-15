@@ -23,7 +23,15 @@
 						</div>
 					</td>
 				</tr>
-
+			<div align="left" style="width: 100%; height: 35px; position: relative; left: 20px; top: 10px;">
+			<s:a href="home">Home</s:a>
+			>
+			<s:a href="ShowSubCategory?categoryId=%{categoryDetails.CategoryId}">${categoryDetails.getCategoryDesc()}</s:a>
+			>
+			<s:a href="ShowProductList?subCategoryId=%{subcategorydetails.SubCategoryId}">${subcategorydetails.getSubCategoryDesc()}</s:a>
+			
+			
+			</div> 
 				<tr>
 					<td valign="top" class="catContent"><img border="1"
 						src="images_product/(<s:property value="productId"/>).JPG"

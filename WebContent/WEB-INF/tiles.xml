@@ -124,6 +124,63 @@
     <definition name="/sellerConfirmShipment.tiles" extends="BaseLayout">
         <put-attribute name="body" value="/SellerConfirmShipment.jsp" />
     </definition>
+
+<!-- Start of My Ebay Tiles -->    
 	
+	<definition name="/myEbayHome.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/myebayhome.jsp" />
+	</definition>
+	
+	<definition name="/editProfile.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/editprofile.jsp" />
+	</definition>
+
+	<definition name="/purchaseHistory.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/purchasehistory.jsp" />
+	</definition>
+	
+	<definition name="/receiptConfirmationShow.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/receiptconfirmationShow.jsp" />
+	</definition>
+	
+	<definition name="/mySellPage.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/mysellpage.jsp" />
+	</definition>	
+
+	<definition name="/allSellItems.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/allsellitems.jsp" />
+	</definition>	
+	<definition name="/bidOrOffer.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/bidsoroffer.jsp" />
+	</definition>	
+
+	<definition name="/MyPaisaPayConfirm.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/cartConfirmItemDelivery.jsp" />
+	</definition>			
+<!-- End of My Ebay Tiles -->
+
+<!-- ************************Pages for seller********************************************* -->
+	
+	<definition name="/ebaySellItemFormShow.tiles" extends="BaseLayout">
+   		<put-attribute name="body" value="/seller/sellerHome.jsp" />
+   		<put-attribute name="searchbar" value="" />
+    </definition>
+
+    <definition name="/ebaySellItemSuccess.tiles" extends="BaseLayout">
+   		<put-attribute name="body" value="/seller/sellItemSuccess.jsp" />
+   		<put-attribute name="searchbar" value="" />
+    </definition>
+    
+    <definition name="/buyitnow.tiles" extends="BaseLayout">
+   		<put-attribute name="body" value="/seller/buyitnow.jsp" />
+   		<put-attribute name="searchbar" value="" />
+    </definition>
+    
+    <definition name="/auction.tiles" extends="BaseLayout">
+   		<put-attribute name="body" value="/seller/auction.jsp" />
+   		<put-attribute name="searchbar" value="" />
+    </definition>
+    
+<!-- ************************End of seller pages******************************************* -->
 	
 </tiles-definitions>
