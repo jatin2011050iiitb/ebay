@@ -38,7 +38,7 @@ private static final long serialVersionUID = 1L;
 			String filepath = servletRequest.getSession().getServletContext()
 					.getRealPath("/images_product");
 			System.out.println("Server path: " + filepath);
-			File fileToCreate = new File(filepath, "("+bin.getProductId(product) + ").jpg");
+			File fileToCreate = new File(filepath, "("+bin.getProductId(product) + ").JPG");
 			FileUtils.copyFile(photo, fileToCreate);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
