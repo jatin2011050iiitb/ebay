@@ -36,7 +36,7 @@ public class auctionFormSubmitAction extends ActionSupport implements ServletReq
 			String filepath = servletRequest.getSession().getServletContext()
 					.getRealPath("/images_product");
 			System.out.println("Server path: " + filepath);
-			File fileToCreate = new File(filepath, "("+auction.getProductId(product) + ").jpg");
+			File fileToCreate = new File(filepath, "("+auction.getProductId(product) + ").JPG");
 			FileUtils.copyFile(photo, fileToCreate);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
