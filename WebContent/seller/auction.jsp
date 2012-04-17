@@ -16,15 +16,7 @@
 		var start = document.forms["auctionForm"]["product.startDate"].value;
 		var end = document.forms["auctionForm"]["product.endDate"].value;
 
-		 var stDate = new Date(start);
-		 var enDate = new Date(end);
-		 var compDate = enDate - stDate;
-
-		 if(compDate < 0)
-		{
-			 alert("Please Enter the correct date ");
-			 return false; 
-		}
+		 
 		 	
 		if (baseprice == null || baseprice == "") {
 			document.getElementById("errmsg").innerHTML = "Baseprice required!";
@@ -55,7 +47,7 @@
 }
 	function displayShipingCost(shipMode)
 	{
-		if(shipMode=="Chargable"){
+		if(shipMode=="Chargeable"){
 			document.getElementById("shippingCost").disabled=false;
 		}
 		else{
@@ -63,23 +55,7 @@
 			document.getElementById("shippingCost").value='0';
 		}
 	}
-	 function compareDate()
-	 {
-
-	 var start = document.formName.begindate.value;
-	 var end = document.formName.enddate.value;
-
-	 var stDate = new Date(start);
-	 var enDate = new Date(end);
-	 var compDate = enDate - stDate;
-
-	 if(compDate >= 0)
-	 return true;
-	 else
-	 {
-	 alert("Please Enter the correct date ");
-	 return false;
-	 }
+	
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Seller Auction page</title>
@@ -104,7 +80,7 @@
 			value="%{'2012-04-14'}" />
 		<s:textfield label="Base Price" name="auctionproduct.basePrice" />
 		<s:textfield label="Step Price" name="auctionproduct.stepPrice" />
-		<s:radio label="Shipping mode" list="{'Free','Chargable'}" onclick="displayShipingCost(this.value)"
+		<s:radio label="Shipping mode" list="{'Free','Chargeable'}" onclick="displayShipingCost(this.value)"
 			name="product.shipmentState"></s:radio>
 		<s:textfield id="shippingCost" label="Shipping Cost" name="product.shipmentCharges" value="0" disabled="true"></s:textfield>
 		<s:submit label="Submit" align="center" />
