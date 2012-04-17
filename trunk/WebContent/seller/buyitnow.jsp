@@ -67,7 +67,7 @@
 		<s:textarea label="Product Description" name="product.productDesc" />
 		<s:textfield label="Stock" name="binproduct.stock" />
 		<s:textfield label="Buy it now price" name="binproduct.binPrice" />
-		<s:radio label="Shipping mode" list="{'Free','Chargable'}" id="shipMode"
+		<s:radio label="Shipping mode" list="{'Free','Chargeable'}" id="shipMode"
 			name="product.shipmentState" onclick="displayShipingCost(this.value)"></s:radio>
 		
 		<s:textfield id="shippingCost" label="Shipping Cost" name="product.shipmentCharges" value="0" disabled="true"></s:textfield>
