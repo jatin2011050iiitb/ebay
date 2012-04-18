@@ -337,7 +337,7 @@ return bankId;
 			pst = con.prepareStatement(query1);
 			pst.setString(1,paymentConfirmation);
 			pst.setString(2,recieptConfirmation);
-			pst.setString(3, "processing");
+			pst.setString(3,"processing");
 			pst.setInt(4,cartId);
 			System.out.println(pst);
 			result = pst.executeUpdate();
@@ -377,6 +377,38 @@ public int updateShoppingCartWithTS(int cartId, String paymentConfirmation, Stri
 		}
 		return result;
 	}
+
+public int updateBankAccount(int amount, BankAccount ba){
+	
+	int result = 0;
+	query1 = "update BankAcc set accBalance=? where bankId=? and accNo =?";
+
+	
+
+		try{
+
+			dbconn = new DBconn();
+			con = dbconn.getConnection();
+			pst = con.prepareStatement(query1);
+			pst.setInt(1,ba.getAccBalance()+amount);
+			pst.setInt(2,ba.getBankId());
+			pst.setLong(3,ba.getAccNo());
+			result = pst.executeUpdate();
+
+		}catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			dbconn.close(resultSet1);
+			dbconn.close(pst);
+			dbconn.close(con);
+		}
+
+
+	
+	return result;
+	
+	
+}
 
 	/**
 	 * @param args
