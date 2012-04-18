@@ -79,6 +79,12 @@
 		<put-attribute name="searchbar" value="" />
 	</definition>
 	
+	<!-- EditShippingAddress page -->
+	<definition name="/EditShippingAddress.tiles" extends="BaseLayout">
+		<put-attribute name="body" value="/EditShippingAddress.jsp" />
+		<put-attribute name="searchbar" value="" />
+	</definition>
+	
 		<!-- MyPaisaPay product  page -->
 	<definition name="/MyPaisaPay.tiles" extends="BaseLayout">
 		<put-attribute name="body" value="/MyPaisaPayHome.jsp" />

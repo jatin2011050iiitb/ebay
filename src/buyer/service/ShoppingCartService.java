@@ -235,4 +235,26 @@ public ShoppingCart updateGrandTotal(ShoppingCart shoppingCart){
 		return shoppingCart;		
 }
 
+
+public void saveEditedShippingAddress(String Address, int cartId) {
+	try {
+		
+		query1 = "UPDATE shoppingCart SET shippingAddress=? where cartId=?";
+		dbconn = new DBconn();
+		con = DBconn.getConnection();
+		pst = con.prepareStatement(query1);
+		pst.setString(1, Address);
+		pst.setInt(2, cartId);
+		
+		
+		System.out.println(pst);
+		pst.executeUpdate();
+	} catch (SQLException e) {
+		System.out.println(e.getMessage());
+	} finally {
+		dbconn.close(pst);
+		dbconn.close(con);
+	}
+}
+
 }
