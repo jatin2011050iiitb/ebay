@@ -34,7 +34,7 @@ public class AuctionService {
 			pst.setInt(1, bidderId);
 			pst.setInt(2, auctionId);
 			pst.setInt(3, bidValue);
-			
+			System.out.println(pst);
 			pst.executeUpdate();
 			
 
@@ -59,6 +59,7 @@ public class AuctionService {
 			pst = con.prepareStatement(query1);
 			
 			pst.setInt(1, productId);
+			System.out.println(pst);
 			resultSet1 = pst.executeQuery();
 			
 			if(resultSet1.next()) {
@@ -91,6 +92,7 @@ public class AuctionService {
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1, productId);
+			System.out.println(pst);
 			resultSet1 = pst.executeQuery();
 			
 			if(resultSet1.next()) {
@@ -121,6 +123,7 @@ public class AuctionService {
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1, auctionId);
+			System.out.println(pst);
 			resultSet1 = pst.executeQuery();
 			
 			if(resultSet1.next()) {
@@ -151,6 +154,7 @@ public class AuctionService {
 			pst = con.prepareStatement(query1);
 			pst.setInt(1, auctionId);
 			pst.setInt(2, buyerid);
+			System.out.println(pst);
 			resultSet1 = pst.executeQuery();
 			
 			if(resultSet1.next()) {
@@ -179,6 +183,7 @@ public class AuctionService {
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1, auctionId);
+			System.out.println(pst);
 			resultSet1 = pst.executeQuery();
 			
 			while(resultSet1.next()) {
