@@ -165,6 +165,14 @@
 			<result name="success" type="tiles">/ShowCartByCartId.tiles</result>
 		</action> 
 		
+		<action name="EditShippingAddress" class="buyer.action.EditShippingAddressAction"
+			method="execute">
+			<interceptor-ref name="loginInterceptor" />
+			<interceptor-ref name="categoryListInterceptorStack" />
+			<result name="show" type="tiles">/EditShippingAddress.tiles</result>
+			<result name="success" type="redirectAction">ShowCartByCartId.action?cartId=${cartId}</result>
+		</action>
+		
 		<!-- Actions for seller -->
         <action name="ShowSellerPendingShipmentList" class="seller.action.ShowPendingShipments">
         <interceptor-ref name="loginInterceptor" />

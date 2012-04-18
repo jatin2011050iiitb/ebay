@@ -50,7 +50,7 @@
 											<br/>
 									</s:iterator>
 									</s:push>
-					Your Shipping Address: <s:property value="shoppingCart.shippingAddress"/><br/><br/>		
+					Your Shipping Address: <s:property value="shoppingCart.shippingAddress"/><br><a href="EditShippingAddress.action">Edit Shipping Address</a><br/><br/>		
 						Grand SubTotal: <s:property value="shoppingCart.grandSubTotal" /><br/>		
 						Grand Shipping price: <s:property value="shoppingCart.grandsShipmentCharges" /><br/>
 						Grand Total: <s:property value="shoppingCart.grandTotal" /><br/><br/>
