@@ -19,6 +19,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import paymentGateway.action.TransferAmountToSellerAcount;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
@@ -134,8 +136,17 @@ public class MyEbayAction extends ActionSupport{
 		System.out.println("Cart ID is in receiptConfirmationSubmitMethod is::"+getCartId());
 		MyEbayService myebayservice = new MyEbayService();
 		int markflag = myebayservice.markItemReceived(getCartId());
-		if (markflag==1)
+		if (markflag==1){
+			
+		
+			TransferAmountToSellerAcount tsa = new TransferAmountToSellerAcount();
+			tsa.setCartId(getCartId());
+			String result = tsa.execute();
+			
+			System.out.println("result from tsa: "+ result);
 			return "success";
+			
+		}
 		else
 			return "error";
 	}
