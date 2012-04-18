@@ -41,7 +41,7 @@
 }
 	function displayShipingCost(shipMode)
 	{
-		if(shipMode=="Chargable"){
+		if(shipMode=="Chargeable"){
 			document.getElementById("shippingCost").disabled=false;
 		}
 		else{
