@@ -167,6 +167,45 @@ public int statusUpdatePPayTransfer(int transactionId, int status){
 	
 }
 
+public PPTransaction getDetailsByCartId(int cartId){
+	PPTransaction p = new PPTransaction();
+	query1 = "select * from PPTransaction where cartId = ?";
+	try {
+		dbconn = new DBconn();
+		con = DBconn.getConnection();
+		pst = con.prepareStatement(query1);
+		pst.setInt(1,cartId);
+		resultSet1 = pst.executeQuery();
+		
+		if(resultSet1.next()){
+			p = new PPTransaction();
+			p.setTransactionId(resultSet1.getInt("transactionId"));
+			p.setBuyerId(resultSet1.getInt("buyerId"));
+			p.setSellerId(resultSet1.getInt("sellerId"));
+			p.setCartId(resultSet1.getInt("cartId"));
+			p.setAccNo(resultSet1.getInt("accNo"));
+			p.setBankId(resultSet1.getInt("bankId"));
+			p.setPPayAccId(resultSet1.getInt("PPayAccId"));
+			p.setPaymentType(resultSet1.getString("paymentType"));
+			p.setAmount(resultSet1.getInt("amount"));
+			p.setpRecvTS(resultSet1.getTimestamp("pRecvTS"));
+			p.setpPaidTS(resultSet1.getTimestamp("pPaidTS"));
+			p.setpCancelTS(resultSet1.getTimestamp("pCancelTS"));
+			p.setStatus(resultSet1.getString("status"));
+								
+		}
+	}catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			dbconn.close(resultSet1);
+			dbconn.close(pst);
+			dbconn.close(con);
+		}
+	
+	
+	return p;
+}
+
 public ArrayList<PPTransaction> getAllPPTransactions(){
 	ArrayList<PPTransaction> ppt = new ArrayList<PPTransaction>();
 	PPTransaction p;
