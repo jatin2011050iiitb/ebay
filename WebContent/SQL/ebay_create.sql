@@ -261,6 +261,7 @@ CREATE TRIGGER update_cart_before BEFORE INSERT ON shoppingCartItem FOR EACH ROW
 BEGIN
   IF NOT EXISTS(SELECT * FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId AND paymentConfirmation='0') THEN
     INSERT INTO shoppingCart(buyerId, sellerId, paymentConfirmation, recieptConfirmation) VALUES(NEW.buyerId, NEW.sellerId, '0', '0');
+    UPDATE shoppingCart SET shippingAddress=(SELECT CONCAT_WS('\n', address, city, state, country) FROM userInfo WHERE userId=NEW.buyerId), sellerName=(SELECT fName FROM userInfo WHERE userId=NEW.buyerId) WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId;
   END IF;
   SET NEW.cartId = (SELECT cartId FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId AND paymentConfirmation='0');
 END$$
