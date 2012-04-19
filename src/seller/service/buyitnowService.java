@@ -120,8 +120,7 @@ public void insert(Product product, BinProduct binproduct, String category, Stri
 					System.out.println(pst);
 					resultSet2=pst.executeQuery();
 					
-					
-					
+							
 					if(resultSet2.next())
 					{
 						subcategoryId=resultSet2.getInt("subcategoryId");
@@ -163,15 +162,16 @@ public void insert(Product product, BinProduct binproduct, String category, Stri
 						pst.setString(5, "1");
 //						System.out.println("product.getProdCondition()"+product.getProdCondition());
 						pst.setString(6, product.getProdCondition());
-						
-						pst.setTimestamp(7, null/*(Timestamp) product.getStartDate()*/);
-						pst.setTimestamp(8, null/*(Timestamp) product.getEndDate()*/);
+						System.out.println("product.getStartDate()"+product.getStartDate());
+						System.out.println("product.getEndDate()"+product.getEndDate());
+						pst.setTimestamp(7, new java.sql.Timestamp(product.getStartDate().getTime()));
+						pst.setTimestamp(8, new java.sql.Timestamp(product.getEndDate().getTime()));
 //						System.out.println("product.getShipmentState()="+product.getShipmentState());
 						pst.setString(9, product.getShipmentState());
 //						System.out.println("product.getShipmentCharges()="+product.getShipmentCharges());
 						pst.setInt(10, product.getShipmentCharges());
 						pst.setString(11, "0");
-						
+												
 
 						System.out.println("insert query="+pst);
 						
@@ -243,8 +243,7 @@ public void insert(Product product, BinProduct binproduct, String category, Stri
 							pst.setInt(3, binproduct.getBinPrice());
 							System.out.println(pst);
 							pst.executeUpdate();
-							
-							
+											
 														
 						}
 
