@@ -164,24 +164,51 @@ public class MyEbayService {
 		return shoppingCartItems;
 	}	
 	// Mark cartId as received (Includes all the Products in that cart)
-	public int markItemReceived(int cartId){
-		try{
-			String query="UPDATE shoppingCart set recieptConfirmation='1' , shipmentStatus='delivered', shipTS=now() where cartId=?";
-			dbconn = new DBconn();
-			con = DBconn.getConnection();
-			pst = con.prepareStatement(query);
-			pst.setInt(1,cartId);
-			pst.executeUpdate();
-			return 1;
+	public int markItemReceived(int cartId, String markReceivedStatus){
+		if(markReceivedStatus.equals("received"))
+		{
+			try{
+	
+					String query="UPDATE shoppingCart set recieptConfirmation='1' , shipmentStatus='delivered', shipTS=now() where cartId=?";
+					dbconn = new DBconn();
+					con = DBconn.getConnection();
+					pst = con.prepareStatement(query);
+					pst.setInt(1,cartId);
+					pst.executeUpdate();
+					return 1;
+			}
+			catch(SQLException e){
+				e.printStackTrace();
+			}
+			finally{
+				dbconn.close(resultSet1);
+				dbconn.close(pst);
+				dbconn.close(con);
+			}
 		}
-		catch(SQLException e){
-			e.printStackTrace();
+		else if(markReceivedStatus.equals("notreceived"))
+		{
+			try{
+	
+					String query="UPDATE shoppingCart set shipmentStatus='failed' where cartId=?";
+					dbconn = new DBconn();
+					con = DBconn.getConnection();
+					pst = con.prepareStatement(query);
+					pst.setInt(1,cartId);
+					pst.executeUpdate();
+					return 2;
+			}
+			catch(SQLException e){
+				e.printStackTrace();
+			}
+			finally{
+				dbconn.close(resultSet1);
+				dbconn.close(pst);
+				dbconn.close(con);
+			}
 		}
-		finally{
-			dbconn.close(resultSet1);
-			dbconn.close(pst);
-			dbconn.close(con);
-		}
+	
+
 		return 0;
 	}
 	// Getting all list of products for a particular seller

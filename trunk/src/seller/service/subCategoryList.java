@@ -43,6 +43,10 @@ public class subCategoryList {
 				}
 			
 				mapping.put(resultSet1.getString("categoryDesc"),options);
+				dbconn2.close(resultSet2);
+				dbconn2.close(pst);
+				dbconn2.close(con2);
+
 			}
 			
 		}

@@ -19,6 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import paymentGateway.action.RefundAmountToBuyerAccount;
 import paymentGateway.action.TransferAmountToSellerAcount;
 
 import com.mysql.jdbc.Connection;
@@ -48,6 +49,7 @@ public class MyEbayAction extends ActionSupport{
 	private int cartId;
 	private int recieptConfirmation;
 	private String shipmentStatus;
+	private String markReceivedStatus;
 
 
 	ArrayList<ShoppingCart> shoppingcart = new ArrayList<ShoppingCart>();
@@ -135,8 +137,8 @@ public class MyEbayAction extends ActionSupport{
 	public String receiptConfirmationSubmitMethod(){
 		System.out.println("Cart ID is in receiptConfirmationSubmitMethod is::"+getCartId());
 		MyEbayService myebayservice = new MyEbayService();
-		int markflag = myebayservice.markItemReceived(getCartId());
-		if (markflag==1){
+		int markflag = myebayservice.markItemReceived(getCartId(), markReceivedStatus);
+		if (markflag==1){	//// This is for item received; 1 indicates it has delivered the item to buyer and buyer has got the item;
 			
 		
 			/*TransferAmountToSellerAcount tsa = new TransferAmountToSellerAcount();
@@ -147,6 +149,17 @@ public class MyEbayAction extends ActionSupport{
 			return "success";
 			
 		}
+		if (markflag==2){	// This is for refund to buyer; 2 indicates it has shipment status failed;
+			//write java code for refund; if trigger doesn't work;
+/*			
+			RefundAmountToBuyerAccount refundAmountToBuyerAccount = new RefundAmountToBuyerAccount();
+			refundAmountToBuyerAccount.setCartId(getCartId());
+			String result = refundAmountToBuyerAccount.execute();
+			System.out.println("In Refund::::::" + result);
+*/			
+			return "success";
+		}
+		
 		else
 			return "error";
 	}
@@ -165,6 +178,12 @@ public class MyEbayAction extends ActionSupport{
 /* --------------------------------------------------------------------------------------------------
 	 ALL GETTER SETTERS
    --------------------------------------------------------------------------------------------------*/	
+	public String getMarkReceivedStatus() {
+		return markReceivedStatus;
+	}
+	public void setMarkReceivedStatus(String markReceivedStatus) {
+		this.markReceivedStatus = markReceivedStatus;
+	}
 	public String getShipmentStatus() {
 		return shipmentStatus;
 	}

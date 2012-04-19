@@ -58,7 +58,7 @@ public class PPayService {
 	public int commitPPTransaction(PPTransaction ppt){
 		int result = 0;
 		
-		query1 = "insert into PPTransaction (buyerId,sellerId,cartId,accNo,bankId,PPayAccId,paymentType,amount,pRecvTS,status) values (?,?,?,?,?,?,?,?,?,?)";
+		query1 = "insert into PPTransaction (buyerId,sellerId,cartId,accNo,bankId,PPayAccId,paymentType,amount,pRecvTS,pPaidTS,pCancelTS,status) values (?,?,?,?,?,?,?,?,?,?,?,?)";
 		try{
 			
 			dbconn = new DBconn();
@@ -73,7 +73,9 @@ public class PPayService {
 			pst.setString(7,ppt.getPaymentType());
 			pst.setInt(8,ppt.getAmount());
 			pst.setTimestamp(9,ppt.getPRecvTS());
-			pst.setString(10,ppt.getStatus());
+			pst.setTimestamp(10,ppt.getPPaidTS());
+			pst.setTimestamp(11,ppt.getPCancelTS());
+			pst.setString(12,ppt.getStatus());
 			
 			result = pst.executeUpdate();
 			
