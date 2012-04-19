@@ -202,9 +202,9 @@ bankId INT,     -- of buyer
 PPayAccId INT,  -- of seller 
 paymentType ENUM('creditcard','debitcard','banktransfer'),
 amount INT,
-pRecvTS TIMESTAMP,
-pPaidTS TIMESTAMP,
-pCancelTS TIMESTAMP,
+pRecvTS TIMESTAMP null,
+pPaidTS TIMESTAMP null,
+pCancelTS TIMESTAMP null,
 status ENUM('paymentRecieved','paidToSellerPPacc','refund'),
 FOREIGN KEY (sellerId) REFERENCES userCredentials(userId),
 FOREIGN KEY (buyerId) REFERENCES userCredentials(userId),
@@ -296,6 +296,10 @@ BEGIN
   DECLARE done BOOLEAN DEFAULT 0;
   DECLARE PPayAccountId INT;
   DECLARE transferAmount INT;
+  DECLARE buyerBankId INT;
+  DECLARE buyerAccNo INT;
+  DECLARE sellerBankId INT;
+  DECLARE sellerAccNo INT;
   /*
   DECLARE cur_get_productId CURSOR FOR SELECT productId FROM shoppingCartItem WHERE cartId=NEW.cartId;
   OPEN cur_get_productId;
@@ -312,12 +316,27 @@ BEGIN
   */
   IF NEW.shipmentStatus='delivered' AND OLD.shipmentStatus='shipped' AND NEW.recieptConfirmation='1' THEN
     SELECT PPayAccId INTO PPayAccountId FROM PPTransaction WHERE cartId=NEW.cartId;
+    SELECT accNo INTO sellerAccNo FROM PPayAccInfo WHERE PPayAccId = PPayAccountId;
+    SELECT bankId INTO sellerBankId FROM PPayAccInfo WHERE PPayAccId = PPayAccountId;    
     SELECT amount INTO transferAmount FROM PPTransaction WHERE cartId=NEW.cartId;
     
-    UPDATE BankAcc SET accBalance=accBalance+transferAmount WHERE accNo=(SELECT accNo FROM PPayAccInfo WHERE PPayAccId=PPayAccountId); 
+    UPDATE BankAcc SET accBalance=accBalance+transferAmount WHERE accNo= sellerAccNo and bankId = sellerBankId; 
     INSERT INTO PPTransaction(BuyerId, SellerId, cartId, AccNo, BankId, PPayAccId, PaymentType, Amount, PPaidTS, status) 
                   (select BuyerId, SellerId, cartId, AccNo, BankId, PPayAccId, PaymentType, Amount, now(), 'paidToSellerPPacc' from PPTransaction where cartId=NEW.cartId);
   END IF;
+  
+  IF NEW.shipmentStatus='failed' AND (OLD.shipmentStatus='shipped' OR OLD.shipmentStatus='processing') THEN
+    SELECT bankId INTO buyerBankId FROM PPTransaction WHERE cartId=NEW.cartId;
+    SELECT accNO INTO buyerAccNo FROM PPTransaction WHERE cartId=NEW.cartId;    
+    SELECT amount INTO transferAmount FROM PPTransaction WHERE cartId=NEW.cartId;
+    
+    UPDATE BankAcc SET accBalance=accBalance+transferAmount WHERE accNo= buyerAccNo and bankId = buyerBankId; 
+    INSERT INTO PPTransaction(BuyerId, SellerId, cartId, AccNo, BankId, PPayAccId, PaymentType, Amount, pCancelTS
+    , status) 
+                  (select BuyerId, SellerId, cartId, AccNo, BankId, PPayAccId, PaymentType, Amount, now(), 'refund' from PPTransaction where cartId=NEW.cartId);
+  END IF;
+  
+  
 
 
 END$$
