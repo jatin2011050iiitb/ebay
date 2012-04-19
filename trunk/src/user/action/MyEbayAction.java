@@ -139,11 +139,11 @@ public class MyEbayAction extends ActionSupport{
 		if (markflag==1){
 			
 		
-			TransferAmountToSellerAcount tsa = new TransferAmountToSellerAcount();
+			/*TransferAmountToSellerAcount tsa = new TransferAmountToSellerAcount();
 			tsa.setCartId(getCartId());
 			String result = tsa.execute();
 			
-			System.out.println("result from tsa: "+ result);
+			System.out.println("result from tsa: "+ result);*/
 			return "success";
 			
 		}

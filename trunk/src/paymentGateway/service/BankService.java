@@ -441,6 +441,37 @@ public int updateShoppingCartWithTS(int cartId, String paymentConfirmation, Stri
 		
 	}
 
+	public int updateBankAccount(int amount, BankAccount ba){
+		
+		int result = 0;
+		query1 = "update BankAcc set accBalance=? where bankId=? and accNo =?";
+
+		
+
+			try{
+
+				dbconn = new DBconn();
+				con = dbconn.getConnection();
+				pst = con.prepareStatement(query1);
+				pst.setInt(1,ba.getAccBalance()+amount);
+				pst.setInt(2,ba.getBankId());
+				pst.setLong(3,ba.getAccNo());
+				result = pst.executeUpdate();
+
+			}catch (SQLException e) {
+				System.out.println(e.getMessage());
+			} finally {
+				dbconn.close(resultSet1);
+				dbconn.close(pst);
+				dbconn.close(con);
+			}
+
+
+		
+		return result;
+		
+		
+	}
 	
 
 }
