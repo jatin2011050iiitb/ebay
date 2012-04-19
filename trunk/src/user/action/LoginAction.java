@@ -38,14 +38,14 @@ public class LoginAction  extends ActionSupport{
 			HttpServletRequest request  = (HttpServletRequest) ActionContext.getContext().get(org.apache.struts2.StrutsStatics.HTTP_REQUEST);
 			Boolean isResponseCorrect = Boolean.FALSE;
 			javax.servlet.http.HttpSession sess = request.getSession();
-			String c= (String)sess.getAttribute(Captcha.CAPTCHA_KEY);
+			/*String c= (String)sess.getAttribute(Captcha.CAPTCHA_KEY);
 			
 			if(!j_captcha_response.equals(c) )
 			{
 			addActionError("Invalid Code! Please try again!");
 			return ERROR;
 			}
-		 
+		 */
 			LoginService loginservice =new LoginService();
 			userId= loginservice.validateUser(getUsername(),getPassword());
 			if(this.userId > 0) 
