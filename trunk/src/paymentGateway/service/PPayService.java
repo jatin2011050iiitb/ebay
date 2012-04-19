@@ -72,7 +72,7 @@ public class PPayService {
 			pst.setInt(6,ppt.getPPayAccId());
 			pst.setString(7,ppt.getPaymentType());
 			pst.setInt(8,ppt.getAmount());
-			pst.setTimestamp(9,ppt.getpRecvTS());
+			pst.setTimestamp(9,ppt.getPRecvTS());
 			pst.setString(10,ppt.getStatus());
 			
 			result = pst.executeUpdate();
@@ -188,9 +188,9 @@ public PPTransaction getDetailsByCartId(int cartId){
 			p.setPPayAccId(resultSet1.getInt("PPayAccId"));
 			p.setPaymentType(resultSet1.getString("paymentType"));
 			p.setAmount(resultSet1.getInt("amount"));
-			p.setpRecvTS(resultSet1.getTimestamp("pRecvTS"));
-			p.setpPaidTS(resultSet1.getTimestamp("pPaidTS"));
-			p.setpCancelTS(resultSet1.getTimestamp("pCancelTS"));
+			p.setPRecvTS(resultSet1.getTimestamp("pRecvTS"));
+			p.setPPaidTS(resultSet1.getTimestamp("pPaidTS"));
+			p.setPCancelTS(resultSet1.getTimestamp("pCancelTS"));
 			p.setStatus(resultSet1.getString("status"));
 								
 		}
@@ -227,9 +227,9 @@ public ArrayList<PPTransaction> getAllPPTransactions(){
 			p.setPPayAccId(resultSet1.getInt("PPayAccId"));
 			p.setPaymentType(resultSet1.getString("paymentType"));
 			p.setAmount(resultSet1.getInt("amount"));
-			p.setpRecvTS(resultSet1.getTimestamp("pRecvTS"));
-			p.setpPaidTS(resultSet1.getTimestamp("pPaidTS"));
-			p.setpCancelTS(resultSet1.getTimestamp("pCancelTS"));
+			p.setPRecvTS(resultSet1.getTimestamp("pRecvTS"));
+			p.setPPaidTS(resultSet1.getTimestamp("pPaidTS"));
+			p.setPCancelTS(resultSet1.getTimestamp("pCancelTS"));
 			p.setStatus(resultSet1.getString("status"));
 			
 			ppt.add(p);
