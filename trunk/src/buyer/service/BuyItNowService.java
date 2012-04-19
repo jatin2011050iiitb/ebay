@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import user.model.Product;
 
+import buyer.model.ShippingPolicy;
 import buyer.model.ShoppingCart;
 import buyer.model.ShoppingCartItem;
 
@@ -104,6 +105,11 @@ public class BuyItNowService {
 					pst.setInt(4, quantity);
 					pst.setInt(5, product.getPrice());
 					pst.setInt(6, subtotal);
+					
+					// compute shipping charges using shipping policies
+					//int shippingCharges = getShippingChargesbyPolicy(product.getProductId(), product.getQuantity());
+					
+					//pst.setInt(7, shippingCharges);
 					pst.setInt(7, product.getShipmentCharges());
 					pst.setInt(8, buyerId);
 					pst.setInt(9, product.getSellerId());
@@ -280,6 +286,49 @@ public class BuyItNowService {
 		}
 
 		return productExists; //returns ( 0 if product doesnt exist) and (1 product exists)
+	}
+	
+	
+	
+	public int getShippingChargesbyPolicy(int productId, int quantity) {
+		int shippingCharges = 0;
+		ShippingPolicy shippingPolicy = new ShippingPolicy();
+		query1 = "SELECT * FROM shippingPolicy where productId=?";
+		try {																			
+			dbconn = new DBconn();
+			con = DBconn.getConnection();
+			pst = con.prepareStatement(query1);
+			pst.setInt(1, productId);
+			resultSet1 = pst.executeQuery();
+		
+			if(resultSet1.next()) {
+				shippingPolicy.setFlatshippingQuantity(resultSet1.getInt("flatshippingQuantity"));
+				shippingPolicy.setFlatshippingRate(resultSet1.getInt("flatshippingRate"));
+				shippingPolicy.setPerPieceshippingQuantity(resultSet1.getInt("perPieceshippingQuantity"));
+				shippingPolicy.setPerPieceshippingRate(resultSet1.getInt("perPieceshippingRate"));
+				shippingPolicy.setFreeshippingQuantity(resultSet1.getInt("freeshippingQuantity"));
+			}
+		
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			dbconn.close(resultSet1);
+			dbconn.close(pst);
+			dbconn.close(con);
+		}
+		
+		// compute shipping policy charges
+		if(quantity < shippingPolicy.getFlatshippingQuantity()) {
+			shippingCharges = shippingPolicy.getFlatshippingRate();
+		}
+		else if(quantity < shippingPolicy.getPerPieceshippingQuantity() && quantity >= shippingPolicy.getFlatshippingQuantity()) {
+			shippingCharges = shippingPolicy.getPerPieceshippingRate() * quantity;
+		}
+		else if(quantity >= shippingPolicy.getPerPieceshippingQuantity()) {
+			shippingCharges = 0;
+		}
+			
+		return shippingCharges;
 	}
 
 }
