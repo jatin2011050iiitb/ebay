@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 import user.model.Product;
@@ -31,6 +33,7 @@ public class ProductService {
 			con = dbconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,categoryId);
+//			pst.setTimestamp(2,new Timestamp(new Date().getTime()));
 			resultSet1 = pst.executeQuery();
 			
 			while(resultSet1.next()) {
@@ -56,12 +59,13 @@ public class ProductService {
 		ArrayList<Product> productList=new ArrayList<Product>();
 		
 		try {
-			query1 = "SELECT * FROM product where subcategoryId=? and sold=?";
+			query1 = "SELECT * FROM product where subcategoryId=? and sold=? and startDate <=?";
 			dbconn = new DBconn();
 			con = DBconn.getConnection();
 			pst = con.prepareStatement(query1);
 			pst.setInt(1,subCategoryId);
 			pst.setString(2,"0");
+			pst.setTimestamp(3,new Timestamp(new Date().getTime()));
 			resultSet1 = pst.executeQuery();
 			
 			while(resultSet1.next()) {
@@ -69,6 +73,7 @@ public class ProductService {
 				product.setProductId(resultSet1.getInt("productId"));
 				product.setProductDesc(resultSet1.getString("productDesc"));
 				product.setSaleType(resultSet1.getInt("saleType"));
+				
 				productList.add(product);
 				//System.out.println(resultSet1.getString("productDesc"));
 			}
