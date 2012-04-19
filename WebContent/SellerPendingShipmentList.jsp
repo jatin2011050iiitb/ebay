@@ -8,11 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<s:if test="cartIdList.size() > 0">
 	<h4>List of products to be shipped by you.</h4><br><br>
 	
 	<s:iterator value="cartIdList">
 		<a href="ConfirmShipmentShow.action?cartId=<s:property />" >Shipment number: s<s:property /></a><br>
 	</s:iterator>
-	
+	</s:if>
+	<s:else>
+		No items to be shipped.
+	</s:else>
 </body>
 </html>
