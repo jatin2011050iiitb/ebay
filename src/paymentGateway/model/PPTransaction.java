@@ -116,22 +116,22 @@ public class PPTransaction {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public Timestamp getpRecvTS() {
+	public Timestamp getPRecvTS() {
 		return pRecvTS;
 	}
-	public void setpRecvTS(Timestamp pRecvTS) {
+	public void setPRecvTS(Timestamp pRecvTS) {
 		this.pRecvTS = pRecvTS;
 	}
-	public Timestamp getpPaidTS() {
+	public Timestamp getPPaidTS() {
 		return pPaidTS;
 	}
-	public void setpPaidTS(Timestamp pPaidTS) {
+	public void setPPaidTS(Timestamp pPaidTS) {
 		this.pPaidTS = pPaidTS;
 	}
-	public Timestamp getpCancelTS() {
+	public Timestamp getPCancelTS() {
 		return pCancelTS;
 	}
-	public void setpCancelTS(Timestamp pCancelTS) {
+	public void setPCancelTS(Timestamp pCancelTS) {
 		this.pCancelTS = pCancelTS;
 	}
 	public String getStatus() {
