@@ -12,5 +12,6 @@
 <h4>Transaction Id: <s:property value="transactionId"/></h4>
 <h4>Amount Paid: <s:property value="totalAmount"/></h4>
 <h5>Please note down Transaction Id for future references</h5>
+<a href="<%= request.getContextPath() %>">Click here to go to Ebay Home Page.</a>
 </body>
 </html>
