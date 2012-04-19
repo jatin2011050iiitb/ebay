@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS ebay ; 
+DROP DATABASE IF EXISTS ebay; 
 CREATE DATABASE ebay;
 USE ebay;
 
@@ -219,7 +219,7 @@ transferId INT AUTO_INCREMENT PRIMARY KEY,
 transactionId INT,
 PPayAccId INT,
 amount INT,
-transferStatus INT, -- 0 means not yet trasferred. 1 means moved from ebay to seller ,-1 refunded
+transferStatus INT,
 transferTS TIMESTAMP,
 FOREIGN KEY (transactionId) REFERENCES PPTransaction(transactionId),
 FOREIGN KEY (PPayAccId) REFERENCES PPayAccInfo(PPayAccId)
@@ -256,18 +256,71 @@ DELIMITER ;
 
 -- TRIGGER FOR UPDATING CART WHEN BIDDING HAS TIMEDOUT
 
--- TRIGGER FOR UPDATING CART WHEN BIDDING HAS TIMEDOUT
-
 DELIMITER $$
 CREATE TRIGGER update_cart_before BEFORE INSERT ON shoppingCartItem FOR EACH ROW
 BEGIN
   IF NOT EXISTS(SELECT * FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId AND paymentConfirmation='0') THEN
-    INSERT INTO shoppingCart(buyerId, sellerId, paymentConfirmation, recieptConfirmation,grandTotal,grandSubTotal) VALUES(NEW.buyerId, NEW.sellerId, '0', '0', 0, 0);
+    INSERT INTO shoppingCart(buyerId, sellerId, paymentConfirmation, recieptConfirmation) VALUES(NEW.buyerId, NEW.sellerId, '0', '0');
   END IF;
   SET NEW.cartId = (SELECT cartId FROM shoppingCart WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId AND paymentConfirmation='0');
 END$$
 DELIMITER ;
 
+
+
+DELIMITER $$
+CREATE TRIGGER update_cart_after AFTER INSERT ON shoppingCartItem FOR EACH ROW
+BEGIN
+  UPDATE shoppingCart SET grandTotal=(SELECT SUM(subtotal+shippingPrice) FROM shoppingCartItem WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId AND cartId=NEW.cartId),
+        grandSubTotal=(SELECT SUM(subtotal) FROM shoppingCartItem WHERE buyerId=NEW.buyerId AND sellerId=NEW.sellerId AND cartId=NEW.cartId)
+      WHERE cartId=NEW.cartId;
+END$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE TRIGGER update_PPayinfo AFTER INSERT ON PPayAccInfo FOR EACH ROW
+BEGIN
+  UPDATE userInfo SET PPayAccId=NEW.PPayAccId WHERE userId=NEW.ebayUserId;
+END$$
+DELIMITER ;
+
+
+-- TRIGGER TO UPDATE THE STOCK WHEN A PRODUCT IS SOLD
+DELIMITER $$
+CREATE TRIGGER update_stock AFTER UPDATE ON shoppingCart FOR EACH ROW
+BEGIN
+  DECLARE productId_of_itemsold INT;
+  DECLARE quantity_deduct INT;
+  DECLARE done BOOLEAN DEFAULT 0;
+  DECLARE PPayAccountId INT;
+  DECLARE transferAmount INT;
+  /*
+  DECLARE cur_get_productId CURSOR FOR SELECT productId FROM shoppingCartItem WHERE cartId=NEW.cartId;
+  OPEN cur_get_productId;
+  
+  IF NEW.paymentConfirmation='1' AND OLD.paymentConfirmation='0' AND NEW.shipmentStatus='processing' THEN
+    REPEAT
+      FETCH cur_get_productId INTO productId_of_itemsold;
+      SELECT quantity INTO quantity_deduct FROM shoppingCartItem WHERE productId=productId_of_itemsold;
+      UPDATE binProduct SET stock=(stock-quantity_deduct) WHERE productId=productId_of_itemsold;
+    UNTIL done END REPEAT;
+  END IF;
+
+  CLOSE cur_get_productId;
+  */
+  IF NEW.shipmentStatus='delivered' AND OLD.shipmentStatus='shipped' AND NEW.recieptConfirmation='1' THEN
+    SELECT PPayAccId INTO PPayAccountId FROM PPTransaction WHERE cartId=NEW.cartId;
+    SELECT amount INTO transferAmount FROM PPTransaction WHERE cartId=NEW.cartId;
+    
+    UPDATE BankAcc SET accBalance=accBalance+transferAmount WHERE accNo=(SELECT accNo FROM PPayAccInfo WHERE PPayAccId=PPayAccountId); 
+    INSERT INTO PPTransaction(BuyerId, SellerId, cartId, AccNo, BankId, PPayAccId, PaymentType, Amount, PPaidTS, status) 
+                  (select BuyerId, SellerId, cartId, AccNo, BankId, PPayAccId, PaymentType, Amount, now(), 'paidToSellerPPacc' from PPTransaction where cartId=NEW.cartId);
+  END IF;
+
+
+END$$
+DELIMITER ;
 
 -- ---------------------------------------------------------------------------------------------------------------------
 
@@ -283,14 +336,6 @@ CREATE EVENT end_bid
           SELECT p.productId, p.productDesc, 1, a.highestBidPrice, a.highestBidPrice, p.shipmentCharges, a.finalBidderId, p.sellerId, u.fName, 0
               FROM product p, auctionProduct a, userInfo u WHERE p.productId=a.productId AND u.userId=p.sellerId AND p.sold='0' AND p.endDate < now();
       UPDATE product SET sold='1' WHERE endDate < now() AND productId in (SELECT productId FROM auctionProduct);
+      /*UPDATE product SET sold='1' WHERE endDate < now() AND productId in (SELECT productId FROM binProduct where quantity>0);*/
+      UPDATE product SET sold='1' WHERE productId in (SELECT productId FROM binProduct where stock=0);  
     END;
-
--- ---------------------------------------------------------------------------------------------------------------------
-
--- upon paisa pay account registration auto setting of PPayAccId in userInfo table
-DELIMITER $$
-CREATE TRIGGER update_PPayinfo AFTER INSERT ON PPayAccInfo FOR EACH ROW
-BEGIN
-  UPDATE userInfo SET PPayAccId=NEW.PPayAccId WHERE userId=NEW.ebayUserId;
-END$$
-DELIMITER ;
