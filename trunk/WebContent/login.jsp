@@ -24,8 +24,8 @@ color:#000000;
            	<s:textfield name="username" label ="User Id" id="username_id"  />           
    			<s:password name="password"  label="Password" id="password_id" />
    			<s:actionerror /> 
-			<img src="Captcha.jpg" border="0">
-			<s:textfield label="Code" name="j_captcha_response" size="20" maxlength="10"/>
+			<%-- <img src="Captcha.jpg" border="0">
+			<s:textfield label="Code" name="j_captcha_response" size="20" maxlength="10"/> --%>
       		<s:submit name="signin" id="signin_id" value="SignIn" align= "center"/><br>
       	</s:form>
 
