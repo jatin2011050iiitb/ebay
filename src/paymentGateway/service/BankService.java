@@ -432,7 +432,7 @@ public int updateShoppingCartWithTS(int cartId, String paymentConfirmation, Stri
 		}catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
-			dbconn.close(resultSet1);
+			
 			dbconn.close(pst);
 			dbconn.close(con);
 		}
