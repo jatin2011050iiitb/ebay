@@ -1,5 +1,6 @@
 package user.model;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 
@@ -18,7 +19,7 @@ public class User {
 	private String country;
 	private int pincode;
 	private String emailId;
-	private int phone;
+	private Long phone;
 	private int secretQID;
 	private String question;
 	private String secretAnswer; 
@@ -164,13 +165,13 @@ public class User {
 	/**
 	 * @return the phone
 	 */
-	public int getPhone() {
+	public Long getPhone() {
 		return phone;
 	}
 	/**
 	 * @param phone the phone to set
 	 */
-	public void setPhone(int phone) {
+	public void setPhone(Long phone) {
 		this.phone = phone;
 	}
 	/**
