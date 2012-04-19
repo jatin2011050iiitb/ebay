@@ -42,6 +42,7 @@ public class SearchService {
 				Product product = new Product();
 				product.setProductId(resultSet1.getInt("productId"));
 				product.setProductDesc(resultSet1.getString("productDesc"));
+				product.setSaleType(resultSet1.getInt("saleType"));
 				productList.add(product);
 				//System.out.println(resultSet1.getString("productDesc"));
 			}
