@@ -32,7 +32,7 @@
 		</a> </span><span class="greeting gh-ui"> <!-- BEGIN: GREETING:SIGNEDOUT -->Welcome!
 
 		<s:if test="%{#session.Loggedin.getStatus()!=null}" >
-				<s:property value="%{#session.objectuser.getfName()}"/>
+				<s:property value="%{#session.objectuser.getFName()}"/>
 				<b>(<s:property value="#session['userName']"/>)!</b>
 				<a href="logout.action"> Sign out</a>			
 		</s:if>		

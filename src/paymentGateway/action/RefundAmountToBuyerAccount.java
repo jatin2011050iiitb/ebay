@@ -11,14 +11,13 @@ import paymentGateway.service.PPayService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class TransferAmountToSellerAcount extends ActionSupport{
-	
+public class RefundAmountToBuyerAccount extends ActionSupport{
+
 	private int cartId;
 	
 	public String execute(){
 		
 		PPayService ps = new PPayService();
-		
 		System.out.println(getCartId());
 		
 		PPTransaction thisTran = ps.getDetailsByCartId(getCartId());
@@ -26,22 +25,20 @@ public class TransferAmountToSellerAcount extends ActionSupport{
 		System.out.println(thisTran.getSellerId());
 		System.out.println(thisTran.getAmount());
 		
-		PPayAccInfo pi = ps.getPPayAccInfoByEbayUserId(thisTran.getSellerId());
-		
 		BankService bs = new BankService();
 		
-		System.out.println(pi.getBankId());
-		System.out.println(pi.getAccNo());
+		System.out.println(thisTran.getBankId());
+		System.out.println(thisTran.getAccNo());
 		
-		BankAccount ba = bs.validateAccountWithoutPassword(pi.getBankId(), pi.getAccNo());
+		BankAccount ba = bs.validateAccountWithoutPassword(thisTran.getBankId(), thisTran.getAccNo());
 		int result = bs.updateBankAccount(thisTran.getAmount(),ba);
 		
 		System.out.println(result);
 		
 		if(result == 1){
 			
-			thisTran.setStatus("paidToSellerPPacc");
-			thisTran.setPPaidTS(new Timestamp(new Date().getTime()));
+			thisTran.setStatus("refund");
+			thisTran.setPCancelTS(new Timestamp(new Date().getTime()));
 			result = ps.commitPPTransaction(thisTran);
 		
 			System.out.println(result);
@@ -52,7 +49,11 @@ public class TransferAmountToSellerAcount extends ActionSupport{
 		
 		
 	}
-
+	
+	
+/* GETTER SETTER
+ * 	
+ */
 	public int getCartId() {
 		return cartId;
 	}
@@ -61,5 +62,5 @@ public class TransferAmountToSellerAcount extends ActionSupport{
 		this.cartId = cartId;
 	}
 	
-
+	
 }

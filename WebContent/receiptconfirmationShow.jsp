@@ -43,10 +43,11 @@
 <br>
 Receipt Status: 
 <s:if test="recieptConfirmation == 1"><b>Received</b></s:if>
-<s:elseif test="recieptConfirmation == 2"><b>Not Received</b>
+<s:elseif test="recieptConfirmation == 2"><b>Not Received</b><br>
 		<s:if test="shipmentStatus == 'shipped'">
-			<s:a href="receiptConfirmationSubmit.action?cartId=%{cartId}">(Mark it received)
-			</s:a>
+			<s:a href="receiptConfirmationSubmit.action?cartId=%{cartId}&markReceivedStatus=received">(Mark it received)</s:a>
+			or 
+			<s:a href="receiptConfirmationSubmit.action?cartId=%{cartId}&markReceivedStatus=notreceived">(Mark it not received)</s:a>
 		</s:if>
 </s:elseif>
 <s:else>Failure</s:else> 
