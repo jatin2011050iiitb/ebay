@@ -5,9 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 
 import paymentGateway.model.BankAccount;
+import user.model.Product;
 import ebay.util.DBconn;
 
 
@@ -337,7 +339,7 @@ return bankId;
 			pst = con.prepareStatement(query1);
 			pst.setString(1,paymentConfirmation);
 			pst.setString(2,recieptConfirmation);
-			pst.setString(3,"processing");
+			pst.setString(3, "processing");
 			pst.setInt(4,cartId);
 			System.out.println(pst);
 			result = pst.executeUpdate();
@@ -375,25 +377,57 @@ public int updateShoppingCartWithTS(int cartId, String paymentConfirmation, Stri
 			dbconn.close(pst);
 			dbconn.close(con);
 		}
-		return result;
+		
+		
+		// logic to decrement stock on payment of shopping cart
+		
+		if(result>0) {
+			
+			String query = "SELECT productId, quantity FROM shoppingCartItem WHERE cartId=? AND itemDeselected=0";
+			
+			try{
+
+				dbconn = new DBconn();
+				con = dbconn.getConnection();
+				pst = con.prepareStatement(query);
+				pst.setInt(1,cartId);
+				System.out.println(pst);
+				resultSet1 = pst.executeQuery();
+				
+				while(resultSet1.next()) {
+					int rc = decrementStock(resultSet1.getInt("productId"), resultSet1.getInt("quantity"));
+					if(rc == 0)
+						return 0;
+				}
+
+			}catch (SQLException e) {
+				System.out.println(e.getMessage());
+				return 0;
+			} finally {
+				dbconn.close(resultSet1);
+				dbconn.close(pst);
+				dbconn.close(con);
+			}
+		}
+		
+		
+		
+		return 1;
 	}
 
-public int updateBankAccount(int amount, BankAccount ba){
-	
-	int result = 0;
-	query1 = "update BankAcc set accBalance=? where bankId=? and accNo =?";
 
-	
-
+	public int decrementStock(int productId, int quantity) {
+		String query="UPDATE binProduct SET stock=stock-? WHERE productId=?";
+		
 		try{
 
 			dbconn = new DBconn();
 			con = dbconn.getConnection();
-			pst = con.prepareStatement(query1);
-			pst.setInt(1,ba.getAccBalance()+amount);
-			pst.setInt(2,ba.getBankId());
-			pst.setLong(3,ba.getAccNo());
-			result = pst.executeUpdate();
+			pst = con.prepareStatement(query);
+			pst.setInt(1,quantity);
+			pst.setInt(2,productId);
+			System.out.println(pst);
+			return pst.executeUpdate();
 
 		}catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -402,20 +436,11 @@ public int updateBankAccount(int amount, BankAccount ba){
 			dbconn.close(pst);
 			dbconn.close(con);
 		}
-
-
-	
-	return result;
-	
-	
-}
-
-	/**
-	 * @param args
-	 */	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		return 0;
+		
 	}
+
+	
 
 }
