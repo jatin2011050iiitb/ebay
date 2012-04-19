@@ -74,10 +74,10 @@
 		<s:textarea label="Product Description" name="product.productDesc" />
 		<sx:datetimepicker name="product.startDate"
 			label="Start Date(dd-MMM-yyyy)" displayFormat="dd-MMM-yyyy"
-			value="%{'2012-04-14'}" />
+			value="%{'today'}" />
 		<sx:datetimepicker name="product.endDate"
 			label="End Date(dd-MMM-yyyy)" displayFormat="dd-MMM-yyyy"
-			value="%{'2012-04-14'}" />
+			value="%{'today'}" />
 		<s:textfield label="Base Price" name="auctionproduct.basePrice" />
 		<s:textfield label="Step Price" name="auctionproduct.stepPrice" />
 		<s:radio label="Shipping mode" list="{'Free','Chargeable'}" onclick="displayShipingCost(this.value)"
