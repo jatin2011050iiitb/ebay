@@ -205,7 +205,7 @@ public class RegistrationService {
 				pst.setString(9, user.getCountry());
 				pst.setInt(10, user.getPincode());
 				pst.setString(11, user.getEmailId());
-				pst.setInt(12, user.getPhone());
+				pst.setLong(12, user.getPhone());
 				pst.setInt(13, questionid);
 				pst.setString(14, user.getSecretAnswer());
 				pst.setString(15, "0");
