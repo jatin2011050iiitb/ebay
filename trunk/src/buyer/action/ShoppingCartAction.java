@@ -32,9 +32,9 @@ public class ShoppingCartAction extends ActionSupport {
 		
 		setShoppingCartArray((shoppingCartService.getSCartArray(getSellerIds(),buyer.getUserId())));
 		
-		/*if(shoppingCartArray==null || shoppingCartArray.equals("")){
+		if(shoppingCartArray==null || shoppingCartArray.equals("") ||shoppingCartArray.getShoppingCartList().isEmpty()){
 			message="No Carts. Please Start Buying";
-		}*/
+		}
 		
 		/*Iterator<Integer> iterator = sellerIds.iterator();
 		while (iterator.hasNext()) {
