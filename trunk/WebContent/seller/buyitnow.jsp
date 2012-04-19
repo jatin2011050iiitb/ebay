@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<sx:head />
 <script type="text/javascript">
 	function validateForm() {
 		var stock = document.forms["buyitnowForm"]["binproduct.stock"].value;
@@ -65,6 +67,12 @@
 			name="product.prodCondition"></s:radio>
 		<s:file name="photo" label="Upload Image" />
 		<s:textarea label="Product Description" name="product.productDesc" />
+		<sx:datetimepicker name="product.startDate"
+			label="Start Date(dd-MMM-yyyy)" displayFormat="dd-MMM-yyyy"
+			value="%{'today'}" />
+		<sx:datetimepicker name="product.endDate"
+			label="End Date(dd-MMM-yyyy)" displayFormat="dd-MMM-yyyy"
+			value="%{'today'}" />
 		<s:textfield label="Stock" name="binproduct.stock" />
 		<s:textfield label="Buy it now price" name="binproduct.binPrice" />
 		<s:radio label="Shipping mode" list="{'Free','Chargeable'}" id="shipMode"
