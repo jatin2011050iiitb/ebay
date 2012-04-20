@@ -20,16 +20,21 @@ public class UpdateQuantityService {
 		
 		int subtotal=0;
 		subtotal= shoppingCartItem.getUnitPrice()*quantity;
+		BuyItNowService buyitnowservice = new BuyItNowService();
+		int shippingCharges = buyitnowservice.getShippingChargesbyPolicy(shoppingCartItem.getProductId(), quantity);
 		 try {
 				
-				query1 = "UPDATE shoppingCartItem SET subTotal=? , quantity=? where cartItemId=? and itemDeselected=?";
+				query1 = "UPDATE shoppingCartItem SET subTotal=? , quantity=?, shippingPrice=? where cartItemId=? and itemDeselected=?";
 				dbconn = new DBconn();
 				con = DBconn.getConnection();
 				pst = con.prepareStatement(query1);
 				pst.setInt(1, subtotal);
 				pst.setInt(2, quantity);
-				pst.setInt(3, shoppingCartItem.getCartItemId());
-				pst.setString(4,"0");
+				pst.setInt(3, shippingCharges);
+				pst.setInt(4, shoppingCartItem.getCartItemId());
+				
+				//pst.setInt(3, shoppingCartItem.getCartItemId());
+				pst.setString(5,"0");
 				System.out.println(pst);
 				isSuccessful = pst.executeUpdate();
 			} catch (SQLException e) {
@@ -41,6 +46,7 @@ public class UpdateQuantityService {
 			if(isSuccessful==1){
 		 shoppingCartItem.setSubtotal(subtotal); // this is short cut. you could also write a select query and set the sub total ;)
 			shoppingCartItem.setQuantity(quantity);
+			shoppingCartItem.setShippingPrice(shippingCharges);
 			}
 		
 	return shoppingCartItem;

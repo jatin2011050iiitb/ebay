@@ -90,6 +90,9 @@ public class BuyItNowService {
 		int isSuccessful = 0;
 		int productExists=0;
 		subtotal= product.getPrice()*quantity;
+		System.out.println("quantity before shipping policy="+quantity);
+		// compute shipping charges using shipping policies
+		int shippingCharges = getShippingChargesbyPolicy(product.getProductId(), quantity);
 		productExists = isProductAlreadyInDB(shoppingCart,product,buyerId, quantity);
 		if(productExists==0){ //0 means doesnt exist so insert it
 				try {
@@ -106,11 +109,10 @@ public class BuyItNowService {
 					pst.setInt(5, product.getPrice());
 					pst.setInt(6, subtotal);
 					
-					// compute shipping charges using shipping policies
-					//int shippingCharges = getShippingChargesbyPolicy(product.getProductId(), product.getQuantity());
 					
-					//pst.setInt(7, shippingCharges);
-					pst.setInt(7, product.getShipmentCharges());
+					
+					pst.setInt(7, shippingCharges);
+					//pst.setInt(7, product.getShipmentCharges());
 					pst.setInt(8, buyerId);
 					pst.setInt(9, product.getSellerId());
 					pst.setString(10, sName);
@@ -236,6 +238,8 @@ public class BuyItNowService {
 	public int isProductAlreadyInDB(ShoppingCart shoppingCart, Product product,
 			int buyerId, int quantity) {
 		int productExists = 0;// 0 means not product doesnt exist
+		// compute shipping charges using shipping policies
+		int shippingCharges = getShippingChargesbyPolicy(product.getProductId(), quantity);
 		try {
 			query1 = "SELECT * FROM shoppingCartItem where cartId=? and productId=? ";// and
 																						// itemDeselected=?
@@ -258,15 +262,17 @@ public class BuyItNowService {
 				try {
 					int subtotal = 0;
 					subtotal = product.getPrice() * quantity;
-					query2 = "UPDATE shoppingCartItem SET subtotal=?, quantity=?,itemDeselected=? where cartId=? and productId=? ";
+					query2 = "UPDATE shoppingCartItem SET subtotal=?, quantity=?,itemDeselected=?, shippingPrice=? where cartId=? and productId=? ";
 					dbconn2 = new DBconn();
 					con2 = dbconn2.getConnection();
 					pst2 = con2.prepareStatement(query2);
 					pst2.setInt(1, subtotal);
 					pst2.setInt(2, quantity);
 					pst2.setInt(3, 0);
-					pst2.setInt(4, shoppingCart.getCartId());
-					pst2.setInt(5, product.getProductId());
+					pst2.setInt(4, shippingCharges);
+					pst2.setInt(5, shoppingCart.getCartId());
+					pst2.setInt(6, product.getProductId());
+					
 					System.out.println(pst2);
 					productExists = pst2.executeUpdate(); // product exists so isSuccessful=1
 				} catch (SQLException e) {
@@ -293,41 +299,51 @@ public class BuyItNowService {
 	public int getShippingChargesbyPolicy(int productId, int quantity) {
 		int shippingCharges = 0;
 		ShippingPolicy shippingPolicy = new ShippingPolicy();
-		query1 = "SELECT * FROM shippingPolicy where productId=?";
+		String query2 = "SELECT * FROM shippingPolicy where productId=?";
+		ResultSet resultSet2 = null;
+		Connection con2 = null;
+		PreparedStatement pst2 = null;
+		DBconn dbconn2 = null;
 		try {																			
-			dbconn = new DBconn();
-			con = DBconn.getConnection();
-			pst = con.prepareStatement(query1);
-			pst.setInt(1, productId);
-			resultSet1 = pst.executeQuery();
+			dbconn2 = new DBconn();
+			con2 = DBconn.getConnection();
+			pst2 = con2.prepareStatement(query2);
+			pst2.setInt(1, productId);
+			System.out.println(pst2);
+			resultSet2 = pst2.executeQuery();
 		
-			if(resultSet1.next()) {
-				shippingPolicy.setFlatshippingQuantity(resultSet1.getInt("flatshippingQuantity"));
-				shippingPolicy.setFlatshippingRate(resultSet1.getInt("flatshippingRate"));
-				shippingPolicy.setPerPieceshippingQuantity(resultSet1.getInt("perPieceshippingQuantity"));
-				shippingPolicy.setPerPieceshippingRate(resultSet1.getInt("perPieceshippingRate"));
-				shippingPolicy.setFreeshippingQuantity(resultSet1.getInt("freeshippingQuantity"));
+			if(resultSet2.next()) {
+				shippingPolicy.setFlatshippingQuantity(resultSet2.getInt("flatshippingQuantity"));
+				shippingPolicy.setFlatshippingRate(resultSet2.getInt("flatshippingRate"));
+				shippingPolicy.setPerPieceshippingQuantity(resultSet2.getInt("perPieceshippingQuantity"));
+				shippingPolicy.setPerPieceshippingRate(resultSet2.getInt("perPieceshippingRate"));
+				shippingPolicy.setFreeshippingQuantity(resultSet2.getInt("freeshippingQuantity"));
 			}
 		
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
-			dbconn.close(resultSet1);
-			dbconn.close(pst);
-			dbconn.close(con);
+			dbconn2.close(resultSet2);
+			dbconn2.close(pst2);
+			dbconn2.close(con2);
 		}
 		
 		// compute shipping policy charges
 		if(quantity < shippingPolicy.getFlatshippingQuantity()) {
+			System.out.println("In flat shipping");
 			shippingCharges = shippingPolicy.getFlatshippingRate();
 		}
 		else if(quantity < shippingPolicy.getPerPieceshippingQuantity() && quantity >= shippingPolicy.getFlatshippingQuantity()) {
+			System.out.println("In piecewise shipping");
 			shippingCharges = shippingPolicy.getPerPieceshippingRate() * quantity;
 		}
 		else if(quantity >= shippingPolicy.getPerPieceshippingQuantity()) {
+			System.out.println("quantity="+quantity);
+			System.out.println("Piecewise quantity="+shippingPolicy.getPerPieceshippingQuantity());
+			System.out.println("In free shipping");
 			shippingCharges = 0;
 		}
-			
+		System.out.println("shipping charges due to shipping policy=" + shippingCharges);	
 		return shippingCharges;
 	}
 

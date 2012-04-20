@@ -115,6 +115,18 @@ binPrice INT NOT NULL,-- buyitnow price
 FOREIGN KEY (productId) REFERENCES product(productId)
 );
 
+-- EBAY SHIPPING POLICY
+CREATE TABLE shippingPolicy(
+productId INT PRIMARY KEY,
+flatshippingQuantity INT,
+flatshippingRate INT, 
+perPieceshippingQuantity INT,
+perPieceshippingRate INT,
+freeshippingQuantity INT,
+FOREIGN KEY (productId) REFERENCES product(productId)
+);
+
+
 CREATE TABLE auctionProduct( -- auction item
 auctionId INT AUTO_INCREMENT PRIMARY KEY,
 productId INT UNIQUE, 

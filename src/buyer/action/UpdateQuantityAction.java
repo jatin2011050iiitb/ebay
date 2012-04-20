@@ -29,9 +29,9 @@ public class UpdateQuantityAction extends ActionSupport{
 				setShoppingCartItem(updateQuantityService.updateSingleProductQuantity(shoppingCartItem,quantity));
 				
 				BuyItNowService buyItNowService = new BuyItNowService();
-				if(shoppingCartItem!=null){
-					setShoppingCart(buyItNowService.calcGrandTotalBuyItNow(shoppingCart,shoppingCartItem));	
-					}
+//				if(shoppingCartItem!=null){
+//					setShoppingCart(buyItNowService.calcGrandTotalBuyItNow(shoppingCart,shoppingCartItem));	
+//					}
 				session.put("SessionCarts",shoppingCart);
 				session.put("sessionCartItems", shoppingCartItem);
 				
