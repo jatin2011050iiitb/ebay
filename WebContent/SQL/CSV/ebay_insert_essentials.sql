@@ -120,7 +120,7 @@ INSERT INTO `ebay`.`userinfo`
 (`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
 `emailId`, `phone`, `secretQID`, `secretanswer`, `isAdmin`, `PPayAccId`) 
 VALUES (3, 'Ashrith', 'Kulai', 'male', '1989-06-11', 'IIIT Bangalore', 'Bangalore', 'Karnataka', 'India', 560100,
-'ashrithkulai@gmail.com', 7204317825, 1, 'sachin', '0',3);
+'ashrithkulai@gmail.com', 1234567890, 1, 'sachin', '0',3);
 
 INSERT INTO `ebay`.`userinfo` 
 (`userId`, `fName`, `lName`, `gender`, `dob`, `address`, `city`, `state`, `country`, `pincode`, 
